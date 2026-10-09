@@ -55,15 +55,23 @@ ${pageHead(s.title, s.intro, trail)}
         to the specialist of your choice.</p>
       </div>
       <div class="panel">
-        <h3 style="font-size:var(--step-1)">${icon("info")} A positive screening test is not a diagnosis</h3>
-        <p style="margin-top:0.5rem">A positive bowel screening test means blood was
-        found in your bowel motion. It does <strong>not</strong> mean you have cancer.
-        There are many other reasons blood can be present. It does mean you need a
-        colonoscopy to find out why.</p>
-        <h3 style="font-size:var(--step-1);margin-top:var(--space-m)">${icon("clock")} Don't wait for a kit if you have symptoms</h3>
-        <p style="margin-top:0.5rem">Screening tests are designed for people
-        <em>without</em> symptoms. If you already have symptoms, see your GP. A
-        screening test is not the right test for you.</p>
+        <!-- Two equal blocks rather than four loose children. The grid places
+             each block in its own column; as loose children, the heading and
+             paragraph of one note were split into separate columns, and the
+             inline margin on the second heading fought the grid's row gap. -->
+        <div>
+          <h3 style="font-size:var(--step-1)">${icon("info")} A positive screening test is not a diagnosis</h3>
+          <p style="margin-top:0.5rem">A positive bowel screening test means blood was
+          found in your bowel motion. It does <strong>not</strong> mean you have cancer.
+          There are many other reasons blood can be present. It does mean you need a
+          colonoscopy to find out why.</p>
+        </div>
+        <div>
+          <h3 style="font-size:var(--step-1)">${icon("clock")} Don't wait for a kit if you have symptoms</h3>
+          <p style="margin-top:0.5rem">Screening tests are designed for people
+          <em>without</em> symptoms. If you already have symptoms, see your GP. A
+          screening test is not the right test for you.</p>
+        </div>
       </div>
     </div>
   </div>

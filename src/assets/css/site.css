@@ -664,6 +664,25 @@ main {
   transform: scale(0.92);
 }
 
+/* An icon placed at the start of a heading is written inline as
+   `${icon("info")} Heading`. There is no wrapper element, so the SVG is a bare
+   flex item with no intrinsic size: it stretched to fill the flex line and
+   rendered at 587px, which blew a two-column panel out to 805px tall.
+   Sized in em so it tracks the heading it sits with. */
+.panel > h3 > svg,
+.card > h3 > svg,
+.panel > h2 > svg,
+.card > h2 > svg,
+.panel > p > svg,
+.card > p > svg,
+h2 > svg,
+h3 > svg {
+  inline-size: 1.15em;
+  block-size: 1.15em;
+  flex: none;
+  vertical-align: -0.16em;
+}
+
 .icon-btn svg {
   inline-size: 1.3rem;
   block-size: 1.3rem;

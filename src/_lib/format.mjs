@@ -143,6 +143,16 @@ for (const theme of ["light", "dark"]) {
           if (cs.whiteSpace !== "nowrap") out.clipped.push(`badge may wrap (white-space:${cs.whiteSpace})`);
         });
 
+        // No icon may render at an absurd size. A bare SVG placed inline at the
+        // start of a heading is a flex item with no intrinsic size, so it
+        // stretched to the full flex line: the info and clock icons on the
+        // symptoms page rendered at 587px and blew a panel out to 805px tall.
+        document.querySelectorAll("main svg").forEach((sv) => {
+          const b = sv.getBoundingClientRect();
+          if (b.width > 60 || b.height > 60)
+            out.clipped.push(`oversized icon ${Math.round(b.width)}x${Math.round(b.height)} in <${sv.parentElement.tagName.toLowerCase()}>`);
+        });
+
         // A card is one object: its children should stack, and there should be
         // no large dead gap between them. A too-broad selector once laid a
         // card's four children out as three columns, stranding its button in a
