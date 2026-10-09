@@ -3,9 +3,58 @@
 A record of the search for a higher-resolution photograph of Dr Andrew
 Sutherland, so the same ground is not covered twice.
 
+## Resolved: a high-resolution portrait was found
+
+**A 2208x2944 professional portrait is now in use.** It is 110x the pixel area
+of the 217x277 file that was previously the best available, and it renders
+sharply at every size up to 2x.
+
+- **Source:** Coffs Day Hospital's `/our-surgeons` page
+  (<https://www.coffsdayhospital.com.au/our-surgeons>), image
+  `IMG_8509+2.jpg` on their Squarespace CDN. `?format=original` returns the same
+  2208x2944, so that is the uploaded master.
+- **Shows:** him smiling in black scrubs embroidered *"Coffs Colorectal Surgery"*
+  and a teal surgical cap, in a hospital corridor. A practice photoshoot, with
+  the untouched camera-original filename.
+- **Identity, verified independently of the search that found it:** rendering the
+  page in a real browser and walking the DOM gives the image-to-name mapping
+  directly, and it is self-consistent:
+
+  ```
+  IMG_8509+2.jpg                  -> Dr Andrew Sutherland, Colorectal
+  680ec3c6..._wilson-home-2000px  -> Dr Wilson Petrushnko, Colorectal
+  dr-das-profile.jpg              -> Dr Kamala Das, General
+  ```
+
+  The neighbouring entries confirm the ordering is meaningful rather than
+  coincidental. The scrubs also carry his own practice name.
+- **A copy is kept locally** at `_archive/media/dr_andrew_sutherland_2023_2208x2944.webp`
+  so the build does not depend on their CDN, and `src/_lib/images.py` generates
+  the responsive set from it.
+- **The crop is explicit, not automatic.** He sits left of centre with the
+  corridor behind him, so `images.py` takes a focus point of `(0.44, 0.30)` to
+  centre the square on his face rather than the frame. A plain centre crop loses
+  his head to the right-hand third.
+
+### Licensing — action required before this is published
+
+The file is hosted on Coffs Day Hospital's CDN and is **their asset, or the
+practice's**. It is not public domain and not stock. `IMG_8509` is an untouched
+camera original from what is plainly a commissioned shoot, so full-resolution
+files exist. **Ask the practice (02 6652 6211) for the master and written
+permission to publish**, and while asking, see whether they would rather supply
+a different frame from the same shoot — this one is a working portrait in a
+surgical cap, and a plain-background headshot would suit the site better. The
+current photo can be reverted to the archived 110px file in one line if wanted.
+
+## Superseded notes
+
+The rest of this file records the search before that find. Most of it is now
+historical, but the method correction below still matters.
+
 ## Conclusion
 
-**No higher-resolution photograph exists on the public web.** The archived
+**No higher-resolution version of the OLD office headshot exists.** The archived
 110 × 110 PNG is the largest version of his current portrait that anyone
 publishes, and it is the original upload — there is no larger master anywhere.
 

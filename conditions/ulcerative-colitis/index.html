@@ -1183,6 +1183,15 @@ main {
   letter-spacing: -0.005em;
 }
 
+/* The circular portrait cut-out. No border or radius of its own: the alpha
+   edge is the shape. */
+.portrait {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  max-inline-size: 20rem;
+}
+
 /* A photograph in a figure: fluid width, natural height. The width/height
    attributes on the <img> give the browser an aspect ratio to reserve space
    with, but they must not be allowed to set a fixed rendered height, or a wide

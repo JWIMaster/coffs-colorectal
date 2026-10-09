@@ -40,12 +40,19 @@ def save(img, name, widths, focal=None):
             print(f"  {os.path.basename(out):44s} {os.path.getsize(out):>7d} B  {w}x{h}")
 
 
-def centre_circle(img, size):
-    """Crop to a centred square, then mask to a circle with transparency."""
+def centre_circle(img, size, focus=(0.5, 0.5)):
+    """Crop to a square centred on `focus`, then mask to a circle.
+
+    focus is the point of the source, as a fraction of width and height, that
+    should land at the centre of the square. A default of (0.5, 0.5) is a plain
+    centre crop; a portrait where the subject sits off-centre needs the focus
+    moved rather than the whole frame thrown away.
+    """
     img = ImageOps.exif_transpose(img).convert("RGBA")
     side = min(img.width, img.height)
-    left = (img.width - side) // 2
-    top = (img.height - side) // 2
+    cx, cy = img.width * focus[0], img.height * focus[1]
+    left = max(0, min(img.width - side, int(round(cx - side / 2))))
+    top = max(0, min(img.height - side, int(round(cy - side / 2))))
     img = img.crop((left, top, left + side, top + side)).resize(
         (size, size), Image.LANCZOS
     )
@@ -68,9 +75,20 @@ def main():
     save(estuary, "coffs-creek-estuary", [800])
 
     print("\nDr Andrew Sutherland — circular portrait")
-    head = Image.open(os.path.join(SRC, "dr_andrew_sutherland.png"))
+    # Preferred source: the 2208x2944 practice photoshoot portrait of 2023, in
+    # which he sits slightly left of centre with the corridor behind him. Falls
+    # back to the original 110x110 archived file if the larger one is absent.
+    modern = os.path.join(SRC, "dr_andrew_sutherland_2023_2208x2944.webp")
+    if os.path.exists(modern):
+        head = Image.open(modern)
+        focus = (0.44, 0.30)          # his face, not the frame centre
+        print(f"  using {os.path.basename(modern)} ({head.width}x{head.height})")
+    else:
+        head = Image.open(os.path.join(SRC, "dr_andrew_sutherland.png"))
+        focus = (0.5, 0.5)
+        print("  using the archived 110x110 file (larger source not present)")
     for size in (220, 440):
-        circle = centre_circle(head, size)
+        circle = centre_circle(head, size, focus)
         circle.save(os.path.join(OUT, f"dr-andrew-sutherland-{size}.webp"),
                     "WEBP", quality=88, method=6)
         circle.save(os.path.join(OUT, f"dr-andrew-sutherland-{size}.png"))

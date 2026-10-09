@@ -28,10 +28,12 @@ function bioPage() {
     <div class="grid grid--2" style="align-items:start;gap:var(--space-xl)">
       <div>
         <figure style="margin:0">
-          <img class="figure-img" src="/media/dr-andrew-sutherland.webp"
-               width="440" height="440"
-               alt="Dr Andrew Sutherland, colorectal surgeon."
-               style="max-width:22rem">
+          <!-- The portrait is supplied as a circular cut-out, so it must not sit
+               in the rectangular figure frame: a bordered square around a circle
+               reads as a mistake. -->
+          <img class="portrait" src="/media/dr-andrew-sutherland.webp"
+               width="440" height="440" loading="lazy" decoding="async"
+               alt="Dr Andrew Sutherland, colorectal surgeon.">
         </figure>
 
         <div class="panel" style="margin-top:var(--space-m);max-width:26rem">
