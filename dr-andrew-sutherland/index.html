@@ -963,9 +963,11 @@ main {
 
 @media (min-width: 46rem) {
   .index__row {
-    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    /* The name needs only enough room to never wrap awkwardly; the summary
+       is the part that actually has to be read, so it takes the larger half. */
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
     align-items: baseline;
-    gap: var(--space-l);
+    gap: var(--space-xl);
     padding-block: var(--space-m);
   }
 }
@@ -1007,8 +1009,8 @@ main {
 }
 
 .index__text {
-  font-size: 0.97rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.55;
   color: var(--text-muted);
   margin: 0;
   max-width: 62ch;
