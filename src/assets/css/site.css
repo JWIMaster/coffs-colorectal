@@ -444,6 +444,13 @@ main {
    pixel at every width and the button sat there padded and empty. */
 /* .btn.btn.call-btn, not .call-btn: a two-class selector so it outranks
    `.btn svg`, whose width was squeezing the icon into a 5x17 sliver. */
+/* Icon-first, so its glyph is sized like the icon buttons beside it rather than
+   at .btn's 1.05rem, where a 16.8px phone outline sat next to two 20.8px ones. */
+.btn.call-btn svg {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+}
+
 .btn.call-btn {
   inline-size: 2.75rem;
   min-block-size: 2.75rem;
