@@ -114,6 +114,77 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
+   2b. Browser surfaces
+   The parts we did not draw still belong to the design. Selection, caret,
+   scrollbars, focus rings and underline offset are themed from the palette
+   rather than left at browser defaults.
+   -------------------------------------------------------------------------- */
+::selection {
+  background: color-mix(in srgb, var(--brand) 26%, transparent);
+  color: var(--text);
+}
+
+::placeholder {
+  color: var(--text-subtle);
+  opacity: 1;
+}
+
+/* Keep the caret on-brand in both appearances. */
+input,
+textarea,
+select {
+  caret-color: var(--brand);
+}
+
+/* Firefox scrollbars. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+/* WebKit scrollbars. */
+::-webkit-scrollbar {
+  inline-size: 12px;
+  block-size: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--text-subtle) 45%, transparent);
+  border: 3px solid transparent;
+  border-radius: var(--radius-full);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--text-subtle) 70%, transparent);
+  background-clip: content-box;
+}
+
+/* A visible focus ring is not enough; it also has to clear the surface it sits
+   on. Two rings: a page-coloured spacer, then the indicator. */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+  box-shadow: 0 0 0 6px var(--bg);
+}
+
+:root[data-theme="dark"] :focus-visible {
+  outline-color: var(--brand);
+  box-shadow: 0 0 0 6px var(--bg);
+}
+
+/* Underlines sit clear of descenders. */
+a {
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 0.06em;
+}
+
+/* --------------------------------------------------------------------------
    2. Typography
    Tracking is size-specific: negative as type grows, positive when small.
    -------------------------------------------------------------------------- */
@@ -239,9 +310,6 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
 }
 
-.grid--3 {
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16.5rem), 1fr));
-}
 
 .section-head {
   display: flex;
@@ -870,129 +938,181 @@ main {
   padding: var(--space-m);
 }
 
-/* Link cards: the whole surface is the target, and it responds on press. */
-.link-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  padding: var(--space-m);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-m);
-  text-decoration: none;
-  color: var(--text);
-  box-shadow: var(--shadow-s);
-  transition: transform var(--dur-fast) var(--ease-out),
-    box-shadow var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out);
+
+/* --------------------------------------------------------------------------
+   9b. Editorial index
+   Conditions and procedures read as a reference index rather than a wall of
+   identical cards: the name carries the hierarchy, the summary sets in a
+   second column, and hairlines do the separating. Cards are the lazy
+   container, and a page built from them flattens everything to one weight.
+   -------------------------------------------------------------------------- */
+.index {
+  border-block-start: 1px solid var(--border);
 }
 
-@media (hover: hover) {
-  .link-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-m);
-    border-color: color-mix(in srgb, var(--brand) 42%, var(--border));
-    color: var(--text);
+.index__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.35rem var(--space-l);
+  padding-block: var(--space-s);
+  border-block-end: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+}
+
+@media (min-width: 46rem) {
+  .index__row {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: baseline;
+    gap: var(--space-l);
+    padding-block: var(--space-m);
   }
 }
 
-.link-card:active {
-  transform: scale(0.988);
-}
-
-.link-card__title {
+.index__name {
   font-size: var(--step-1);
   font-weight: 640;
-  letter-spacing: -0.014em;
+  letter-spacing: -0.016em;
   line-height: 1.3;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 0.5rem;
 }
 
-.link-card__title svg {
-  inline-size: 1.05rem;
-  block-size: 1.05rem;
-  color: var(--brand-text);
+.index__name svg {
+  inline-size: 0.85rem;
+  block-size: 0.85rem;
   flex: none;
-  transition: transform var(--dur-fast) var(--ease-out);
+  color: var(--brand-text);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
 }
 
 @media (hover: hover) {
-  .link-card:hover .link-card__title svg {
-    transform: translateX(3px);
+  .index__row:hover .index__name svg {
+    opacity: 1;
+    transform: none;
+  }
+
+  .index__row:hover .index__name {
+    color: var(--brand-text);
   }
 }
 
-.link-card__text {
-  color: var(--text-muted);
-  font-size: 0.97rem;
-  line-height: 1.55;
-  margin: 0;
+.index__row:active {
+  transform: scale(0.995);
 }
 
-.link-card__meta {
-  margin-block-start: auto;
-  padding-block-start: 0.4rem;
+.index__text {
+  font-size: 0.97rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 62ch;
+}
+
+.index__meta {
+  display: block;
+  margin-block-start: 0.3rem;
   font-size: var(--step--1);
   color: var(--text-subtle);
-  font-weight: 560;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
-/* Numbered/iconed index cards for procedures & conditions. */
-.tile {
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-  padding: var(--space-s) var(--space-s) var(--space-s);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-s);
-  text-decoration: none;
-  color: var(--text);
-  transition: transform var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out),
-    box-shadow var(--dur-fast) var(--ease-out);
+/* A focus ring that follows the whole row rather than the title alone. */
+.index__row:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: var(--radius-xs);
 }
 
-@media (hover: hover) {
-  .tile:hover {
-    transform: translateY(-2px);
-    border-color: color-mix(in srgb, var(--brand) 45%, var(--border));
-    box-shadow: var(--shadow-s);
-    color: var(--text);
+/* --------------------------------------------------------------------------
+   9c. Routemap
+   The "where do I go" block is a weighted map, not six equal tiles: the
+   symptom entry point is the one most people need, so it leads at double
+   width and the rest fall in beneath it.
+   -------------------------------------------------------------------------- */
+.routemap {
+  display: grid;
+  gap: var(--space-s);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+}
+
+@media (min-width: 52rem) {
+  .routemap {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .route--primary {
+    grid-column: span 6;
+  }
+  .route:not(.route--primary) {
+    grid-column: span 2;
   }
 }
 
-.tile:active {
+.route {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: var(--space-s) 0;
+  border-block-start: 2px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-instant) var(--ease-out);
+}
+
+.route:hover {
+  border-block-start-color: var(--brand);
+  color: var(--text);
+}
+
+.route:active {
   transform: scale(0.99);
 }
 
-.tile__name {
-  font-weight: 620;
-  letter-spacing: -0.012em;
+.route__label {
+  font-size: var(--step-1);
+  font-weight: 640;
+  letter-spacing: -0.015em;
   line-height: 1.28;
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
   gap: 0.5rem;
 }
 
-.tile__name svg {
-  inline-size: 0.95rem;
-  block-size: 0.95rem;
-  flex: none;
-  color: var(--brand-text);
-  opacity: 0.8;
+.route--primary .route__label {
+  font-size: var(--step-2);
+  letter-spacing: -0.02em;
 }
 
-.tile__text {
-  font-size: 0.93rem;
-  line-height: 1.5;
+.route__label svg {
+  inline-size: 0.9rem;
+  block-size: 0.9rem;
+  flex: none;
+  color: var(--brand-text);
+}
+
+.route__text {
+  font-size: 0.95rem;
+  line-height: 1.58;
   color: var(--text-muted);
   margin: 0;
+  max-width: 58ch;
+}
+
+.route--primary .route__text {
+  font-size: var(--step-0);
+  max-width: 68ch;
+}
+
+.route:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: var(--radius-xs);
 }
 
 /* --------------------------------------------------------------------------
@@ -1468,27 +1588,58 @@ main {
 }
 
 /* --------------------------------------------------------------------------
-   18. Scroll-reveal — subtle, and only where motion is welcome
+   18. The one authored moment
+   The hero panel arrives as a material rather than a fade: blur radius and
+   scale animate together, so the surface reads as glass settling into place.
+   Everything else on the page is static. Content is visible by default and is
+   only animated where motion is welcome, so nothing can be stranded hidden.
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: no-preference) {
-  .reveal {
-    opacity: 0;
-    transform: translate3d(0, 14px, 0);
-    transition: opacity var(--dur-slow) var(--ease-out),
-      transform var(--dur-slow) var(--ease-out);
-    will-change: opacity, transform;
+  .hero__panel {
+    animation: panel-settle 720ms var(--ease-out) 60ms both;
   }
 
-  .reveal[data-visible="true"] {
-    opacity: 1;
-    transform: none;
-    will-change: auto;
+  .hero__copy > * {
+    animation: copy-settle 620ms var(--ease-out) both;
   }
 
-  @media (prefers-reduced-transparency: no-preference) {
-    .reveal {
+  .hero__copy > *:nth-child(1) { animation-delay: 0ms; }
+  .hero__copy > *:nth-child(2) { animation-delay: 70ms; }
+  .hero__copy > *:nth-child(3) { animation-delay: 140ms; }
+
+  @keyframes panel-settle {
+    from {
       opacity: 0;
+      transform: translate3d(0, 18px, 0) scale(0.985);
+      -webkit-backdrop-filter: blur(2px) saturate(120%);
+      backdrop-filter: blur(2px) saturate(120%);
     }
+    to {
+      opacity: 1;
+      transform: none;
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+      backdrop-filter: blur(18px) saturate(160%);
+    }
+  }
+
+  @keyframes copy-settle {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 12px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* Where a material transition is not wanted, the material is simply solid. */
+@media (prefers-reduced-transparency: reduce) {
+  .hero__panel {
+    background: color-mix(in srgb, var(--ocean-900) 86%, transparent);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
   }
 }
 
@@ -1522,11 +1673,6 @@ main {
       box-shadow !important;
   }
 
-  .reveal {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
   .nav-sheet__panel {
     transform: none;
     opacity: 0;
@@ -1537,12 +1683,10 @@ main {
     opacity: 1;
   }
 
-  .link-card:hover,
-  .tile:hover,
   .btn:active,
   .icon-btn:active,
-  .link-card:active,
-  .tile:active {
+  .index__row:active,
+  .route:active {
     transform: none !important;
   }
 }
@@ -2029,21 +2173,18 @@ main {
 <section class="section section--tight" aria-labelledby="rel-h">
   <div class="shell">
     <h2 id="rel-h" style="font-size:var(--step-2)">Procedures used to treat this</h2>
-    <div class="grid grid--2" style="margin-top:var(--space-m)">
-      <a class="link-card" href="/procedures/colon-resection/">
-        <span class="link-card__title">Colon resection (colectomy)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12.5 5.5 19 12l-6.5 6.5"/></svg></span>
-        <span class="link-card__text">A colon resection removes the part of the large bowel containing a tumour or diseased segment, then rejoins the healthy ends. Most people do not need a stoma.</span>
-        
+    <div class="index" style="margin-top:var(--space-m)">
+      <a class="index__row" href="/procedures/colon-resection/">
+        <span class="index__name">Colon resection (colectomy)<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12.5 5.5 19 12l-6.5 6.5"/></svg></span>
+        <span class="index__text">A colon resection removes the part of the large bowel containing a tumour or diseased segment, then rejoins the healthy ends. Most people do not need a stoma.</span>
       </a>
-      <a class="link-card" href="/procedures/laparoscopic-colon-resection/">
-        <span class="link-card__title">Laparoscopic colon resection<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12.5 5.5 19 12l-6.5 6.5"/></svg></span>
-        <span class="link-card__text">Keyhole bowel surgery removes a section of colon through several small cuts instead of one large one. Recovery is often quicker, but your surgeon will advise whether it suits you.</span>
-        
+      <a class="index__row" href="/procedures/laparoscopic-colon-resection/">
+        <span class="index__name">Laparoscopic colon resection<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12.5 5.5 19 12l-6.5 6.5"/></svg></span>
+        <span class="index__text">Keyhole bowel surgery removes a section of colon through several small cuts instead of one large one. Recovery is often quicker, but your surgeon will advise whether it suits you.</span>
       </a>
-      <a class="link-card" href="/procedures/colonoscopy/">
-        <span class="link-card__title">Colonoscopy<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12.5 5.5 19 12l-6.5 6.5"/></svg></span>
-        <span class="link-card__text">A colonoscopy is a test that looks at the inside of your whole large bowel using a thin, flexible tube with a camera. It is usually done as a day procedure with sedation.</span>
-        
+      <a class="index__row" href="/procedures/colonoscopy/">
+        <span class="index__name">Colonoscopy<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12.5 5.5 19 12l-6.5 6.5"/></svg></span>
+        <span class="index__text">A colonoscopy is a test that looks at the inside of your whole large bowel using a thin, flexible tube with a camera. It is usually done as a day procedure with sedation.</span>
       </a>
     </div>
   </div>
@@ -2447,35 +2588,7 @@ main {
   }
 
   /* ----------------------------------------------------------------------
-     4. Scroll reveal
-     Only where motion is welcome, and only once per element.
-     ---------------------------------------------------------------------- */
-  var reveals = document.querySelectorAll(".reveal");
-  if (reveals.length) {
-    if (reduceMotion.matches || !("IntersectionObserver" in window)) {
-      Array.prototype.forEach.call(reveals, function (el) {
-        el.setAttribute("data-visible", "true");
-      });
-    } else {
-      var io = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.setAttribute("data-visible", "true");
-              io.unobserve(entry.target);
-            }
-          });
-        },
-        { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
-      );
-      Array.prototype.forEach.call(reveals, function (el) {
-        io.observe(el);
-      });
-    }
-  }
-
-  /* ----------------------------------------------------------------------
-     5. Current section in the header nav
+     4. Current section in the header nav
      Highlights the section you are reading, for pages inside a section.
      ---------------------------------------------------------------------- */
   var path = window.location.pathname;

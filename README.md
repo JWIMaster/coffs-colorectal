@@ -234,6 +234,49 @@ The first pass found 101 issues. The substantive ones were fixed:
 - **Line heights below the 1.3 readability floor** on multi-line interface text
   (the brand lockup and link-card titles).
 
+### What the detector could not see
+
+The detector checks rules, not composition, so it missed the largest tell of
+all: **the site was built out of card grids.** The conditions index was nine
+identical bordered cards and the procedures index was ten — the "icon plus
+heading plus text as the page structure" scaffold, which is the category
+default the craft guidance names first ("cards are the lazy container"). The
+home page had six equal tiles, the resources page twenty more.
+
+Those were replaced with structures that carry their own hierarchy:
+
+- **Conditions and procedures** are now an editorial index: the name carries the
+  type weight in the left column, the summary sets in the right, and hairlines
+  do the separating. It reads as a reference document rather than a wall of
+  boxes, and the titles finally outrank each other visually.
+- **The home page** is a weighted routemap rather than six equal choices. "I
+  have symptoms" leads at full width and display size, because it is the entry
+  point most people need, and the other five fall in beneath it at a third
+  width. Hierarchy replaces uniformity.
+- **Related links** on clinical pages and the resources index use the same
+  index treatment.
+
+Also applied from the same guidance:
+
+- **Browser surfaces.** Text selection, placeholder text, caret colour,
+  scrollbars in both engines, focus rings with a surface spacer so the indicator
+  clears whatever it sits on, and underline offset. The guidance calls this "the
+  cheapest signal that a page was built rather than assembled, and the one
+  models skip most reliably" — it was entirely absent before.
+- **One authored moment.** The hero panel now arrives as a material: blur
+  radius, scale and opacity animate together over 720 ms on an exponential
+  ease-out, so the surface reads as glass settling rather than a plain fade.
+  Everything else on the page is static at rest.
+- **Deleted a generic entrance.** A scroll-reveal system had been written into
+  the CSS and JavaScript and applied to zero elements — dead code that would
+  have put the same fade-up on every section, which the guidance explicitly
+  rules out in favour of one authored moment. Removed entirely, along with the
+  2.2 KB of CSS the old card components left behind.
+
+Under `prefers-reduced-motion` the hero is fully visible with no animation, and
+under `prefers-reduced-transparency` the panel becomes near-solid; both are
+asserted in the verification pass.
+
 ### Verified exceptions
 
 Two rules are ignored in `.impeccable/config.json`, both confirmed false

@@ -225,18 +225,23 @@ for (const url of urls) {
   await p2.goto(base + "/", { waitUntil: "networkidle" });
   const still = await p2.evaluate(() => {
     const dur = [];
-    document.querySelectorAll(".reveal, .btn, .link-card, .nav-sheet__panel").forEach((el) => {
+    document.querySelectorAll(".hero__panel, .hero__copy > *, .btn, .link-card").forEach((el) => {
       const cs = getComputedStyle(el);
       dur.push(cs.transitionDuration);
     });
-    const hidden = [...document.querySelectorAll(".reveal")].filter(
-      (el) => getComputedStyle(el).opacity === "0",
+    // The hero's authored entrance is the only animated content on the page.
+    // Under reduced motion it must be fully visible, not stranded mid-entrance.
+    const hidden = [...document.querySelectorAll(".hero__panel, .hero__copy > *")].filter(
+      (el) => {
+        const o = parseFloat(getComputedStyle(el).opacity);
+        return o < 0.99;
+      },
     ).length;
     return { dur, hidden };
   });
   // With reduced motion, reveal elements must already be visible.
-  if (still.hidden) problems.push(`[reduced-motion] ${still.hidden} reveal elements left at opacity 0`);
-  console.log(`reduced motion: ${still.hidden} hidden reveal elements`);
+  if (still.hidden) problems.push(`[reduced-motion] ${still.hidden} hero elements not fully visible`);
+  console.log(`reduced motion: ${still.hidden} hero elements short of full opacity`);
   await rmCtx.close();
 }
 

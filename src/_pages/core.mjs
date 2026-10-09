@@ -29,7 +29,7 @@ export function render() {
     </picture>
   </div>
   <div class="shell hero__inner">
-    <div>
+    <div class="hero__copy">
       <h1>${escapeHTML(h.heroTitle)}</h1>
       <p class="lede" style="margin-top:var(--space-s)">${inline(h.heroLede)}</p>
       <p class="hero__actions">
@@ -68,16 +68,21 @@ export function render() {
       <p class="muted" style="max-width:38ch">If you are not sure which section you
       need, start with the symptom list. It will point you in the right direction.</p>
     </div>
-    <div class="grid grid--3">
+    <div class="routemap">
       ${[
-        ["/your-visit/symptoms/", "I have symptoms", "Bleeding, a change in bowel habit, pain or weight loss — what to do next, and when to see your GP."],
-        ["/conditions/", "I have a diagnosis", "Plain-language information about bowel cancer and the other conditions treated here."],
-        ["/procedures/", "I am having a procedure", "What each operation involves, how to prepare, what to expect afterwards, and the honest risks."],
+        ["/your-visit/symptoms/", "I have symptoms", "Bleeding, a change in bowel habit, pain or weight loss. Start here for what to do next and when to see your GP.", true],
         ["/your-visit/bowel-preparation/", "I am having a colonoscopy", "Bowel preparation instructions, the low-fibre diet, clear fluids, and what happens on the day."],
-        ["/your-visit/referrals/", "I need a referral", "How to get a referral from your GP, how long it lasts, and what to bring to your first appointment."],
-        ["/your-visit/fees/", "I want to know the cost", "Consultation fees, Medicare rebates, the safety net, and how informed financial consent works."],
+        ["/conditions/", "I have a diagnosis", "Plain-language information about bowel cancer and the other conditions treated here."],
+        ["/procedures/", "I am having an operation", "What each operation involves, and what to expect afterwards."],
+        ["/your-visit/referrals/", "I need a referral", "How to get one from your GP, and what to bring."],
+        ["/your-visit/fees/", "I want to know the cost", "Consultation fees, Medicare rebates and the safety net."],
       ]
-        .map((c) => card(c[0], c[1], c[2]))
+        .map(
+          ([href, label, text, primary]) => `<a class="route${primary ? " route--primary" : ""}" href="${href}">
+        <span class="route__label">${escapeHTML(label)}${icon("arrow")}</span>
+        <span class="route__text">${escapeHTML(text)}</span>
+      </a>`,
+        )
         .join("\n      ")}
     </div>
   </div>
@@ -160,9 +165,17 @@ export function render() {
 
 <section class="section">
   <div class="shell">
-    <div class="grid grid--2">
+    <div class="index">
       ${conditions
-        .map((c) => card(`/conditions/${c.slug}/`, c.title, c.summary, c.alsoKnownAs))
+        .map(
+          (c) => `<a class="index__row" href="/conditions/${c.slug}/">
+        <span class="index__name">${escapeHTML(c.title)}${icon("arrow")}</span>
+        <span>
+          <span class="index__text">${escapeHTML(c.summary)}</span>
+          ${c.alsoKnownAs ? `<span class="index__meta">${escapeHTML(c.alsoKnownAs)}</span>` : ""}
+        </span>
+      </a>`,
+        )
         .join("\n      ")}
     </div>
   </div>
@@ -198,9 +211,14 @@ export function render() {
         <p>${inline(site.consentNote)}</p>
       </div>
     </div>
-    <div class="grid grid--2">
+    <div class="index">
       ${procedures
-        .map((p) => card(`/procedures/${p.slug}/`, p.title, p.summary))
+        .map(
+          (p) => `<a class="index__row" href="/procedures/${p.slug}/">
+        <span class="index__name">${escapeHTML(p.title)}${icon("arrow")}</span>
+        <span class="index__text">${escapeHTML(p.summary)}</span>
+      </a>`,
+        )
         .join("\n      ")}
     </div>
   </div>

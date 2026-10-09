@@ -726,12 +726,12 @@ function resourcesPage() {
         (g) => `<div style="margin-top:var(--space-xl)">
       <h2 style="font-size:var(--step-2)">${escapeHTML(g.title)}</h2>
       <p class="muted" style="margin-top:0.35rem;max-width:60ch">${escapeHTML(g.blurb)}</p>
-      <div class="grid grid--2" style="margin-top:var(--space-m)">
+      <div class="index" style="margin-top:var(--space-m)">
         ${g.links
           .map(
-            (l) => `<a class="link-card" href="${l[1]}" rel="noopener noreferrer">
-          <span class="link-card__title">${escapeHTML(l[0])}${icon("external")}</span>
-          <span class="link-card__text">${escapeHTML(l[2])}</span>
+            (l) => `<a class="index__row" href="${l[1]}" rel="noopener noreferrer">
+          <span class="index__name">${escapeHTML(l[0])}${icon("external")}</span>
+          <span class="index__text">${escapeHTML(l[2])}</span>
         </a>`,
           )
           .join("\n        ")}
@@ -923,7 +923,7 @@ function visitIndex() {
 
 <section class="section">
   <div class="shell">
-    <div class="grid grid--2">
+    <div class="index">
       ${[
         ["/your-visit/symptoms/", "Symptoms and screening", "What to watch for, when to see your GP, when to seek urgent care, and how the national screening program works."],
         ["/your-visit/referrals/", "Referrals and Medicare", "How to get a referral, how long it lasts, what to bring, and information for referring doctors."],
@@ -933,9 +933,9 @@ function visitIndex() {
         ["/resources/", "Resources and support", "Trusted organisations for bowel cancer, inflammatory bowel disease and stoma support."],
       ]
         .map(
-          (c) => `<a class="link-card" href="${c[0]}">
-        <span class="link-card__title">${escapeHTML(c[1])}${icon("arrow")}</span>
-        <span class="link-card__text">${escapeHTML(c[2])}</span>
+          (c) => `<a class="index__row" href="${c[0]}">
+        <span class="index__name">${escapeHTML(c[1])}${icon("arrow")}</span>
+        <span class="index__text">${escapeHTML(c[2])}</span>
       </a>`,
         )
         .join("\n      ")}

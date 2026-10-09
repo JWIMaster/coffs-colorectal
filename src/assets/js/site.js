@@ -286,35 +286,7 @@
   }
 
   /* ----------------------------------------------------------------------
-     4. Scroll reveal
-     Only where motion is welcome, and only once per element.
-     ---------------------------------------------------------------------- */
-  var reveals = document.querySelectorAll(".reveal");
-  if (reveals.length) {
-    if (reduceMotion.matches || !("IntersectionObserver" in window)) {
-      Array.prototype.forEach.call(reveals, function (el) {
-        el.setAttribute("data-visible", "true");
-      });
-    } else {
-      var io = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.setAttribute("data-visible", "true");
-              io.unobserve(entry.target);
-            }
-          });
-        },
-        { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
-      );
-      Array.prototype.forEach.call(reveals, function (el) {
-        io.observe(el);
-      });
-    }
-  }
-
-  /* ----------------------------------------------------------------------
-     5. Current section in the header nav
+     4. Current section in the header nav
      Highlights the section you are reading, for pages inside a section.
      ---------------------------------------------------------------------- */
   var path = window.location.pathname;

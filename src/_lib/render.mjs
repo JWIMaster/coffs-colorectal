@@ -324,9 +324,14 @@ export function relatedBlock(title, links) {
   return `<section class="section section--tight" aria-labelledby="rel-h">
   <div class="shell">
     <h2 id="rel-h" style="font-size:var(--step-2)">${escapeHTML(title)}</h2>
-    <div class="grid grid--2" style="margin-top:var(--space-m)">
+    <div class="index" style="margin-top:var(--space-m)">
       ${links
-        .map((l) => card(l.href, l.label, l.text))
+        .map(
+          (l) => `<a class="index__row" href="${l.href}">
+        <span class="index__name">${escapeHTML(l.label)}${icon("arrow")}</span>
+        <span class="index__text">${escapeHTML(l.text || "")}</span>
+      </a>`,
+        )
         .join("\n      ")}
     </div>
   </div>
