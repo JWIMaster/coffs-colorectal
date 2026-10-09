@@ -33,6 +33,61 @@ WordPress. Asking the Wayback Machine for it at six different capture timestamps
 `-150x150`, `-300x300`, `-768x768`, `-1024x1024` derivatives all 404, which they
 would not if a larger original had ever existed.
 
+## Correction: a 2023 photograph does exist, and I first got this wrong
+
+An earlier version of this record listed the *News Of The Area* bowel-cancer
+coverage under false leads, on the basis that a perceptual-hash comparison put
+those images 127–144 away from the archived portrait. **That reasoning was
+invalid and the conclusion was wrong.**
+
+The likeness limit: perceptual hashing answers "is this the same *photograph*",
+not "is this the same *person*". A 2023 outdoor group shot and a 2014 office
+headshot can never hash close, no matter who is in them. The rule I applied
+(> 100 means a different person) only holds between photographs taken under
+similar conditions. Used this way it produced a confident false negative.
+
+What settles it is ground truth that was sitting in the article the whole time:
+the caption names him.
+
+> Donna Blythe, who was symptom free when she was diagnosed with bowel cancer,
+> with her colorectal surgeon Dr Andrew Sutherland.
+
+— *News Of The Area*, 19 June 2023,
+<https://www.newsofthearea.com.au/coffs-locals-share-importance-of-bowel-cancer-screening>
+
+The group caption names all five subjects in the order they appear, and the man
+in the light-blue shirt is second from the left: Dr Andrew Sutherland. The other
+surgeon present, Dr Wilson Petrushnko, is the man in the pink shirt and tie —
+plainly a different person. Two photographs from that shoot are of him
+(`news_bowel_AF_PY2.jpg`, him with Donna Blythe; `news_bowel_AF_PY1.jpg`, the
+group of five). Side-by-side verification is in `verify-2023-photo-identity.png`.
+
+**Method rule for next time:** a named caption or byline is ground truth. A
+perceptual hash is a heuristic, and it may only be used to rule images *in*;
+it cannot rule a person out across different photographs.
+
+### This still does not solve the portrait
+
+The 2023 photograph is a genuine second photograph of him, and it is 9 years
+newer, but it is not usable as the site portrait:
+
+| Source | Usable square | Upscale at 1x (220px) | Upscale at 2x (440px) |
+|---|---|---|---|
+| Archived original (in use) | 110 px | 2.00x | 4.00x |
+| Ramsay directory | 217 px | **1.01x** | 2.03x |
+| HealthShare | 125 px | 1.76x | 3.52x |
+| 2023 news photo, his head | ~261 px | 0.84x | **1.69x** |
+
+Even taking the most generous crop, his head is about 261px in a 765x496 frame,
+so it is still smaller than the Ramsay version at high-DPI and only marginally
+better than the archived one. It is also the wrong genre: outdoors, at the
+jetty, holding a "Help Beat Bowel Cancer" sign, standing beside a patient. For a
+practice's portrait that reads as a news photo, not a headshot.
+
+So the conclusion is unchanged, for a different and better-evidenced reason:
+**the largest usable headshot remains the Ramsay 217x277, and the fix is still a
+commissioned photograph.**
+
 ## Sources checked
 
 | Source | Outcome |
@@ -51,7 +106,8 @@ would not if a larger original had ever existed.
 | myhospitalnow, aushealthpages | No photograph of him. |
 | CSSANZ "Find a Colorectal Surgeon" | iMIS postback form; no images on the public page. |
 | AHPRA / RACS finders | No photographs published. |
-| `newsofthearea.com.au` bowel-cancer screening and Red Apple Day coverage | Group photos of other people, confirmed by hash (127–144). |
+| `newsofthearea.com.au` bowel-cancer screening (19 Jun 2023) | **He is in two of the photos** — see the correction above. Too small and the wrong genre for the portrait. |
+| Red Apple Day 2024 and 2025 coverage | Name him in text only; photos are patients and other staff. |
 | `australianseniorsnews.com.au` implant-service story | Different people. |
 | DuckDuckGo and Bing image search, four phrasings | Only the sources above. |
 | `coffsharboursurgical.com.au`, `coffsms.com.au` | Different practice; no photograph of him. |
