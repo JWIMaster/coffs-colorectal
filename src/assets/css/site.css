@@ -1528,8 +1528,19 @@ main {
   font-weight: 700;
   font-size: 0.98rem;
   display: flex;
-  align-items: center;
-  gap: 0.45rem;
+  /* Top-aligned, because the heading wraps to two or three lines in a four
+     column grid and the badge was being centred against that block, which read
+     as the badge floating down the card. */
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.45rem;
+  line-height: 1.35;
+}
+
+/* When the badge cannot sit beside the heading it drops below it, and needs a
+   little clearance from the text above so it does not look stuck to it. */
+.risk__flag:not(:first-child) {
+  margin-inline-start: 0.15rem;
 }
 
 .risk__flag {
@@ -1540,6 +1551,10 @@ main {
   border-radius: var(--radius-full);
   background: var(--red-100);
   color: var(--red-700);
+  /* "Rare but serious" was breaking across two lines inside the badge, making
+     it taller than the heading it labels. */
+  white-space: nowrap;
+  flex: none;
   border: 1px solid color-mix(in srgb, var(--red-600) 30%, transparent);
 }
 

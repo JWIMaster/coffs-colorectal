@@ -107,6 +107,22 @@ for (const theme of ["light", "dark"]) {
             out.lowCard.push(`${c.className.split(" ")[0]} bg ${bg} on ${pageBg}`);
         });
 
+        // A label badge must stay on one line and inside its card. The risk
+        // badges previously wrapped "Rare but / serious" across two lines and
+        // were vertically centred against a wrapped heading, which read as the
+        // badge floating down the card.
+        document.querySelectorAll(".risk__flag").forEach((f) => {
+          const b = f.getBoundingClientRect();
+          const cs = getComputedStyle(f);
+          const lh = parseFloat(cs.lineHeight) || 18;
+          const card = f.closest(".risk");
+          const cb = card ? card.getBoundingClientRect() : null;
+          if (b.height > lh + 6) out.clipped.push(`badge wrapped ${Math.round(b.height)}px vs line ${Math.round(lh)}px`);
+          if (cb && (b.right > cb.right + 1 || b.left < cb.left - 1))
+            out.clipped.push(`badge escapes its card`);
+          if (cs.whiteSpace !== "nowrap") out.clipped.push(`badge may wrap (white-space:${cs.whiteSpace})`);
+        });
+
         // A grid should not leave a column of empty space beside short content.
         // Threshold is a ratio as well as an absolute: two columns of naturally
         // different length (a form beside details) are fine, but one column
