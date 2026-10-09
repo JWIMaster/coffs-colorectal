@@ -840,22 +840,22 @@ function contactPage() {
 
           <div style="margin-top:var(--space-s);display:grid;gap:var(--space-s)">
             <div>
-              <label for="name" style="display:block;font-weight:600;margin-bottom:0.3rem">Your name</label>
+              <label class="field-label" for="name">Your name</label>
               <input id="name" name="name" type="text" autocomplete="name" required
                      style="width:100%;min-height:2.75rem;padding:0.6rem 0.7rem;border:1px solid var(--border-strong);border-radius:var(--radius-s);background:var(--surface)">
             </div>
             <div>
-              <label for="phone" style="display:block;font-weight:600;margin-bottom:0.3rem">Phone number</label>
+              <label class="field-label" for="phone">Phone number</label>
               <input id="phone" name="phone" type="tel" autocomplete="tel" required
                      style="width:100%;min-height:2.75rem;padding:0.6rem 0.7rem;border:1px solid var(--border-strong);border-radius:var(--radius-s);background:var(--surface)">
             </div>
             <div>
-              <label for="email" style="display:block;font-weight:600;margin-bottom:0.3rem">Email address</label>
+              <label class="field-label" for="email">Email address</label>
               <input id="email" name="email" type="email" autocomplete="email"
                      style="width:100%;min-height:2.75rem;padding:0.6rem 0.7rem;border:1px solid var(--border-strong);border-radius:var(--radius-s);background:var(--surface)">
             </div>
             <div>
-              <label for="reason" style="display:block;font-weight:600;margin-bottom:0.3rem">Reason for enquiry</label>
+              <label class="field-label" for="reason">Reason for enquiry</label>
               <select id="reason" name="reason"
                       style="width:100%;min-height:2.75rem;padding:0.6rem 0.7rem;border:1px solid var(--border-strong);border-radius:var(--radius-s);background:var(--surface)">
                 <option>General administrative question</option>
@@ -867,7 +867,7 @@ function contactPage() {
               </select>
             </div>
             <div>
-              <label for="message" style="display:block;font-weight:600;margin-bottom:0.3rem">Message</label>
+              <label class="field-label" for="message">Message</label>
               <textarea id="message" name="message" rows="4"
                         aria-describedby="message-hint"
                         style="width:100%;padding:0.6rem 0.7rem;border:1px solid var(--border-strong);border-radius:var(--radius-s);background:var(--surface)"></textarea>

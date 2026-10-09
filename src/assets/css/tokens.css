@@ -5,56 +5,100 @@
    warmth and place in the accents.
    ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   Typefaces
+   Public Sans — designed by the US Web Design System for legible public-service
+   information. Chosen because it is built for exactly this job: dense, factual
+   content read by people of all ages on screens, including under stress. Three
+   weights carry the whole hierarchy; no second family, and no system stack.
+   Latin subset, self-hosted, 180 KB. SIL Open Font License 1.1 (see
+   assets/fonts/LICENSE.txt).
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/PublicSans-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/PublicSans-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/PublicSans-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/assets/fonts/PublicSans-ExtraBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/PublicSans-Italic.woff2") format("woff2");
+}
+
 :root {
   color-scheme: light dark;
 
-  /* --- Brand: ocean ------------------------------------------------------ */
-  /* Deep, trustworthy teal-blue. The primary action and identity colour. */
-  --ocean-50: #eef6f8;
-  --ocean-100: #d5e9ee;
-  --ocean-200: #aad3dc;
-  --ocean-300: #74b4c2;
-  --ocean-400: #42919f;
-  --ocean-500: #247485;
-  --ocean-600: #175d6d;
-  --ocean-700: #124b58;
-  --ocean-800: #113d47;
-  --ocean-900: #0d2c33;
+  /* --- Ink ---------------------------------------------------------------- */
+  /* Ink carries a blue cast. It is never pure black and never a neutral grey. */
+  --ink-900: #08161c;
+  --ink-800: #0b1b22;
+  --ink-700: #16303a;
+  --ink-600: #23454f;
+  --ink-500: #3d5b65;
+  --ink-400: #5c7078;
+  --ink-300: #7d9098;
+  --ink-200: #a8b6bc;
 
-  /* --- Brand: sand ------------------------------------------------------- */
-  /* The warm neutral of the estuary. Used for gentle surfaces, never for text. */
-  --sand-50: #fbf8f3;
-  --sand-100: #f5efe4;
-  --sand-200: #eae0cd;
-  --sand-300: #ddceb2;
-  --sand-400: #c9b28c;
-
-  /* --- Brand: banksia ---------------------------------------------------- */
-  /* A restrained warm accent for highlights and the "now" affordances. */
-  --banksia-400: #e0a458;
-  --banksia-500: #c8863a;
-  --banksia-600: #a56a28;
+  /* --- One accent -------------------------------------------------------- */
+  /* Blue-teal, taken from the practice's own identity. It marks what you can
+     act on and nothing else, so it never becomes decoration. */
+  --teal-700: #073f4b;
+  --teal-600: #0b5666;
+  --teal-500: #106b7e;
+  --teal-200: #cfe2e6;
+  --teal-100: #e3eef1;
 
   /* --- Functional -------------------------------------------------------- */
-  --urgent-100: #fdeceb;
-  --urgent-500: #c0392b;
-  --urgent-600: #9c2b1f;
+  /* Red is reserved for genuine urgency, amber for "get help" states. Neither
+     is used for emphasis. */
+  --red-700: #7d1a12;
+  --red-600: #a8241a;
+  --red-100: #fbeae7;
+  --amber-700: #6b4708;
+  --amber-100: #fdf3e2;
+  --positive-700: #14532d;
   --positive-100: #e8f5ee;
-  --positive-500: #2e7d5b;
-  --focus: #0a6b8a;
+  --focus: #0b5666;
 
   /* --- Type scale -------------------------------------------------------- */
   /* Fluid, rem-based so the whole layout scales with the user's text size. */
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, "Noto Sans", sans-serif;
-  --font-serif: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --font-sans: "Public Sans", system-ui, sans-serif;
 
   --step--1: 0.875rem;
   --step-0: clamp(1.0625rem, 0.99rem + 0.28vw, 1.1875rem);
-  --step-1: clamp(1.25rem, 1.13rem + 0.45vw, 1.5rem);
+  --step-1: clamp(1.25rem, 1.14rem + 0.42vw, 1.5rem);
   --step-2: clamp(1.5rem, 1.3rem + 0.78vw, 2rem);
-  --step-3: clamp(1.875rem, 1.55rem + 1.28vw, 2.75rem);
-  --step-4: clamp(2.25rem, 1.7rem + 2.2vw, 3.75rem);
+  --step-3: clamp(1.875rem, 1.5rem + 1.5vw, 2.875rem);
+  --step-4: clamp(2.25rem, 1.6rem + 2.6vw, 4rem);
 
   /* --- Space ------------------------------------------------------------- */
   --space-3xs: 0.25rem;
@@ -68,10 +112,12 @@
   --space-3xl: 6.5rem;
 
   /* --- Radius ------------------------------------------------------------ */
-  --radius-xs: 8px;
-  --radius-s: 12px;
-  --radius-m: 18px;
-  --radius-l: 26px;
+  /* Nearly square. Softness was a complaint, so this takes the edge off rather
+     than rounding everything into pills. */
+  --radius-xs: 2px;
+  --radius-s: 3px;
+  --radius-m: 5px;
+  --radius-l: 8px;
   --radius-full: 999px;
 
   /* --- Motion ------------------------------------------------------------ */
@@ -95,9 +141,9 @@
 :root,
 :root[data-theme="light"] {
   --bg: #fdfcfa;
-  --bg-sunken: var(--sand-50);
+  --bg-sunken: #eff3f5;
   --surface: #ffffff;
-  --surface-2: var(--sand-100);
+  --surface-2: #eff3f5;
   --surface-inset: #f7f4ef;
 
   --text: #16232a;
@@ -109,66 +155,71 @@
   --border: #e2ded6;
   --border-strong: #cec8bd;
 
-  --brand: var(--ocean-600);
-  --brand-hover: var(--ocean-700);
-  --brand-quiet: var(--ocean-50);
-  --brand-text: var(--ocean-700);
-  --accent: var(--banksia-500);
+  --brand: var(--teal-600);
+  --brand-hover: var(--teal-700);
+  --brand-quiet: var(--teal-100);
+  --brand-text: var(--teal-600);
+  /* No separate accent: one hue cannot do two jobs. State colours
+     (urgency, caution, positive) carry the second job instead. */
+  --accent: var(--brand);
 
-  /* Translucent chrome — content scrolls beneath it. */
-  --chrome-bg: rgb(253 252 250 / 0.72);
-  --chrome-bg-solid: #fdfcfa;
-  --chrome-border: rgb(22 35 42 / 0.09);
-  --scrim: rgb(15 28 34 / 0.38);
+  /* Translucent chrome — content scrolls beneath the header. */
+  --chrome-bg: rgb(247 249 250 / 0.85);
+  --chrome-bg-solid: #f7f9fa;
+  --chrome-border: rgb(11 27 34 / 0.12);
+  --scrim: rgb(8 22 28 / 0.46);
 
-  --shadow-s: 0 1px 2px rgb(18 40 50 / 0.06), 0 2px 6px rgb(18 40 50 / 0.05);
-  --shadow-m: 0 2px 6px rgb(18 40 50 / 0.06), 0 10px 24px rgb(18 40 50 / 0.08);
-  --shadow-l: 0 4px 12px rgb(18 40 50 / 0.08), 0 24px 56px rgb(18 40 50 / 0.12);
-  --shadow-brand: 0 2px 6px rgb(23 93 109 / 0.2), 0 10px 24px rgb(23 93 109 / 0.18);
+  /* Depth comes from structure first: a defined border, then a tight shadow.
+     Nothing here is a soft halo. */
+  --shadow-s: 0 1px 2px rgb(8 22 28 / 0.05);
+  --shadow-m: 0 1px 2px rgb(8 22 28 / 0.06), 0 3px 8px rgb(8 22 28 / 0.06);
+  --shadow-l: 0 2px 4px rgb(8 22 28 / 0.08), 0 10px 22px rgb(8 22 28 / 0.1);
+  --shadow-brand: 0 1px 2px rgb(11 86 102 / 0.24), 0 4px 12px rgb(11 86 102 / 0.2);
 
-  --hero-tint: rgb(13 44 51 / 0.58);
-  --ring: rgb(23 93 109 / 0.35);
+  --hero-tint: rgb(8 22 28 / 0.62);
+  --ring: rgb(11 86 102 / 0.4);
 }
 
 /* --------------------------------------------------------------------------
-   Dark theme
+   Dark appearance
    -------------------------------------------------------------------------- */
 :root[data-theme="dark"] {
-  --bg: #0e181d;
-  --bg-sunken: #0a1216;
-  --surface: #16242b;
-  --surface-2: #1c2e36;
-  --surface-inset: #101c22;
+  --bg: #0a1519;
+  --bg-sunken: #060f12;
+  --surface: #10222a;
+  --surface-2: #16303a;
+  --surface-inset: #0c1b21;
 
-  --text: #eef4f6;
-  --text-muted: #b3c4cb;
-  --text-subtle: #9db2ba;
-  --text-on-brand: #04191f;
+  --text: #eef4f5;
+  --text-muted: #b7c6cc;
+  --text-subtle: #9fb1b8;
+  --text-on-brand: #04161c;
 
-  --border: #263a43;
-  --border-strong: #33505c;
+  --border: #24404a;
+  --border-strong: #3a5b67;
 
-  --brand: #7fc4d4;
-  --brand-hover: #a2d8e4;
-  --brand-quiet: #14313a;
+  --brand: #7cc3d4;
+  --brand-hover: #a3d9e6;
+  --brand-quiet: #103038;
   --brand-text: #9ed4e0;
-  --accent: var(--banksia-400);
+  --accent: var(--brand);
 
-  --chrome-bg: rgb(14 24 29 / 0.72);
-  --chrome-bg-solid: #0e181d;
-  --chrome-border: rgb(255 255 255 / 0.1);
-  --scrim: rgb(0 0 0 / 0.55);
+  --chrome-bg: rgb(10 21 25 / 0.86);
+  --chrome-bg-solid: #0a1519;
+  --chrome-border: rgb(255 255 255 / 0.12);
+  --scrim: rgb(0 0 0 / 0.6);
 
-  --shadow-s: 0 1px 2px rgb(0 0 0 / 0.3);
-  --shadow-m: 0 2px 6px rgb(0 0 0 / 0.35), 0 10px 24px rgb(0 0 0 / 0.3);
-  --shadow-l: 0 4px 12px rgb(0 0 0 / 0.4), 0 24px 56px rgb(0 0 0 / 0.45);
-  --shadow-brand: 0 2px 6px rgb(0 0 0 / 0.4);
+  --shadow-s: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-m: 0 1px 2px rgb(0 0 0 / 0.45), 0 4px 12px rgb(0 0 0 / 0.4);
+  --shadow-l: 0 2px 6px rgb(0 0 0 / 0.5), 0 14px 32px rgb(0 0 0 / 0.5);
+  --shadow-brand: 0 1px 2px rgb(0 0 0 / 0.5);
 
-  --hero-tint: rgb(4 14 18 / 0.62);
-  --ring: rgb(127 196 212 / 0.45);
+  --hero-tint: rgb(3 12 15 / 0.66);
+  --ring: rgb(124 195 212 / 0.5);
 
-  --urgent-100: #3a1a17;
-  --positive-100: #122c22;
+  --red-100: #3a1410;
+  --amber-100: #2e2410;
+  --positive-100: #0f2a1c;
 }
 
 /* --------------------------------------------------------------------------
@@ -191,34 +242,34 @@
 @media (prefers-contrast: more) {
   :root {
     --bg: #ffffff;
+    --bg-sunken: #ffffff;
     --surface: #ffffff;
     --surface-2: #ffffff;
     --surface-inset: #ffffff;
     --text: #000000;
-    --text-muted: #23343c;
-    --text-subtle: #33474f;
-    --border: #6b7d86;
-    --border-strong: #16232a;
-    --brand: var(--ocean-700);
-    --brand-hover: var(--ocean-800);
+    --text-muted: #1c343d;
+    --text-subtle: #2b444d;
+    --border: #6d8189;
+    --border-strong: #0b1b22;
+    --brand: var(--teal-700);
+    --brand-hover: var(--ink-900);
     --chrome-bg: #ffffff;
-    --hero-tint: rgb(9 32 38 / 0.78);
+    --hero-tint: rgb(6 20 25 / 0.85);
   }
   :root[data-theme="dark"] {
     --bg: #000000;
-    --surface: #0b1418;
-    --surface-2: #101d22;
-    --surface-inset: #060d10;
+    --surface: #08161c;
+    --surface-2: #0d2028;
+    --surface-inset: #040d10;
     --text: #ffffff;
-    --text-muted: #d3e0e4;
-    --border: #7c8f97;
-    --brand: #a9dcea;
+    --text-muted: #d5e2e6;
+    --border: #8298a1;
+    --brand: #7cc3d4;
     --chrome-bg: #000000;
   }
   .card,
   .panel,
-  .proc-card,
-  .cond-card {
+  .index__row {
     border-width: 2px !important;
   }
 }

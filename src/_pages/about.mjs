@@ -268,8 +268,8 @@ function privacyPage() {
 
 ${sourcesBlock(
   [
-    { title: "OAIC — Guide to health privacy", url: "https://www.oaic.gov.au/privacy/privacy-guidance-for-organisations-and-government-agencies/health-service-providers/guide-to-health-privacy" },
-    { title: "OAIC — Australian Privacy Principles", url: "https://www.oaic.gov.au/privacy/australian-privacy-principles" },
+    { title: "OAIC: Guide to health privacy", url: "https://www.oaic.gov.au/privacy/privacy-guidance-for-organisations-and-government-agencies/health-service-providers/guide-to-health-privacy" },
+    { title: "OAIC: Australian Privacy Principles", url: "https://www.oaic.gov.au/privacy/australian-privacy-principles" },
     { title: "NSW Information and Privacy Commission — Health Privacy Principles fact sheet", url: "https://www.ipc.nsw.gov.au/resources/fact-sheet-health-privacy-principles-hpps" },
     { title: "Health Records and Information Privacy Act 2002 (NSW)", url: "https://legislation.nsw.gov.au/view/html/inforce/current/act-2002-071" },
   ],
@@ -316,7 +316,7 @@ function accessibilityPage() {
         <li>Buttons and links in the main navigation and footer are at least 44 by 44 pixels</li>
         <li>Images that carry meaning have alternative text; purely decorative images are hidden from screen readers</li>
         <li>Headings follow a logical order, and each page has one main heading</li>
-        <li>Every page has a "skip to main content" link and proper landmark regions</li>
+        <li>Every page has proper landmark regions, so screen readers can jump straight to the navigation, the main content or the footer</li>
         <li>The page respects your operating system's reduced motion setting, described below</li>
         <li>A dark appearance is applied automatically if your device is set to dark mode, and can be switched manually</li>
         <li>Text remains readable if you override line height, paragraph spacing, letter spacing or word spacing</li>

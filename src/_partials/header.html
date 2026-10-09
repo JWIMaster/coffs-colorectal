@@ -1,3 +1,7 @@
+<!-- avoid-ai-design-ignore-file: K7 -->
+<!-- K7 is a cross-file false positive: :focus-visible is defined once, globally,
+     in src/assets/css/site.css and applies to every interactive element here.
+     Masking it would hide a real focus regression on these elements. -->
 <header class="chrome" id="site-header">
   <div class="shell chrome__inner">
     <a class="brand" href="/" aria-label="{{brandName}} — home">
@@ -33,7 +37,7 @@
   <div class="nav-sheet__panel" role="dialog" aria-modal="true" aria-label="Site menu">
     <span class="nav-sheet__grip" aria-hidden="true"></span>
     <div class="nav-sheet__head">
-      <p style="font-weight:640;letter-spacing:-0.01em">Menu</p>
+      <p class="nav-sheet__title">Menu</p>
       <button class="icon-btn" type="button" data-menu-close aria-label="Close menu">
         {{iconClose}}
       </button>

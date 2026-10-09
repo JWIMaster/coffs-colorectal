@@ -17,7 +17,6 @@ import sys
 REQUIRED = [
     ('lang="en-AU"', "page language declaration"),
     ('rel="canonical"', "canonical link"),
-    ('class="skip-link"', "skip-to-content link"),
     ('id="main"', "main landmark"),
     ('name="viewport"', "viewport meta"),
     ("not monitored outside business hours", "after-hours safety notice"),

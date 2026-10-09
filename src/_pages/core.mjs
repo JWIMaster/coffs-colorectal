@@ -49,7 +49,7 @@ export function render() {
       </ul>
       <div class="hero__divider"></div>
       <p class="small">${escapeHTML(site.contact.street)}, ${escapeHTML(site.contact.suburb)}<br>
-        <a href="/contact-us/" style="color:inherit;font-weight:620">Contact and directions</a>
+        <a class="quiet-link" href="/contact-us/">Contact and directions</a>
       </p>
     </div>
   </div>
