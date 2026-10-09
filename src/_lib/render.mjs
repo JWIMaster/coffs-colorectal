@@ -91,10 +91,11 @@ export const list = (items) =>
 /* ------------------------------------------------------------------ icons */
 
 const ICONS = {
-  /* A handset. The previous path closed on a squared-off foot that read as a
-     blunt lump at 17px, where this icon is mostly seen. */
+  /* A handset. Lucide's "phone" geometry, which draws the receiver as one
+     smooth outline with a rounded thumb notch, rather than the hand-authored
+     path's kinked joint and blunt foot that read as a squiggle at 17px. */
   phone:
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 3.5h-2A1.6 1.6 0 0 0 3 5.1C3 13.3 10.7 21 18.9 21a1.6 1.6 0 0 0 1.6-1.6v-2l-4.2-1.7-2.2 2.2a14.6 14.6 0 0 1-6.1-6.1l2.2-2.2Z"/></svg>',
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>',
   pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>',
   arrow:
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12.5 5.5 19 12l-6.5 6.5"/></svg>',
