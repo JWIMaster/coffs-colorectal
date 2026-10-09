@@ -1,0 +1,875 @@
+{
+  "conditions": [
+    {
+      "slug": "crohns-disease",
+      "title": "Crohn's Disease",
+      "summary": "Crohn's disease is a long-term condition where the body's immune system inflames the gut, causing pain and diarrhoea. Treatment aims to control it, not cure it.",
+      "sections": [
+        {
+          "heading": "What is Crohn's disease?",
+          "body": [
+            "Crohn's disease is a type of inflammatory bowel disease (IBD). IBD is a group of conditions where the body's immune system causes ongoing inflammation in the gut. Inflammation means redness, swelling and soreness.",
+            "Crohn's disease can affect any part of the digestive tract, from the mouth to the anus (the back passage). It most often affects the last part of the small bowel and the colon (large bowel).",
+            "The inflammation usually goes through the full thickness of the bowel wall, and it tends to be patchy, with areas of healthy bowel between inflamed areas. Doctors sometimes call these 'skip lesions'.",
+            "Crohn's disease is a lifelong condition that tends to come and go. Times when symptoms are active are called flare-ups; times when you feel well are called remission. It cannot currently be cured, but for most people it can be well managed.",
+            "This page is general information only and is not a substitute for advice about your own situation."
+          ]
+        },
+        {
+          "heading": "What causes it, and who gets it?",
+          "body": [
+            "The exact cause is not known. It is thought to be a combination of genes you inherit and something in the environment that sets off the immune system. Stress and particular foods can make symptoms worse, but they do not cause Crohn's disease.",
+            "Crohn's disease can start at any age, but symptoms most often appear in teenagers and young adults. Having a close family member with IBD makes it more likely.",
+            "Smoking is one risk factor you can change. Smoking is linked to more flare-ups and more complications, and stopping is one of the most helpful things you can do. Your GP or surgeon can point you to quit-smoking support.",
+            "It is not caused by anything you did, and it is not contagious."
+          ]
+        },
+        {
+          "heading": "Common symptoms",
+          "bullets": [
+            "Diarrhoea, sometimes with blood or mucus",
+            "Abdominal (tummy) pain and cramping",
+            "Tiredness and fatigue, even after a good sleep",
+            "Losing weight without trying, or loss of appetite",
+            "A sore or swollen bottom, discharge, or a tear near the anus (an anal fissure)",
+            "Mouth ulcers, sore joints, sore eyes or skin rashes in some people",
+            "Symptoms vary from person to person and can be mild or severe"
+          ]
+        },
+        {
+          "heading": "How it is diagnosed",
+          "body": [
+            "There is no single test for Crohn's disease. Your GP will ask about your symptoms and examine you, and may arrange blood tests and a stool (poo) sample. A stool test called faecal calprotectin can show whether there is inflammation in the bowel.",
+            "A colonoscopy is usually needed. This is a day procedure where a flexible tube with a camera is passed through the anus to look at the lining of the bowel. Very small samples of tissue (biopsies) are taken and checked under a microscope.",
+            "You may also have imaging such as an MRI or CT scan to look at the small bowel and to check for complications such as narrowing (strictures) or tunnels (fistulae). Occasionally a capsule camera that you swallow is used.",
+            "Because the symptoms overlap with other conditions such as irritable bowel syndrome (IBS), reaching a diagnosis can take time. This is normal and does not mean anything has been missed."
+          ]
+        },
+        {
+          "heading": "Treatment without surgery",
+          "body": [
+            "Most people are cared for by a gastroenterologist (a bowel specialist) and a team that may include an IBD nurse, a dietitian and your colorectal surgeon. Treatment is tailored to you and may change over time.",
+            "Medicines aim to settle inflammation and keep you in remission. They include aminosalicylates (also called 5-ASAs), corticosteroids (steroids) used short-term for flare-ups, immunomodulators that calm the immune system, and biologic medicines that target specific parts of the immune response. Antibiotics are used for some complications, especially around the anus.",
+            "Good nutrition matters. Some people need vitamin or mineral supplements such as iron, vitamin D or calcium, and a liquid-only diet (exclusive enteral nutrition) may be used for a period, especially in children. Please speak to a dietitian before making big dietary changes.",
+            "Avoid anti-inflammatory painkillers such as ibuprofen and other NSAIDs unless your doctor says they are safe for you, as they can trigger a flare."
+          ]
+        },
+        {
+          "heading": "If surgery is needed",
+          "body": [
+            "Surgery does not cure Crohn's disease. It is used to treat problems that medicines cannot control, or complications such as a narrowing that causes a blockage, a fistula, an abscess, or a section of bowel that is badly damaged.",
+            "The operation depends on the problem. Often the diseased section is removed and the healthy ends are rejoined (a resection). A narrowing may be widened without removing bowel (stricturoplasty). An abscess is drained. Sometimes a stoma is needed. A stoma is an opening made on the abdomen so that waste collects in a bag; it may be temporary or permanent.",
+            "Because Crohn's can return in other parts of the gut, further treatment or surgery may be needed later. Many people with Crohn's disease have at least one operation over their lifetime - Crohn's & Colitis Australia notes this may be up to about 8 in 10 people - usually to deal with a complication rather than as a cure.",
+            "Dr Sutherland will discuss the risks, benefits and alternatives with you, including whether surgery is the right step now or whether your medical treatment should be adjusted first."
+          ]
+        },
+        {
+          "heading": "Looking after yourself",
+          "bullets": [
+            "Take your medicines as prescribed, even when you feel well",
+            "Stopping smoking is strongly encouraged and worth the effort",
+            "Keep up to date with vaccinations recommended by your team",
+            "Eat a balanced diet and stay physically active",
+            "A symptom and food diary can help you and your team spot patterns",
+            "Keep your routine check-ups; tell your team early if symptoms change",
+            "Support for mood and anxiety is available - ask your team"
+          ]
+        },
+        {
+          "heading": "When to seek help urgently",
+          "bullets": [
+            "Heavy or non-stop bleeding from the back passage, or large blood clots",
+            "Severe or worsening tummy pain with vomiting, a swollen tummy, or being unable to pass wind or stool",
+            "Fever, chills or feeling very unwell",
+            "A hot, swollen, very painful bottom, or pus coming from around the anus",
+            "Black, tarry or dark red stool",
+            "Call 000 for an ambulance, or go to the nearest emergency department - at Coffs Harbour this is Coffs Harbour Base Hospital"
+          ]
+        }
+      ],
+      "urgent": [
+        "Heavy or non-stop rectal bleeding, or large blood clots",
+        "Severe tummy pain with vomiting, swelling, or no wind or stool",
+        "Fever, chills or feeling very unwell",
+        "Hot, swollen, very painful bottom or pus near the anus",
+        "Black, tarry or dark red stool"
+      ],
+      "expect": [
+        "Can affect any part of the gut, mouth to anus",
+        "Flare-ups come and go over time",
+        "Surgery treats complications; it is not a cure",
+        "Stopping smoking helps reduce flare-ups"
+      ],
+      "questions": [
+        {
+          "q": "Will I definitely need an operation?",
+          "a": "No. Many people are managed with medicines, diet and regular review. Over time, some people do need surgery for a complication or when medicines stop working well. Your surgeon will discuss this with you if and when it becomes relevant."
+        },
+        {
+          "q": "Can Crohn's disease be cured?",
+          "a": "Not at present. Unlike ulcerative colitis, removing the affected bowel does not cure Crohn's disease, because it can come back in other parts of the gut. The aim is to control inflammation and keep you feeling well for as long as possible."
+        },
+        {
+          "q": "Is my diet causing my Crohn's disease?",
+          "a": "No. Diet does not cause Crohn's disease, although some foods may make symptoms worse for some people. A dietitian can help you work out what suits you without cutting out foods you need."
+        },
+        {
+          "q": "Should I stop my medicines when I feel well?",
+          "a": "Please do not stop or change medicines without talking to your team first. Medicines often keep inflammation quiet even when you have no symptoms, and stopping them can lead to a flare."
+        },
+        {
+          "q": "Can I still travel, work and have a family?",
+          "a": "Most people with Crohn's disease lead full lives, including work, travel and raising a family. Planning ahead - such as knowing where toilets are and carrying medicines - can make things easier. Discuss pregnancy plans with your team early."
+        }
+      ],
+      "sources": [
+        { "title": "NHS - Crohn's disease", "url": "https://www.nhs.uk/conditions/crohns-disease/" },
+        { "title": "healthdirect - Crohn's disease", "url": "https://www.healthdirect.gov.au/crohns-disease" },
+        { "title": "Crohn's & Colitis Australia - Crohn's disease", "url": "https://crohnsandcolitis.org.au/about-crohns-colitis/crohns-disease/" },
+        { "title": "Crohn's & Colitis Australia - Complications of IBD", "url": "https://crohnsandcolitis.org.au/living-with-crohns-colitis/medical/complications-of-ibd/" },
+        { "title": "CSSANZ - Condition Information (Crohn's disease)", "url": "https://cssanz.org/Web/Web/Patients-Public/Condition-Information.aspx" }
+      ],
+      "disclaimer": "This page is general information only; every person's situation is different, and Dr Andrew Sutherland will discuss your individual circumstances, tests and treatment options with you."
+    },
+    {
+      "slug": "ulcerative-colitis",
+      "title": "Ulcerative Colitis",
+      "summary": "Ulcerative colitis is a long-term condition that inflames the lining of the large bowel, causing diarrhoea and urgency. Medicines control it well for most people.",
+      "sections": [
+        {
+          "heading": "What is ulcerative colitis?",
+          "body": [
+            "Ulcerative colitis (often just called colitis) is a type of inflammatory bowel disease (IBD). It causes inflammation and small open sores (ulcers) in the lining of the large bowel (colon) and rectum. Inflammation means redness, swelling and soreness.",
+            "The inflammation starts at the rectum and spreads upwards in a continuous strip - doctors describe this as continuous inflammation from the rectum. It affects only the inner lining of the bowel, not the full thickness of the wall.",
+            "It is different from Crohn's disease, which can affect any part of the gut and goes through the full thickness of the bowel wall.",
+            "Ulcerative colitis comes and goes. Active symptoms are called a flare-up; quiet times are called remission. It cannot currently be cured with medicines, but treatment can control it very well for most people.",
+            "This page is general information only and is not a substitute for advice about your own situation."
+          ]
+        },
+        {
+          "heading": "What causes it, and who gets it?",
+          "body": [
+            "The exact cause is not known. It is thought to involve a combination of genes and an abnormal immune response, rather than an infection you can catch.",
+            "It can start at any age, but most often appears in people in their 20s and 30s. Having a family member with IBD increases the chance.",
+            "It is not caused by stress, diet or anything you did. Stress and some foods can make symptoms feel worse, but they do not cause the condition.",
+            "If you used to smoke, you may be at slightly higher risk; unlike Crohn's disease, smoking is not protective and is still bad for your overall health."
+          ]
+        },
+        {
+          "heading": "Common symptoms",
+          "bullets": [
+            "Diarrhoea, often with blood, mucus or pus",
+            "Urgency - a sudden, strong need to get to the toilet",
+            "Going to the toilet often, including at night",
+            "A feeling of not fully emptying the bowel (tenesmus)",
+            "Crampy tummy pain, often on the lower left side",
+            "Tiredness, low appetite and weight loss",
+            "During a flare, some people also get sore joints, mouth ulcers, sore eyes or skin rashes"
+          ]
+        },
+        {
+          "heading": "How it is diagnosed",
+          "body": [
+            "Your GP will ask about your symptoms and examine you, and will usually arrange blood tests and stool (poo) tests to look for inflammation and to rule out infection.",
+            "A colonoscopy is usually needed to confirm the diagnosis. This is a day procedure where a flexible tube with a camera is passed through the anus to inspect the bowel. Small tissue samples (biopsies) are taken and examined under a microscope.",
+            "Imaging such as a CT scan or MRI may be used, particularly if a severe flare is suspected.",
+            "The pattern of inflammation seen on colonoscopy and biopsy helps your specialist tell ulcerative colitis apart from Crohn's disease and other conditions."
+          ]
+        },
+        {
+          "heading": "Treatment without surgery",
+          "body": [
+            "Treatment aims to settle inflammation, control symptoms and keep you in remission. It is tailored to how much of the bowel is affected and how severe the inflammation is.",
+            "Medicines include aminosalicylates (5-ASAs) taken as tablets or sometimes as enemas or suppositories, corticosteroids (steroids) for short-term control of flare-ups, immunosuppressants that calm the immune system, and biologic medicines or newer targeted tablets for moderate to severe disease.",
+            "Lifestyle measures help too: staying hydrated, eating a balanced diet, regular activity, managing stress, avoiding NSAIDs such as ibuprofen unless your doctor approves, and keeping up with vaccinations if you take medicines that affect your immune system.",
+            "Because long-standing colitis slightly increases the risk of bowel cancer, your specialist will recommend regular surveillance colonoscopies. Attending these is an important part of your care."
+          ]
+        },
+        {
+          "heading": "If surgery is needed",
+          "body": [
+            "Surgery is not needed for most people, but it may be recommended when medicines are not controlling the disease, when pre-cancerous or cancerous changes are found, or during a severe flare that does not settle with intensive medical treatment.",
+            "The main operations remove the large bowel and rectum. One option is a total proctocolectomy with an ileal pouch-anal anastomosis (often called a J-pouch or IPAA). The surgeon makes an internal pouch from the end of the small bowel and joins it to the anus, so you can pass stool normally through the bottom. This is often done in stages, with a temporary ileostomy while the pouch heals.",
+            "The other option is a panproctocolectomy with an end ileostomy. The large bowel and rectum are removed and the small bowel is brought out through an opening on the abdomen (a stoma), with waste collected in a bag. This can be a permanent, reliable solution and suits some people better than a pouch.",
+            "Because ulcerative colitis only affects the colon, removing the colon cures the colitis itself. You will still need regular follow-up to look after the pouch or stoma.",
+            "Pouches can become inflamed - this is called pouchitis. It usually causes diarrhoea, cramping and urgency, and is often treated with antibiotics or probiotics. Many women find it harder to conceive after pouch surgery, so if you are planning a pregnancy, please discuss this with your surgeon and gastroenterologist beforehand.",
+            "Dr Sutherland will explain the risks, benefits and alternatives of each option, including the choice between a pouch and an ileostomy, so you can decide what is right for you."
+          ]
+        },
+        {
+          "heading": "When to seek help urgently",
+          "bullets": [
+            "Severe tummy pain, or a tummy that is swollen and tender",
+            "A severe flare with fever, a fast heartbeat, or feeling faint",
+            "Being unable to pass wind or stool",
+            "Heavy or non-stop bleeding from the back passage, or large blood clots",
+            "Vomiting blood, or vomit that looks like coffee grounds",
+            "Call 000 for an ambulance, or go to the nearest emergency department - at Coffs Harbour this is Coffs Harbour Base Hospital"
+          ]
+        }
+      ],
+      "urgent": [
+        "Severe tummy pain or a swollen, tender tummy",
+        "Fever, fast heartbeat or feeling faint during a flare",
+        "Unable to pass wind or stool",
+        "Heavy or non-stop rectal bleeding, or large clots",
+        "Vomiting blood or coffee-ground vomit"
+      ],
+      "expect": [
+        "Affects only the large bowel and rectum",
+        "Inflammation is continuous from the rectum",
+        "Medicines control it well for most people",
+        "Surgery removes the colitis but is not always needed"
+      ],
+      "questions": [
+        {
+          "q": "Will I need my bowel removed?",
+          "a": "Most people do not. Surgery is usually reserved for when medicines are not working, for pre-cancerous changes, or for a severe flare. If it is ever needed, you and your surgeon will discuss the options carefully in advance."
+        },
+        {
+          "q": "Does surgery cure ulcerative colitis?",
+          "a": "Removing the large bowel and rectum removes the disease, because ulcerative colitis only affects the colon. You will still need follow-up, and a pouch can become inflamed (pouchitis), which is usually treatable."
+        },
+        {
+          "q": "What is a J-pouch?",
+          "a": "A J-pouch (ileal pouch-anal anastomosis) is an internal pouch made from the end of the small bowel and joined to the anus, so stool leaves the body in the usual way. It is usually created in stages and may involve a temporary stoma while it heals."
+        },
+        {
+          "q": "Could surgery affect my ability to have children?",
+          "a": "Pouch surgery can make it harder for some women to conceive, so it is worth discussing family plans early with your surgeon and gastroenterologist. There may be ways to plan around this. An ileostomy avoids that particular issue."
+        },
+        {
+          "q": "Do I still need colonoscopies if I feel well?",
+          "a": "Yes. Long-standing colitis increases the risk of bowel cancer, so your specialist will recommend regular surveillance colonoscopies even when you have no symptoms. These are an important safety check."
+        },
+        {
+          "q": "Can I stop my medicines when I feel well?",
+          "a": "Please speak to your team first. Many medicines keep inflammation quiet even when you feel fine, and stopping them suddenly can trigger a flare."
+        }
+      ],
+      "sources": [
+        { "title": "NHS - Ulcerative colitis", "url": "https://www.nhs.uk/conditions/ulcerative-colitis/" },
+        { "title": "healthdirect - Ulcerative colitis", "url": "https://www.healthdirect.gov.au/ulcerative-colitis" },
+        { "title": "Crohn's & Colitis Australia - Ulcerative colitis treatment", "url": "https://crohnsandcolitis.org.au/about-crohns-colitis/ulcerative-colitis/ulcerative-colitis-treatment/" },
+        { "title": "Crohn's & Colitis Australia - Surgery", "url": "https://crohnsandcolitis.org.au/living-with-crohns-colitis/medical/surgery/" },
+        { "title": "Better Health Channel - Crohn's disease and ulcerative colitis", "url": "https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/crohns-disease-and-ulcerative-colitis" }
+      ],
+      "disclaimer": "This page is general information only; every person's situation is different, and Dr Andrew Sutherland will discuss your individual circumstances, tests and treatment options with you."
+    },
+    {
+      "slug": "haemorrhoids",
+      "title": "Haemorrhoids (Piles)",
+      "summary": "Haemorrhoids are swollen cushions of tissue in and around the anus. Most settle with simple measures, but bleeding from the back passage should always be checked.",
+      "sections": [
+        {
+          "heading": "What are haemorrhoids?",
+          "body": [
+            "Haemorrhoids (also called piles) are enlarged, bulging cushions of blood vessels and supporting tissue in the anal canal and around the anus (the back passage).",
+            "Everyone has this tissue as part of normal anatomy. It only becomes a problem when the cushions enlarge, stretch or slip downwards, causing bleeding, itching, discomfort or a lump.",
+            "Internal haemorrhoids sit inside the anal canal, where the lining is not sensitive to pain. External haemorrhoids sit just outside the anus and are covered by sensitive skin, so they can be painful, especially if a clot forms inside one (a thrombosed haemorrhoid).",
+            "This page is general information only and is not a substitute for advice about your own situation."
+          ]
+        },
+        {
+          "heading": "Grading of internal haemorrhoids",
+          "bullets": [
+            "Grade 1: stay inside the anus, usually no prolapse",
+            "Grade 2: come out with a bowel motion, then go back in on their own",
+            "Grade 3: come out and need to be pushed back in by you",
+            "Grade 4: stay out and cannot be pushed back in; often painful",
+            "The grade helps your surgeon recommend the most suitable treatment"
+          ]
+        },
+        {
+          "heading": "What causes them?",
+          "body": [
+            "Haemorrhoids are linked to increased pressure in the abdomen and straining. Common triggers include constipation and pushing hard, diarrhoea, spending a long time on the toilet, heavy lifting, pregnancy, being overweight and getting older.",
+            "They often run in families and are more common between the ages of about 45 and 65. Haemorrhoids are not caused by sitting on cold surfaces and they do not turn into cancer.",
+            "Roughly 5 in 100 people develop symptoms from their haemorrhoids, and only a small proportion of those need an operation."
+          ]
+        },
+        {
+          "heading": "Symptoms",
+          "bullets": [
+            "Bright red blood on the toilet paper, in the bowl or on the stool",
+            "Itching, irritation or a damp feeling around the anus",
+            "A lump or cushion that comes out during a bowel motion",
+            "Mucus discharge, or difficulty cleaning after a bowel motion",
+            "A sense that the stool is 'stuck' at the anus",
+            "Severe pain is uncommon with internal haemorrhoids and may point to another problem"
+          ]
+        },
+        {
+          "heading": "Why bleeding must always be checked",
+          "body": [
+            "It is unwise to assume that rectal bleeding is 'just haemorrhoids'. Bleeding from the back passage can also come from a polyp, a bowel cancer or another condition, and the symptoms of haemorrhoids and bowel cancer can look very similar.",
+            "If you notice blood, a change in bowel habit, mucus, unexplained weight loss, tummy pain or tiredness from a low blood count (anaemia), please see your GP. They can examine you and arrange tests such as a colonoscopy if needed.",
+            "Checking the cause of bleeding is a routine and responsible step, not a reason to worry."
+          ]
+        },
+        {
+          "heading": "How it is diagnosed",
+          "body": [
+            "Your doctor will ask about your symptoms, including any bleeding, and examine the anus. This usually involves a gentle digital rectal examination (a gloved finger) and an anoscopy or proctoscopy, where a small lighted tube is used to look at the anal canal.",
+            "Depending on your age, symptoms and family history, your doctor may also arrange a colonoscopy or flexible sigmoidoscopy to rule out other causes of bleeding higher in the bowel.",
+            "These examinations are quick and are performed every day; there is no need to feel embarrassed."
+          ]
+        },
+        {
+          "heading": "Treatment without surgery",
+          "body": [
+            "Most haemorrhoids improve without an operation. The foundation is regulating your bowel motions so they are soft, bulky and easy to pass - not too hard and not too loose.",
+            "Simple measures include a high-fibre diet (aim for a gradual increase), plenty of water, regular exercise, not straining or delaying the urge to go, and not sitting on the toilet longer than needed. Fibre supplements and stool softeners can help. Warm baths and simple pain relief such as paracetamol may ease discomfort. Avoid codeine-based painkillers, which cause constipation.",
+            "For internal haemorrhoids that keep causing trouble, your surgeon can offer office-based procedures. Rubber band ligation places a small band at the base of the haemorrhoid so it shrinks and drops off. Injection sclerotherapy uses a chemical to shrink smaller haemorrhoids. Infrared coagulation uses heat to scar and shrink the tissue. These are usually done without a general anaesthetic and you go home the same day.",
+            "A thrombosed external haemorrhoid (one with a clot) can be very painful for a few days. If you are seen early, a small procedure to remove the clot can give rapid relief; otherwise warm baths, creams and pain relief are used while it settles."
+          ]
+        },
+        {
+          "heading": "If surgery is needed",
+          "body": [
+            "Only a minority of people need surgery - fewer than about 1 in 10 of those seen with symptomatic haemorrhoids. An operation is usually considered for large external haemorrhoids, a combination of internal and external haemorrhoids, or grade 3 to 4 prolapse that has not responded to other treatment.",
+            "A haemorrhoidectomy removes the haemorrhoid tissue. It is performed under an anaesthetic, usually as day surgery or with an overnight stay. It is effective, but it causes more pain and a longer recovery than the office-based procedures, and there is a small risk of bleeding, infection or narrowing.",
+            "Other operations include stapled haemorrhoidopexy, which lifts the prolapsing tissue back inside, and haemorrhoidal artery ligation, which ties off the blood supply so the haemorrhoids shrink. Each has its own risks and benefits.",
+            "Dr Sutherland will discuss which option suits your situation, and what to expect during recovery, including pain management, bowel motions and follow-up."
+          ]
+        },
+        {
+          "heading": "When to seek help urgently",
+          "bullets": [
+            "Bleeding that will not stop, or a lot of blood with large clots",
+            "Severe or rapidly worsening pain around the anus",
+            "Fever with a hot, swollen, painful lump near the anus",
+            "Pus leaking from around the anus",
+            "Call 000 for an ambulance, or go to the nearest emergency department - at Coffs Harbour this is Coffs Harbour Base Hospital"
+          ]
+        }
+      ],
+      "urgent": [
+        "Non-stop rectal bleeding, or a lot of blood with clots",
+        "Severe or rapidly worsening anal pain",
+        "Fever with a hot, swollen, painful lump",
+        "Pus leaking from around the anus"
+      ],
+      "expect": [
+        "Everyone has haemorrhoid tissue normally",
+        "Most cases settle without an operation",
+        "Any rectal bleeding should be checked",
+        "Office procedures suit many internal haemorrhoids"
+      ],
+      "questions": [
+        {
+          "q": "Could my bleeding be bowel cancer?",
+          "a": "It is possible, which is exactly why bleeding should be checked rather than assumed to be haemorrhoids. Most causes are benign, but a proper examination and, if needed, a colonoscopy is the safe way to find out."
+        },
+        {
+          "q": "Will I need an operation?",
+          "a": "Probably not. Most people improve with dietary and lifestyle changes, and some need simple office procedures such as banding. Surgery is reserved for a minority with large or persistent haemorrhoids."
+        },
+        {
+          "q": "Do banding and other office procedures hurt?",
+          "a": "Most people feel a dull ache or pressure for a day or two, which usually settles with simple pain relief. Serious complications are uncommon, and your surgeon will explain the small risks beforehand."
+        },
+        {
+          "q": "Can haemorrhoids come back after treatment?",
+          "a": "They can, especially if constipation and straining continue. Keeping your bowel motions soft with fibre and fluid is the best way to reduce the chance of them returning."
+        },
+        {
+          "q": "Are haemorrhoids caused by sitting on a cold floor?",
+          "a": "No, that is a myth. The main contributors are straining, constipation, pregnancy, heavy lifting and getting older."
+        }
+      ],
+      "sources": [
+        { "title": "ASCRS - Hemorrhoids: Expanded Information", "url": "https://fascrs.org/Web/Web/Patients/Diseases-and-Conditions/A-Z/Hemorrhoids-Expanded-Information.aspx" },
+        { "title": "healthdirect - Haemorrhoids", "url": "https://www.healthdirect.gov.au/haemorrhoids-piles" },
+        { "title": "NHS - Piles (haemorrhoids)", "url": "https://www.nhs.uk/conditions/piles-haemorrhoids/" },
+        { "title": "CSSANZ - Condition Information (Haemorrhoids)", "url": "https://cssanz.org/Web/Web/Patients-Public/Condition-Information.aspx" },
+        { "title": "Cancer Council - Early detection of bowel cancer", "url": "https://www.cancer.org.au/cancer-information/screening-tests-and-treatments/early-detection-and-screening/early-detection-of-bowel-cancer" }
+      ],
+      "disclaimer": "This page is general information only; every person's situation is different, and Dr Andrew Sutherland will discuss your individual circumstances, tests and treatment options with you."
+    },
+    {
+      "slug": "anal-fissure",
+      "title": "Anal Fissure",
+      "summary": "An anal fissure is a small tear in the lining of the anus that causes sharp pain and bleeding when you pass a stool. Most heal with simple care.",
+      "sections": [
+        {
+          "heading": "What is an anal fissure?",
+          "body": [
+            "An anal fissure is a small tear or split in the skin lining the anal canal (the short passage just inside the anus). It is a common problem and can happen at any age.",
+            "Most fissures sit in the midline at the back of the anal canal. They are usually caused by passing a hard or large stool, but they can also follow diarrhoea or childbirth.",
+            "A fissure is a simple mechanical tear. It does not turn into cancer. However, because the symptoms overlap with other conditions, it should be assessed so the cause is clear.",
+            "This page is general information only and is not a substitute for advice about your own situation."
+          ]
+        },
+        {
+          "heading": "Why fissures are painful",
+          "body": [
+            "The pain of a fissure has a pattern. Passing a stool tears the delicate lining, which hurts. The pain triggers the internal anal sphincter muscle to go into spasm, and the spasm reduces the blood supply to the area, so the tear heals slowly. The next bowel motion tears it again, and the cycle repeats.",
+            "This cycle explains why fissures can last for weeks if they are not treated, and why treatment aims to relax the sphincter as well as soften the stool."
+          ]
+        },
+        {
+          "heading": "Primary and secondary fissures",
+          "body": [
+            "Most fissures are 'primary' - caused by trauma from a hard stool with no underlying disease.",
+            "'Secondary' fissures have another cause and need extra attention. These include Crohn's disease or ulcerative colitis, infection, a fissure after childbirth, reduced blood flow to the area, or, rarely, a cancer near the anus. A fissure that is off to the side, does not heal, or comes with other symptoms may need a closer look, sometimes under an anaesthetic.",
+            "If you have an ongoing bowel condition, tell your surgeon, as this changes how the fissure is managed."
+          ]
+        },
+        {
+          "heading": "Symptoms",
+          "bullets": [
+            "Sharp, intense pain when passing a stool",
+            "Burning pain afterwards that can last minutes to several hours",
+            "Bright red blood on the toilet paper or in the bowl",
+            "A small crack or tear visible near the anus",
+            "A skin tag or small lump at the edge of the fissure",
+            "Anal itching or cramping",
+            "The pain can make you avoid going to the toilet, which leads to harder stools"
+          ]
+        },
+        {
+          "heading": "How it is diagnosed",
+          "body": [
+            "Your doctor will ask about your symptoms and gently examine the anus. Often the fissure can be seen just by looking, without any internal examination.",
+            "If the examination is too painful because of muscle spasm, or if the appearance is unusual or not healing as expected, your surgeon may recommend an examination under anaesthetic (EUA). This allows a proper look while you are asleep and comfortable, and biopsies can be taken if needed.",
+            "Further tests, such as a colonoscopy, may be arranged if there is bleeding, a change in bowel habit, weight loss or a family history that needs checking."
+          ]
+        },
+        {
+          "heading": "Treatment without surgery",
+          "body": [
+            "Most fissures heal without an operation. Good self-care works for more than 8 in 10 people.",
+            "The basics are a high-fibre diet, plenty of water, and a stool softener or gentle laxative if needed, so that stools are soft and easy to pass. Warm shallow (sitz) baths after a bowel motion ease pain and spasm, and simple pain relief such as paracetamol can help.",
+            "If the fissure is not healing, your doctor may prescribe a cream that relaxes the anal sphincter - glyceryl trinitrate (GTN) or diltiazem - usually for up to 8 weeks. These creams improve healing but can cause headaches or light-headedness, so tell your doctor if that happens.",
+            "Botulinum toxin (Botox) injected into the sphincter is another option. It causes a temporary relaxation that lasts around 8 to 12 weeks and gives the fissure time to heal. It is often suggested for people who are at higher risk of incontinence from surgery.",
+            "About 4 in 10 fissures can become long-term (chronic) if they do not heal well, so it is worth treating them properly rather than putting up with the pain."
+          ]
+        },
+        {
+          "heading": "If surgery is needed",
+          "body": [
+            "If a fissure stays painful and does not heal after non-surgical treatment, an operation may be recommended. The main operation is a lateral internal sphincterotomy: a small cut is made in the lowest part of the internal anal sphincter muscle to relieve the spasm and let the fissure heal. It is usually a day procedure.",
+            "Pain often improves quickly, although the fissure itself can take a few weeks to fully heal. A fissure that has caused a skin tag or a tight scar may also be treated at the same time.",
+            "Sphincterotomy weakens the muscle slightly. There is a small but real risk of problems controlling wind or, much less commonly, stool. For this reason it is reserved for chronic fissures that have not responded to other treatment, and it is discussed carefully, especially for women who have had previous childbirth injuries, people with diarrhoea, and anyone with a bowel condition.",
+            "Dr Sutherland will explain the risks and benefits of each option, including repeating a Botox injection instead of surgery, so you can make an informed choice."
+          ]
+        },
+        {
+          "heading": "When to seek help urgently",
+          "bullets": [
+            "Fever with severe anal pain, or pus coming from the area",
+            "Heavy or non-stop bleeding from the back passage",
+            "Black, tarry or dark red stool",
+            "Severe pain that is getting worse rather than settling",
+            "A fissure that is not healing, or bleeding with weight loss or a change in bowel habit",
+            "Call 000 for an ambulance, or go to the nearest emergency department - at Coffs Harbour this is Coffs Harbour Base Hospital"
+          ]
+        }
+      ],
+      "urgent": [
+        "Fever with severe anal pain, or pus from the area",
+        "Heavy or non-stop rectal bleeding",
+        "Black, tarry or dark red stool",
+        "Pain that is worsening rather than settling",
+        "A non-healing fissure with weight loss or bowel change"
+      ],
+      "expect": [
+        "A small tear in the lining of the anus",
+        "Painful with bowel motions, then settles",
+        "More than 8 in 10 heal with simple care",
+        "Surgery is reserved for chronic fissures"
+      ],
+      "questions": [
+        {
+          "q": "How long should a fissure take to heal?",
+          "a": "With good self-care, many heal within about 6 to 8 weeks. If it is still painful after that, or keeps coming back, see your doctor, as other treatment may help."
+        },
+        {
+          "q": "Are the creams safe to use?",
+          "a": "GTN and diltiazem creams are commonly used and generally safe. GTN can cause headaches or dizziness in some people. Tell your doctor or pharmacist if this happens, as the dose or choice can often be adjusted."
+        },
+        {
+          "q": "Will I need surgery?",
+          "a": "Most people do not. Surgery (lateral internal sphincterotomy) is usually considered only when a fissure has become chronic and other treatments have not worked. Your surgeon will discuss the small risk to bowel control carefully."
+        },
+        {
+          "q": "Could the fissure be a sign of something more serious?",
+          "a": "Usually not, but fissures can be linked with Crohn's disease, infection, or rarely a growth near the anus. If the appearance is unusual or it does not heal, your surgeon may recommend further tests, sometimes under an anaesthetic."
+        },
+        {
+          "q": "Will the pain happen every time I go to the toilet?",
+          "a": "While the fissure is active, usually yes. Keeping stools soft, using warm baths and, if prescribed, a muscle-relaxing cream helps break the cycle of pain and spasm."
+        }
+      ],
+      "sources": [
+        { "title": "NHS - Anal fissure", "url": "https://www.nhs.uk/conditions/anal-fissure/" },
+        { "title": "healthdirect - Anal fissure", "url": "https://www.healthdirect.gov.au/anal-fissure" },
+        { "title": "CSSANZ - Condition Information (Anal fissure)", "url": "https://cssanz.org/Web/Web/Patients-Public/Condition-Information.aspx" },
+        { "title": "Crohn's & Colitis Australia - Complications of IBD", "url": "https://crohnsandcolitis.org.au/living-with-crohns-colitis/medical/complications-of-ibd/" }
+      ],
+      "disclaimer": "This page is general information only; every person's situation is different, and Dr Andrew Sutherland will discuss your individual circumstances, tests and treatment options with you."
+    },
+    {
+      "slug": "anal-abscess-and-fistula",
+      "title": "Anal Abscess and Fistula",
+      "summary": "An anal abscess is a painful collection of pus near the back passage that needs prompt drainage. A fistula is a tunnel that can form afterwards.",
+      "sections": [
+        {
+          "heading": "What is an anal abscess?",
+          "body": [
+            "An anal abscess is an infected cavity filled with pus near the anus or rectum. Most begin when a small gland inside the anal canal becomes blocked and infected.",
+            "An abscess is an acute problem - it develops over days and causes constant, throbbing pain that gets worse until the pus is released. It is not something to wait and see about.",
+            "This page is general information only and is not a substitute for advice about your own situation."
+          ]
+        },
+        {
+          "heading": "What is an anal fistula?",
+          "body": [
+            "An anal fistula (also called fistula-in-ano) is a narrow tunnel that connects a gland inside the anal canal to the skin near the anus. It often follows an abscess that has drained.",
+            "An abscess and a fistula are closely related. When an abscess drains, the channel may not close, leaving a fistula. Up to about 4 in 10 people with an anal abscess go on to develop a fistula, and some sources put the figure as high as half. Fistulas rarely close on their own, and they can cause repeated cycles of pain, swelling and discharge.",
+            "Fistulas are more common in people with Crohn's disease, where they can be part of the bowel condition rather than a one-off infection."
+          ]
+        },
+        {
+          "heading": "Who is at higher risk?",
+          "bullets": [
+            "People with Crohn's disease or another inflammatory bowel condition",
+            "People with diabetes",
+            "People whose immune system is suppressed, such as by medicines or illness",
+            "People who are overweight",
+            "People who sit for long periods, or who have a lot of hair and sweat in the area",
+            "Smoking, which slows healing and increases recurrence"
+          ]
+        },
+        {
+          "heading": "Symptoms",
+          "bullets": [
+            "Constant, throbbing pain around the anus, worse when sitting, moving or coughing",
+            "Redness, swelling and warmth near the anus",
+            "Fever, sweats and feeling generally unwell",
+            "Pus, blood or a smelly discharge from near the anus",
+            "Painful bowel motions, or difficulty passing urine",
+            "For a fistula: ongoing or intermittent discharge, skin irritation, and recurring abscesses"
+          ]
+        },
+        {
+          "heading": "How it is diagnosed",
+          "body": [
+            "Your doctor will ask about your symptoms and examine the area. An abscess is often obvious from the outside, but sometimes it is deep and the only clue is severe rectal pain. A gentle internal examination may be needed, although it can be very tender.",
+            "For a fistula, the surgeon looks for an external opening and feels for the tract. Tests can help map complex tracts before surgery. These include an MRI scan of the pelvis, an endoanal ultrasound (a small probe in the anus), and occasionally a CT scan.",
+            "An examination under anaesthetic (EUA) is commonly used. It lets your surgeon examine the area properly while you are asleep, and treat the problem in the same session.",
+            "If Crohn's disease is suspected, your surgeon may involve a gastroenterologist and arrange further bowel tests."
+          ]
+        },
+        {
+          "heading": "Treatment of an abscess",
+          "body": [
+            "An abscess needs to be drained. This is usually done by making a small opening in the skin over the abscess under a local or general anaesthetic, letting the pus out. A larger or deeper abscess may need a formal drainage in an operating theatre, sometimes with an overnight stay.",
+            "Antibiotics alone are not enough to cure an abscess - drainage is always needed. Antibiotics may be added if the infection is spreading, or if you have diabetes or a weakened immune system.",
+            "Please do not wait to see if an abscess settles by itself. If it is not drained, it usually becomes more painful and can spread into the surrounding tissues. In people with diabetes or a suppressed immune system, infection can become severe quickly, so seek care the same day."
+          ]
+        },
+        {
+          "heading": "Treatment of a fistula",
+          "body": [
+            "Fistulas almost always need surgery to cure them. The aim is to close the tunnel while preserving as much of the anal sphincter muscle as possible, because those muscles control continence.",
+            "For a simple fistula that passes through only a small amount of muscle, a fistulotomy is often used. The surgeon opens the length of the tunnel so it heals as a shallow groove. This has a high chance of success but does divide a small amount of muscle.",
+            "For a more complex fistula, or one involving more muscle, other approaches protect the sphincter better. A seton - a soft thread or drain left through the tunnel for some weeks - keeps it draining and lets inflammation settle before a definitive repair. A LIFT procedure ties off the tunnel in the space between the sphincter muscles. An advancement flap covers the internal opening with healthy tissue. Your surgeon may also use a combination of these.",
+            "There is always a balance between the chance of the fistula coming back and the risk of affecting bowel control. More complex fistulas may need more than one operation, and your surgeon will explain the likely success rate and the risks for your particular fistula. If your fistula is related to Crohn's disease, medicines such as biologics are often the main treatment, with surgery used for infection or as a supplement.",
+            "Recovery usually involves pain relief, fibre and fluids to keep stools soft, warm sitz baths, and dressings. Most people go home the same day or after a short stay. Dr Sutherland will give you clear wound-care instructions and follow-up."
+          ]
+        },
+        {
+          "heading": "When to seek help urgently",
+          "bullets": [
+            "Fever, chills or feeling very unwell with anal pain",
+            "A rapidly growing, red, hot, very painful swelling near the anus",
+            "Pain that is severe or getting worse despite treatment",
+            "Redness spreading across the skin, or skin that looks dusky or blistered",
+            "Being unable to pass urine because of the pain",
+            "If you have diabetes or a weakened immune system, seek care the same day - do not wait",
+            "Call 000 for an ambulance, or go to the nearest emergency department - at Coffs Harbour this is Coffs Harbour Base Hospital"
+          ]
+        }
+      ],
+      "urgent": [
+        "Fever or feeling very unwell with anal pain",
+        "Rapidly growing, red, hot, very painful swelling",
+        "Pain getting worse despite treatment",
+        "Spreading redness, or dusky, blistered skin",
+        "Unable to pass urine because of pain",
+        "Diabetes or immunosuppression with any of the above - seek same-day care"
+      ],
+      "expect": [
+        "An abscess needs prompt drainage",
+        "A fistula is a tunnel that rarely closes alone",
+        "Up to about 4 in 10 abscesses lead to a fistula",
+        "Surgery balances cure against bowel control"
+      ],
+      "questions": [
+        {
+          "q": "Can I just take antibiotics for an abscess?",
+          "a": "No. Antibiotics do not cure an abscess on their own - the pus must be drained. Antibiotics may be used as well, particularly if the infection is spreading or your immune system is weakened."
+        },
+        {
+          "q": "Does draining an abscess mean I will get a fistula?",
+          "a": "Not necessarily, but it is a real possibility. Up to about 4 in 10 people who have an abscess drained go on to develop a fistula. If discharge or pain keeps returning, tell your surgeon."
+        },
+        {
+          "q": "Will treating a fistula affect my bowel control?",
+          "a": "There is a trade-off between curing the fistula and preserving the sphincter muscle. Your surgeon will assess your fistula and choose the approach that best protects your continence, and will explain the small risks involved."
+        },
+        {
+          "q": "Why do I need an MRI or ultrasound?",
+          "a": "Fistula tracts can branch and pass through muscle in ways that are not obvious on examination. Imaging helps your surgeon plan the safest and most effective operation."
+        },
+        {
+          "q": "I have Crohn's disease. Is the treatment different?",
+          "a": "Yes. Perianal fistulas in Crohn's disease are usually treated mainly with medicines that control inflammation, with surgery used for infection or as a supplement. Your surgeon and gastroenterologist will work together."
+        }
+      ],
+      "sources": [
+        { "title": "ASCRS - Abscess and Fistula: Expanded Information", "url": "https://fascrs.org/Web/Web/Patients/Diseases-and-Conditions/A-Z/Abscess-and-Fistula-Expanded-Information.aspx" },
+        { "title": "NHS - Anal fistula", "url": "https://www.nhs.uk/conditions/anal-fistula/" },
+        { "title": "CSSANZ - Condition Information (Anal abscess / fistula)", "url": "https://cssanz.org/Web/Web/Patients-Public/Condition-Information.aspx" },
+        { "title": "Crohn's & Colitis Australia - Complications of IBD", "url": "https://crohnsandcolitis.org.au/living-with-crohns-colitis/medical/complications-of-ibd/" }
+      ],
+      "disclaimer": "This page is general information only; every person's situation is different, and Dr Andrew Sutherland will discuss your individual circumstances, tests and treatment options with you."
+    },
+    {
+      "slug": "pilonidal-sinus",
+      "title": "Pilonidal Sinus (Pilonidal Disease)",
+      "summary": "Pilonidal disease causes a small tunnel or lump in the crease between the buttocks. It only needs treatment if it becomes infected or keeps coming back.",
+      "sections": [
+        {
+          "heading": "What is pilonidal disease?",
+          "body": [
+            "Pilonidal disease affects the skin in the natal cleft - the crease between the buttocks at the top of the bottom. It can cause a pilonidal sinus (one or more narrow tunnels under the skin), a pilonidal cyst (a non-inflamed lump), or a pilonidal abscess (an infected collection of pus).",
+            "The tunnels and cysts contain hair and debris. Hair in the crease can be pushed into the skin, causing irritation and infection. The problem is not caused by poor hygiene.",
+            "Many people have a pilonidal sinus and never notice it. Treatment is usually only needed if it becomes infected, drains, or keeps coming back.",
+            "This page is general information only and is not a substitute for advice about your own situation."
+          ]
+        },
+        {
+          "heading": "Who gets it?",
+          "body": [
+            "Pilonidal disease is most common in young men, particularly between the ages of about 15 and 25. It is more likely in people with a lot of body hair, people who sit for long periods (such as long-distance drivers or office workers), and people with a family history of the condition.",
+            "The shape of the cleft, friction and sweat in the area also play a part. It is not caused by an infection you can catch, and it is not a sexually transmitted infection."
+          ]
+        },
+        {
+          "heading": "Symptoms",
+          "bullets": [
+            "A small lump or dimple at the top of the cleft between the buttocks",
+            "Pain, especially when sitting",
+            "Redness, warmth and swelling if it becomes infected",
+            "Pus, blood or fluid staining the underwear, sometimes with an unpleasant smell",
+            "Fever with a painful swelling (this suggests an abscess)",
+            "Symptoms can come and go over months or years"
+          ]
+        },
+        {
+          "heading": "How it is diagnosed",
+          "body": [
+            "Diagnosis is usually made by your doctor asking about symptoms and looking at the area. Blood tests and scans are rarely needed.",
+            "If there is pus, a swab may be taken to identify the bacteria and guide antibiotic choice. If the problem is extensive or unusual, your surgeon may arrange imaging to see how far the tunnels extend.",
+            "You will not usually need a colonoscopy or bowel tests, because pilonidal disease is a skin condition, not a bowel condition."
+          ]
+        },
+        {
+          "heading": "Treatment without surgery",
+          "body": [
+            "If there are no symptoms, the usual approach is to keep the area clean and dry, shower or bathe regularly, and avoid long periods of sitting without a break.",
+            "Reducing hair in the area can lower the chance of the problem coming back. Options include shaving (only if advised), hair-removal creams (depilatory creams), waxing and laser hair removal. Laser hair removal is increasingly used and is worth discussing with your surgeon, as it can reduce recurrence.",
+            "An occasional discharge may settle with antibiotics, but antibiotics alone will not cure a chronic sinus. If a simple abscess or sinus is present, a small procedure called deroofing and curettage can be done - the roof is removed, the tunnel is cleaned of hair and debris, and the wound is left open to heal with dressings. This is often done under a local anaesthetic and you go home the same day.",
+            "The wound is usually packed or covered and needs regular dressings. Good wound care matters, and your surgeon and practice nurse will show you what to do."
+          ]
+        },
+        {
+          "heading": "If surgery is needed",
+          "body": [
+            "Surgery is considered when the problem is large, repeatedly infected, or causing ongoing discharge, pain or difficulty sitting.",
+            "One option is to remove the sinus and infected tissue and leave the wound open to heal from the bottom up (excision with open healing). This has the lowest chance of the sinus returning but needs careful, regular wound care and can take weeks to heal. The practice's Resources page links to Pilonidal.org, which includes information on an open-healing technique described by Dr Paul Kitchen, and Dr Sutherland has worked with and been trained by Dr Paul Kitchen in this approach.",
+            "Another option is excision with primary closure, where the wound is stitched closed. This tends to heal faster but has a higher chance of the wound not healing or the problem returning.",
+            "Off-midline procedures move the wound away from the centre of the cleft, where healing is difficult. The Bascom cleft lift and the Karydakis flap are examples. These operations generally have better healing and lower recurrence rates than closing the wound in the midline, but they are more extensive and need a longer recovery.",
+            "Your surgeon will discuss which operation suits your pattern of disease, your work and your preferences. Recovery usually takes a few weeks, and heavy lifting, cycling and swimming are avoided until the wound has healed. Recurrence is a real risk with any option, which is why hair control and follow-up matter.",
+            "Dr Sutherland will explain the risks, benefits and likely recovery time for each technique so you can choose together."
+          ]
+        },
+        {
+          "heading": "When to seek help urgently",
+          "bullets": [
+            "A painful lump in the cleft that is red, hot or swollen",
+            "Fever, chills or feeling unwell with the lump",
+            "Pus or blood that is increasing, or a rapidly growing swelling",
+            "Discharge or fever after pilonidal surgery, or a wound that opens up",
+            "Call 000 for an ambulance, or go to the nearest emergency department - at Coffs Harbour this is Coffs Harbour Base Hospital"
+          ]
+        }
+      ],
+      "urgent": [
+        "A painful, red, hot or swollen lump in the cleft",
+        "Fever or feeling unwell with the lump",
+        "Rapidly increasing pus, bleeding or swelling",
+        "Discharge or fever after pilonidal surgery"
+      ],
+      "expect": [
+        "A skin problem in the crease between the buttocks",
+        "Often no treatment needed unless infected",
+        "Abscesses need prompt drainage",
+        "Hair control lowers the chance of recurrence",
+        "Healing can take several weeks"
+      ],
+      "questions": [
+        {
+          "q": "Is pilonidal disease caused by poor hygiene?",
+          "a": "No. It is related to hair entering the skin in the crease, friction, sweat and the shape of the cleft. Keeping the area clean helps, but the condition is not your fault."
+        },
+        {
+          "q": "Will I always need an operation?",
+          "a": "No. If there are no symptoms, no treatment is needed beyond keeping the area clean and reducing hair. Surgery is for an abscess or for disease that keeps causing trouble."
+        },
+        {
+          "q": "How long is recovery after surgery?",
+          "a": "It varies with the operation. Many people return to work in about 2 to 3 weeks, but healing of an open wound can take longer. Your surgeon will give you a realistic timeline for your procedure."
+        },
+        {
+          "q": "Can the problem come back?",
+          "a": "Yes, recurrence is a real risk with any treatment. Keeping the area hair-free, clean and dry, avoiding long periods of sitting and following wound-care advice all help reduce the chance."
+        },
+        {
+          "q": "Is laser hair removal worth it?",
+          "a": "Many surgeons recommend it for people with recurrent pilonidal disease. It reduces hair growth in the area and may lower the chance of the sinus returning. Discuss it with your surgeon."
+        }
+      ],
+      "sources": [
+        { "title": "NHS - Pilonidal sinus", "url": "https://www.nhs.uk/conditions/pilonidal-sinus/" },
+        { "title": "healthdirect - Pilonidal disease", "url": "https://www.healthdirect.gov.au/pilonidal-disease" },
+        { "title": "healthdirect - Surgery for pilonidal sinus", "url": "https://www.healthdirect.gov.au/surgery/surgery-for-pilonidal-sinus" },
+        { "title": "Pilonidal Support Alliance - Treatments for pilonidal disease", "url": "https://www.pilonidal.org/treatments-for-pilonidal-disease/" }
+      ],
+      "disclaimer": "This page is general information only; every person's situation is different, and Dr Andrew Sutherland will discuss your individual circumstances, tests and treatment options with you."
+    },
+    {
+      "slug": "diverticular-disease",
+      "title": "Diverticular Disease",
+      "summary": "Diverticular disease is when small pouches form in the wall of the large bowel. Most cause no trouble, but inflammation can cause pain, fever and bleeding.",
+      "sections": [
+        {
+          "heading": "What is diverticular disease?",
+          "body": [
+            "Diverticula are small pouches or pockets that bulge out through weak spots in the wall of the large bowel (colon). They are most common in the sigmoid colon, the section just above the rectum.",
+            "The words used can be confusing. Diverticulosis means simply having the pouches, usually with no symptoms. Diverticular disease means the pouches are causing symptoms such as crampy pain or changes in bowel habit. Diverticulitis means a pouch has become inflamed or infected. A diverticular bleed is when a pouch bleeds, which can sometimes be brisk.",
+            "This page is general information only and is not a substitute for advice about your own situation."
+          ]
+        },
+        {
+          "heading": "Who gets it?",
+          "body": [
+            "Diverticulosis becomes much more common with age. It affects fewer than 1 in 10 people under 40, and about 1 in 2 people over 80. Most people who have diverticula never get symptoms.",
+            "A diet low in fibre, high in red meat and salt, reduced physical activity, obesity and smoking all increase the chance of developing diverticular disease. Straining to pass hard stools is thought to raise the pressure inside the colon and push the pouches out through weak spots.",
+            "Vegetarians are less likely to be affected."
+          ]
+        },
+        {
+          "heading": "Symptoms",
+          "bullets": [
+            "Diverticulosis: usually no symptoms at all",
+            "Diverticular disease: crampy or intermittent lower tummy pain, bloating, and alternating constipation and diarrhoea",
+            "Diverticulitis: constant pain, usually in the lower left side, often with fever",
+            "Nausea, vomiting or a change in bowel habit during an attack",
+            "Blood in the stool, which may be bright red or darker",
+            "A diverticular bleed can produce a large amount of blood suddenly"
+          ]
+        },
+        {
+          "heading": "How it is diagnosed",
+          "body": [
+            "Diverticulosis is often found by chance during a colonoscopy done for bowel cancer screening or for other gut symptoms.",
+            "If diverticulitis is suspected, a CT scan of the abdomen and pelvis is the usual test, along with blood tests. This shows inflamed pouches and can detect complications such as an abscess or perforation.",
+            "After an attack of diverticulitis, your doctor will usually recommend a colonoscopy (often about 6 to 8 weeks later, once things have settled). This is important because diverticular disease can look very similar to bowel cancer, and the colonoscopy makes sure nothing else is causing the symptoms.",
+            "If you have bleeding, tell your doctor, as this also needs to be assessed."
+          ]
+        },
+        {
+          "heading": "Treatment without surgery",
+          "body": [
+            "Uncomplicated diverticulitis in someone who is otherwise well is increasingly managed without antibiotics. Practice has moved towards a no-antibiotic strategy for people who are systemically well, with simple pain relief such as paracetamol, a period of bowel rest (a low-fibre or fluid-only diet) and clear advice to seek help if symptoms worsen. Antibiotics are still used if you are unwell, have significant other medical conditions, or are immunosuppressed.",
+            "Avoid anti-inflammatory painkillers such as ibuprofen and opioid painkillers such as codeine where possible. They can increase the risk of bowel perforation or cause constipation. Paracetamol is usually the safer choice for pain.",
+            "Between attacks, the mainstays are a high-fibre diet with plenty of fruit and vegetables, adequate fluids, regular physical activity, maintaining a healthy weight and stopping smoking. Increasing fibre gradually helps avoid bloating and wind, and the benefits can take several weeks.",
+            "A common myth is that nuts, seeds, popcorn and fruit skins cause attacks. This is not supported by the evidence - there is no need to avoid them. If you have constipation, a bulk-forming laxative may help, and an antispasmodic can ease cramping."
+          ]
+        },
+        {
+          "heading": "Complications and surgery",
+          "body": [
+            "Most diverticulitis settles without an operation, but complications need treatment. An abscess may be drained with a needle or tube placed under imaging guidance (percutaneous drainage). A perforation that lets stool or pus leak into the abdominal cavity is serious and usually needs emergency surgery. A fistula (an abnormal connection, most often to the bladder) and a stricture (a narrowing that causes blockage) may also need an operation.",
+            "When surgery is needed, the usual operation is a sigmoid colectomy - removing the affected section of colon and rejoining the healthy ends. It is often performed laparoscopically (keyhole surgery). A stoma may sometimes be needed, either temporarily or, less commonly, permanently, depending on the situation and your general health.",
+            "Elective surgery for recurrent diverticulitis is now individualised. It is not automatic after a set number of attacks. Your surgeon will consider how frequent and severe the attacks are, how they affect your life, your general health and your own preferences before recommending an operation.",
+            "Dr Sutherland will discuss the risks, benefits and alternatives, including the option of continuing non-surgical management, so the decision is made together."
+          ]
+        },
+        {
+          "heading": "When to seek help urgently",
+          "bullets": [
+            "Severe or worsening tummy pain, especially with a swollen, rigid tummy",
+            "Fever, chills or feeling very unwell",
+            "Vomiting and being unable to pass wind or stool (possible obstruction)",
+            "Heavy bleeding from the back passage, or large blood clots",
+            "Confusion, pale or blotchy skin, fast breathing, or a very high or low temperature (possible sepsis)",
+            "Call 000 for an ambulance, or go to the nearest emergency department - at Coffs Harbour this is Coffs Harbour Base Hospital"
+          ]
+        }
+      ],
+      "urgent": [
+        "Severe or worsening tummy pain with a swollen tummy",
+        "Fever, chills or feeling very unwell",
+        "Vomiting and unable to pass wind or stool",
+        "Heavy rectal bleeding or large blood clots",
+        "Confusion, blotchy skin, fast breathing or extreme temperature"
+      ],
+      "expect": [
+        "Small pouches in the wall of the colon",
+        "Most people have no symptoms at all",
+        "Uncomplicated attacks usually settle without surgery",
+        "Nuts, seeds and popcorn do not cause attacks",
+        "A colonoscopy is usually advised after an attack"
+      ],
+      "questions": [
+        {
+          "q": "Do I need antibiotics for diverticulitis?",
+          "a": "Not always. For people who are not very unwell, treatment without antibiotics is now common and considered safe. Antibiotics are used if you are systemically unwell, have other significant conditions, or are immunosuppressed."
+        },
+        {
+          "q": "Should I avoid nuts, seeds and popcorn?",
+          "a": "No. There is no good evidence that these foods cause diverticulitis or bleeding, and guidelines specifically say they do not need to be avoided. A healthy high-fibre diet is what helps."
+        },
+        {
+          "q": "Will I need an operation after a certain number of attacks?",
+          "a": "Not automatically. Surgery is now considered individually, taking into account how often and how badly you are affected, your general health and your preferences. Many people are managed without an operation."
+        },
+        {
+          "q": "Why do I need a colonoscopy after diverticulitis?",
+          "a": "Diverticular disease can mimic bowel cancer. A colonoscopy once the inflammation has settled checks the rest of the bowel and makes sure nothing else is causing your symptoms."
+        },
+        {
+          "q": "Can diverticular disease be prevented?",
+          "a": "You cannot guarantee prevention, but a high-fibre diet, plenty of fluids, regular activity, a healthy weight and not smoking all reduce the risk of symptoms and complications."
+        },
+        {
+          "q": "What should I do during a mild attack?",
+          "a": "Follow the advice from your doctor, which may include rest, fluids or a low-fibre diet for a short time, and paracetamol for pain. Seek help promptly if the pain worsens, you develop a fever, or you cannot keep fluids down."
+        }
+      ],
+      "sources": [
+        { "title": "healthdirect - Diverticular disease, diverticulitis and diverticulosis", "url": "https://www.healthdirect.gov.au/diverticular-disease-and-diverticulitis" },
+        { "title": "NICE guideline NG147 - Diverticular disease: diagnosis and management", "url": "https://www.nice.org.uk/guidance/ng147/chapter/Recommendations" },
+        { "title": "ASCRS - Diverticular Disease", "url": "https://fascrs.org/Web/Web/Patients/Diseases-and-Conditions/A-Z/Diverticular-Disease.aspx" },
+        { "title": "CSSANZ - Condition Information (Diverticular disease)", "url": "https://cssanz.org/Web/Web/Patients-Public/Condition-Information.aspx" },
+        { "title": "GESA - Patient Resources", "url": "https://gesa.org.au/Web/Web/Resources/Patient%20Resources.aspx" }
+      ],
+      "disclaimer": "This page is general information only; every person's situation is different, and Dr Andrew Sutherland will discuss your individual circumstances, tests and treatment options with you."
+    }
+  ]
+}

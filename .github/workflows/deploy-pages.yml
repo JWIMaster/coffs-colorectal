@@ -1,0 +1,61 @@
+name: Build and deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let an in-progress deploy finish rather than cancelling it mid-publish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  # GitHub Pages serves project repositories from https://<owner>.github.io/<repo>/
+  SITE_BASE: /${{ github.event.repository.name }}
+  SITE_URL: https://${{ github.repository_owner }}.github.io
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # The site has no dependencies, so there is nothing to install and no
+      # package manager step. The build is plain Node plus the standard library.
+      - name: Build the site
+        run: node build.mjs --base="$SITE_BASE" --out=dist
+
+      # Fail loudly rather than publishing a broken site.
+      - name: Verify the build
+        run: python3 src/_lib/verify.py dist "$SITE_BASE"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

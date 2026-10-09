@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Coffs Colorectal Surgery">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#247485"/>
+      <stop offset="1" stop-color="#113d47"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#g)"/>
+  <path d="M22 14v13a10 10 0 0 0 20 0V14" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round"/>
+  <path d="M32 37v6a9 9 0 0 0 9 9 9 9 0 0 0 9-9v-3" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round"/>
+  <circle cx="50" cy="36" r="3.6" fill="#fff"/>
+</svg>

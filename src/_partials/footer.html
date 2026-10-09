@@ -1,0 +1,84 @@
+<section class="section section--sunken" aria-labelledby="help-h">
+  <div class="shell">
+    <div class="grid grid--2" style="gap:var(--space-l)">
+      <div>
+        <p class="eyebrow">Appointments</p>
+        <h2 id="help-h" style="font-size:var(--step-2)">Making an appointment</h2>
+        <p class="muted" style="margin-top:var(--space-2xs);max-width:46ch">
+          A referral from your general practitioner is needed to claim a Medicare
+          rebate for a specialist consultation. Call the practice and we will explain
+          what to bring and what to expect.
+        </p>
+        <p style="margin-top:var(--space-s);display:flex;gap:0.6rem;flex-wrap:wrap">
+          <a class="btn btn--primary" href="tel:{{tel}}">{{iconPhone}}Call {{phone}}</a>
+          <a class="btn btn--ghost" href="/your-visit/referrals/">How to get a referral</a>
+        </p>
+      </div>
+      <div class="panel">
+        <h3 style="font-size:var(--step-1)">Practice details</h3>
+        <dl class="deflist" style="margin-top:var(--space-xs)">
+          <div>
+            <dt>Consulting address</dt>
+            <dd>{{street}}<br>{{suburb}} {{state}} {{postcode}}</dd>
+          </div>
+          <div><dt>Telephone</dt><dd><a href="tel:{{tel}}">{{phone}}</a></dd></div>
+          <div><dt>Fax</dt><dd>{{fax}}</dd></div>
+          <div><dt>Consulting hours</dt><dd>Monday to Friday, 9am – 5pm</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="shell">
+    <aside class="callout callout--urgent" style="margin-bottom:var(--space-l)" aria-label="Emergency information">
+      {{iconAlert}}
+      <div>
+        <p class="callout__title">In an emergency, call {{ambulance}}</p>
+        <p>
+          For urgent health advice when the rooms are closed, call healthdirect on
+          <a href="tel:1800022222">{{healthdirect}}</a> (free, 24 hours, registered nurses).
+          For life-threatening symptoms, go to the nearest emergency department —
+          {{emergencyDept}}. This website and the enquiry form are
+          <strong>not monitored outside business hours</strong> and are not for urgent
+          or clinical matters. National Relay Service <strong>1800 555 677</strong>;
+          interpreters <strong>131 450</strong>.
+        </p>
+      </div>
+    </aside>
+
+    <div class="footer__grid">
+      <div>
+        <h2>Coffs Colorectal Surgery</h2>
+        <ul>
+          <li style="display:flex;gap:0.5rem;align-items:flex-start">
+            <span aria-hidden="true" style="margin-top:0.15rem;opacity:0.7">{{iconPin}}</span>
+            <span>{{street}}<br>{{suburb}} {{state}} {{postcode}}</span>
+          </li>
+          <li style="display:flex;gap:0.5rem;align-items:center">
+            <span aria-hidden="true" style="opacity:0.7">{{iconPhone}}</span>
+            <a href="tel:{{tel}}">{{phone}}</a>
+          </li>
+          <li>Fax {{fax}}</li>
+          <li><a href="mailto:{{email}}">{{email}}</a></li>
+        </ul>
+      </div>
+      {{groups}}
+    </div>
+
+    <div class="footer__base">
+      <p class="small">
+        &copy; {{year}} Coffs Colorectal Surgery. {{abn}}. All rights reserved.
+      </p>
+      <p class="small">
+        Information on this website is general in nature and is not a substitute for
+        advice from your own doctor.
+      </p>
+    </div>
+
+    <p class="small subtle" style="margin-top:var(--space-m);max-width:70ch">
+      {{acknowledgement}}
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,148 @@
+{
+  "practice": {
+    "name": "Coffs Colorectal Surgery",
+    "tagline": "Colorectal surgery",
+    "region": "Coffs Harbour & the Mid North Coast",
+    "lang": "en-AU",
+    "url": "https://www.coffscolorectal.com.au",
+    "abn": "ABN to be confirmed",
+    "intro": "A specialist colorectal surgery practice in Coffs Harbour, providing care for conditions of the colon, rectum and anus — including bowel cancer, inflammatory bowel disease and benign anorectal conditions.",
+    "credentials": [
+      "Fellow of the Royal Australasian College of Surgeons (FRACS)",
+      "Post-fellowship training accredited by the Colorectal Surgical Society of Australia and New Zealand (CSSANZ)",
+      "Consulting in Coffs Harbour since 2009",
+      "Operates at Baringa Private Hospital and Coffs Harbour Health Campus"
+    ],
+    "acknowledgement": "Coffs Colorectal Surgery acknowledges the Gumbaynggirr people as the Traditional Owners of the land on which we work, and pays respect to Elders past and present."
+  },
+
+  "contact": {
+    "phone": "(02) 6651 6211",
+    "fax": "(02) 6651 6299",
+    "email": "reception@coffscolorectal.com.au",
+    "street": "Suite 4, 29 Orlando Street",
+    "suburb": "Coffs Harbour",
+    "state": "NSW",
+    "postcode": "2450",
+    "address": "Suite 4, 29 Orlando Street, Coffs Harbour NSW 2450",
+    "landmark": "Opposite NBN and Cooper's Surf Shop, in the Orlando Street medical precinct.",
+    "hoursShort": "Monday to Friday, 9am – 5pm",
+    "hours": [
+      { "days": "Monday to Friday", "time": "9:00am – 5:00pm" },
+      { "days": "Saturday, Sunday and public holidays", "time": "Closed" }
+    ],
+    "afterHours": "The practice telephone is not answered outside consulting hours. For urgent health advice, call healthdirect on 1800 022 222. In an emergency call 000."
+  },
+
+  "emergency": {
+    "ambulance": "000",
+    "healthdirect": "1800 022 222",
+    "department": "Coffs Harbour Health Campus emergency department",
+    "relay": "1800 555 677",
+    "interpreter": "131 450"
+  },
+
+  "footerNav": [
+    {
+      "title": "Your visit",
+      "links": [
+        { "label": "Referrals and Medicare", "href": "/your-visit/referrals/" },
+        { "label": "Fees and informed financial consent", "href": "/your-visit/fees/" },
+        { "label": "Bowel preparation", "href": "/your-visit/bowel-preparation/" },
+        { "label": "Symptoms and screening", "href": "/your-visit/symptoms/" },
+        { "label": "After your procedure", "href": "/your-visit/after-surgery/" }
+      ]
+    },
+    {
+      "title": "Clinical information",
+      "links": [
+        { "label": "Conditions", "href": "/conditions/" },
+        { "label": "Procedures", "href": "/procedures/" },
+        { "label": "Resources and support", "href": "/resources/" },
+        { "label": "Dr Andrew Sutherland", "href": "/dr-andrew-sutherland/" }
+      ]
+    },
+    {
+      "title": "About this site",
+      "links": [
+        { "label": "Accessibility statement", "href": "/accessibility/" },
+        { "label": "Privacy policy", "href": "/privacy/" },
+        { "label": "Contact us", "href": "/contact-us/" }
+      ]
+    }
+  ],
+
+  "home": {
+    "heroTitle": "Specialist colorectal surgery in Coffs Harbour",
+    "heroLede": "Care for conditions of the colon, rectum and anus — from bowel cancer and inflammatory bowel disease through to haemorrhoids, fissures and fistulas. Clear information, and honest advice about what each treatment involves.",
+    "metaDescription": "Coffs Colorectal Surgery — Dr Andrew Sutherland, colorectal surgeon in Coffs Harbour. Information for patients about bowel cancer, colonoscopy, and conditions and procedures of the colon, rectum and anus.",
+    "about": [
+      "This website is written for patients and for the doctors who refer to us. It explains colorectal conditions and operations in plain language, sets out what to expect before and after a procedure, and is honest about the risks.",
+      "The information here has been prepared by Dr Andrew Sutherland and is general in nature. It does not take into account your individual circumstances. Nothing on this site replaces a consultation with your surgeon or your general practitioner."
+    ],
+    "screening": {
+      "title": "Bowel cancer screening saves lives",
+      "body": [
+        "Bowel cancer is one of the most common cancers in Australia, and it is one of the most treatable when it is found early. The National Bowel Cancer Screening Program posts a **free test kit** to eligible Australians every two years.",
+        "- People aged **50 to 74** are sent a free kit automatically every two years.",
+        "- People aged **45 to 49** can request their first free kit, and are then sent one every two years. Call the National Cancer Screening Register on **1800 627 701** or visit ncsr.gov.au.",
+        "- If you are younger than 45 or older than 74, or you have a family history of bowel cancer, speak to your GP about what screening is right for you.",
+        "The test looks for invisible traces of blood in a bowel motion. A positive result does **not** mean you have cancer — it means you need a colonoscopy to find out why the blood is there. If you already have symptoms, see your GP rather than waiting for a screening kit; screening is for people without symptoms."
+      ],
+      "symptoms": [
+        "Blood in your bowel motion, or on the toilet paper",
+        "A change in bowel habit lasting more than a few weeks",
+        "Unexplained weight loss",
+        "Abdominal pain, bloating or a feeling of not emptying your bowel",
+        "Unexplained anaemia or low iron"
+      ]
+    }
+  },
+
+  "conditionsIntro": "Each page explains a condition in plain language: what it is, what causes it, the symptoms, how it is diagnosed, and the treatments available — starting with the treatments that do not involve surgery. Most colorectal conditions are managed without an operation.",
+  "proceduresIntro": "Each page explains what an operation involves, how to prepare, what to expect during recovery, and the risks — including the risks that are rare but serious. The exact nature of any procedure depends on your individual circumstances, and Dr Sutherland will discuss this with you in detail.",
+  "consentNote": "Informed consent means you understand the nature of a procedure, why it is being recommended, the alternatives available, and the risks and benefits for you in particular. Please ask as many questions as you need to. It is always reasonable to take information home and think about it before deciding.",
+
+  "resourcesIntro": "These organisations provide further information about colorectal surgery and specific conditions. The inclusion of a link does not imply endorsement by Dr Sutherland. For many problems the best evidence remains specialist opinion rather than definite facts, and more than one approach may be equally reasonable.",
+
+  "symptomsPage": {
+    "title": "Symptoms and screening",
+    "intro": "Colorectal symptoms are common and most of them turn out not to be cancer. But some symptoms need to be checked, and a few need urgent attention. This page explains what to look out for and how the Australian screening program works.",
+    "redFlags": [
+      "Heavy or continuous bleeding from the back passage",
+      "Severe abdominal pain with a swollen, tender abdomen, vomiting, or passing no gas or stool",
+      "Fever with severe pain and swelling around the anus — this may be an abscess and needs prompt treatment",
+      "Feeling faint, dizzy or short of breath with rectal bleeding"
+    ],
+    "seeGp": [
+      "Blood in your bowel motion, or on the toilet paper",
+      "A change in bowel habit — looser, more frequent, or constipation — lasting more than a few weeks",
+      "A feeling of not completely emptying your bowel",
+      "Unexplained weight loss or loss of appetite",
+      "Abdominal pain, cramping or bloating that does not settle",
+      "Unexplained anaemia, or low iron on a blood test",
+      "A lump or swelling in the abdomen or around the back passage",
+      "Mucus or discharge from the back passage"
+    ],
+    "screening": [
+      "The National Bowel Cancer Screening Program posts a free test kit to eligible Australians every two years. People aged **50 to 74** are sent a kit automatically, and people aged **45 to 49** can request one.",
+      "The test is an immunochemical faecal occult blood test (iFOBT), also called a faecal immunochemical test (FIT) or simply a bowel screening test. It detects invisible traces of blood in a bowel motion. It does **not** detect cancer, and a positive result does **not** mean you have cancer — it means you need a colonoscopy to establish the cause.",
+      "If you have symptoms, do not wait for a screening kit. See your GP, because a screening test is not the right test for someone with symptoms.",
+      "If your kit is lost, expired or damaged, a free replacement can be requested from the National Cancer Screening Register."
+    ]
+  },
+
+  "afterSurgeryPage": {
+    "title": "After your procedure",
+    "intro": "Recovery is different for every operation and every person. This page covers what is generally expected after colorectal surgery, and the symptoms that mean you should contact us or seek urgent care.",
+    "contactIf": [
+      "Fever or chills, or feeling generally unwell",
+      "Increasing pain, redness, swelling or discharge from a wound",
+      "No bowel motion, or passing no gas, with a swollen and painful abdomen",
+      "Persistent vomiting",
+      "Bleeding from the back passage that is more than a few streaks",
+      "Chest pain, shortness of breath, or pain and swelling in a calf",
+      "Difficulty passing urine"
+    ]
+  }
+}

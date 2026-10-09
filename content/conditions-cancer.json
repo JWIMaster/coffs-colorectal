@@ -1,0 +1,230 @@
+[
+  {
+    "slug": "colon-cancer",
+    "title": "Colon cancer",
+    "alsoKnownAs": "Also called bowel cancer, or large bowel cancer",
+    "summary": "Cancer of the colon — the large bowel above the rectum. Usually found by colonoscopy, and usually treated by removing the affected section of bowel along with the nearby lymph glands.",
+    "expect": [
+      "Diagnosed by colonoscopy and biopsy",
+      "Staging with CT scans of the chest and abdomen",
+      "Main treatment is surgery to remove the cancer",
+      "The bowel is usually rejoined — a stoma is usually not needed",
+      "Follow-up continues for five years"
+    ],
+    "urgent": [
+      "A bowel obstruction — severe abdominal pain, a swollen abdomen, vomiting, and passing no gas or stool",
+      "Heavy or continuous bleeding from the back passage",
+      "Fever with severe abdominal pain after surgery",
+      "Feeling faint or short of breath with rectal bleeding"
+    ],
+    "sections": [
+      {
+        "heading": "What is colon cancer?",
+        "body": [
+          "The colon is another name for the large bowel, excluding the rectum. A cancer is a malignant growth of tissue. Malignant means that it has the potential to spread to other parts of the body. It does **not** mean that it has already spread.",
+          "The term bowel cancer (colorectal cancer) covers cancer of both the colon and the rectum. Despite many similarities between the two, there are important differences in how each is treated. It therefore matters a great deal exactly where a cancer is."
+        ]
+      },
+      {
+        "heading": "Symptoms",
+        "body": [
+          "Colon cancer often causes no symptoms at all in its early stages, which is why screening matters. When symptoms do occur they may include:"
+        ],
+        "bullets": [
+          "Blood in the bowel motion, or bleeding from the back passage",
+          "A persistent change in bowel habit lasting more than a few weeks",
+          "Abdominal pain, cramping or bloating",
+          "Unexplained weight loss, tiredness, or anaemia (low iron)",
+          "A feeling of not completely emptying the bowel",
+          "A lump in the abdomen"
+        ]
+      },
+      {
+        "heading": "How it is diagnosed",
+        "body": [
+          "Colon cancer is usually diagnosed readily by colonoscopy and biopsy — the removal of a very small piece of the growth for examination under a microscope.",
+          "Screening tests, such as the immunochemical faecal occult blood test (iFOBT, also called a FIT) used in the National Bowel Cancer Screening Program, detect microscopic amounts of blood in the faeces. They do **not** detect cancer. Many cancers bleed a small amount into the bowel, but there are many other causes of a positive screening test apart from cancer.",
+          "After a diagnosis, further tests are usually performed to determine the stage of the cancer. This is largely aimed at detecting spread to other organs, and involves a CT (computed tomography) scan of the abdomen and chest."
+        ]
+      },
+      {
+        "heading": "Treatment",
+        "body": [
+          "The main treatment for colon cancer is surgery to remove the segment of colon containing the cancer, together with the lymph glands that drain that segment. This is called a colectomy, or colon resection. It can usually be done laparoscopically (by keyhole surgery).",
+          "The bowel can usually be rejoined straight away, which means there is usually no need for a stoma. Where the join is not safe, or where the bowel is obstructed, a stoma may be needed — often temporarily.",
+          "Depending on the stage of the cancer, chemotherapy may also be recommended after surgery. This is discussed with a medical oncologist, and the decision depends on what the pathology shows."
+        ]
+      },
+      {
+        "heading": "Follow-up",
+        "body": [
+          "There are several reasons your surgeon will continue to see you after surgery. Initially it is important to ensure that the recovery proceeds well. In the longer term it is important to be monitored for recurrence of the cancer. This will involve regular blood tests and visits for five years after the time of surgery. A recurrence may still be curable if it is detected early.",
+          "In addition, there is an ongoing risk of developing more polyps in the bowel, or even a second bowel cancer. Colonoscopy will be recommended periodically, depending on the nature of the initial cancer."
+        ]
+      },
+      {
+        "heading": "Support",
+        "body": [
+          "The diagnosis of cancer, and the treatment it requires, are often devastating for a person and their family. There are many supports available to help during this difficult period and afterwards. Speak to your surgeon or general practitioner for help, and see our resources page for organisations that provide information and support."
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "q": "Will I need a stoma?",
+        "a": "Usually not. For cancer of the colon, the bowel can normally be rejoined during the same operation. A stoma is needed only when rejoining the bowel would not be safe, such as when the bowel is obstructed or the join is under tension. Your surgeon will tell you beforehand if a stoma is likely."
+      },
+      {
+        "q": "Do I need chemotherapy as well as surgery?",
+        "a": "Sometimes. The recommendation depends on the stage of the cancer and what the pathologist finds in the lymph glands. Cases where chemotherapy is likely to help are discussed with a medical oncologist and with you."
+      },
+      {
+        "q": "How long will I be in hospital?",
+        "a": "After laparoscopic (keyhole) surgery many people go home after about three to four days. After open surgery it is often longer. The enhanced recovery pathway used by Dr Sutherland is designed to help you eat, move and go home sooner."
+      },
+      {
+        "q": "Can the cancer come back?",
+        "a": "It can, which is why follow-up continues for five years. Most recurrences are found by the scheduled blood tests and scans. A recurrence detected early may still be able to be treated with curative intent."
+      },
+      {
+        "q": "Should my family be screened?",
+        "a": "It depends on your age at diagnosis and whether any other relatives have had bowel cancer or polyps. Your surgeon or GP can advise whether earlier or more frequent colonoscopy is appropriate for your relatives."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Cancer Council Australia — Bowel cancer",
+        "url": "https://www.cancer.org.au/cancer-information/types-of-cancer/bowel-cancer"
+      },
+      {
+        "title": "Bowel Cancer Australia",
+        "url": "https://www.bowelcanceraustralia.org/bowel-cancer/"
+      },
+      {
+        "title": "National Bowel Cancer Screening Program",
+        "url": "https://www.health.gov.au/our-work/national-bowel-cancer-screening-program"
+      },
+      {
+        "title": "NHMRC — Clinical practice guidelines for the prevention, early detection and management of colorectal cancer",
+        "url": "https://www.nhmrc.gov.au/"
+      }
+    ]
+  },
+  {
+    "slug": "rectal-cancer",
+    "title": "Rectal cancer",
+    "alsoKnownAs": "Also called bowel cancer, or cancer of the rectum",
+    "summary": "Cancer of the rectum — the last part of the large bowel before the anus. Treatment often involves chemotherapy and radiotherapy before surgery, and sometimes a temporary stoma.",
+    "expect": [
+      "Often found by rectal examination or colonoscopy",
+      "An MRI scan is the key test for staging",
+      "Chemotherapy and radiotherapy are often given before surgery",
+      "A temporary stoma is commonly used to protect the join",
+      "Bowel habit can take a year or more to settle"
+    ],
+    "urgent": [
+      "A bowel obstruction — severe abdominal pain, a swollen abdomen, vomiting, and passing no gas or stool",
+      "Heavy or continuous bleeding from the back passage",
+      "Fever with severe pain, redness or discharge at a surgical wound",
+      "Increasing pain, swelling or discharge around a stoma",
+      "Pain, swelling or redness in a calf, or chest pain and breathlessness"
+    ],
+    "sections": [
+      {
+        "heading": "What is rectal cancer?",
+        "body": [
+          "The rectum is the last part of the large bowel — approximately the final 12 centimetres before the anus. A cancer is a malignant growth of tissue. Malignant means that it has the potential to spread to other parts of the body. It does **not** mean that it has already spread.",
+          "The term bowel cancer (colorectal cancer) covers cancer of both the colon and the rectum. Despite many similarities, there are significant differences in the way cancer in these two areas is treated. It is therefore important to be clear exactly where the cancer is."
+        ]
+      },
+      {
+        "heading": "Symptoms",
+        "bullets": [
+          "Bleeding from the back passage, or blood mixed with the bowel motion",
+          "A change in bowel habit — looser, more frequent, or a feeling of urgency",
+          "A feeling of not completely emptying the bowel",
+          "Mucus or discharge from the back passage",
+          "Pain or a lump felt in the back passage",
+          "Unexplained weight loss, tiredness or anaemia",
+          "In more advanced cases, pain in the lower back or pelvis"
+        ]
+      },
+      {
+        "heading": "How it is diagnosed and staged",
+        "body": [
+          "Rectal cancer can often be detected by a rectal examination in the consulting room. A colonoscopy and biopsy — the removal of a very small piece of the growth for testing — will usually be required to confirm the diagnosis and to assess the cancer further.",
+          "Screening tests, such as the immunochemical faecal occult blood test (iFOBT, also called a FIT) used in the National Bowel Cancer Screening Program, detect microscopic amounts of blood in the faeces. They do not detect cancer, and there are many other causes for a positive screening test.",
+          "After diagnosis, further tests determine the stage. The most important part of this is judging the size of the cancer and whether it has grown through the wall of the bowel or into nearby structures. The best test for this is a **magnetic resonance imaging (MRI)** scan. Unfortunately, Medicare does not cover the cost of this MRI scan, even though it is recommended by the National Health and Medical Research Council. A CT scan of the chest and abdomen is also used to detect spread to other organs."
+        ]
+      },
+      {
+        "heading": "Treatment",
+        "body": [
+          "The main treatment for rectal cancer is surgery to remove the rectum containing the cancer, along with the lymph glands that drain that area. This is called a rectal resection, and the standard operation is a total mesorectal excision (TME).",
+          "In many cases the rectum can be removed and the bowel rejoined, avoiding a permanent stoma. A temporary stoma is often used to rest the join while it heals, and a second, smaller operation is required to close it. In some cases — depending on the exact location of the cancer and other technical factors — it may not be possible to rejoin the bowel. In that situation the anus is usually removed as well, and a permanent stoma is needed. This is called an abdominoperineal resection.",
+          "The other major treatments for rectal cancer are radiotherapy and chemotherapy. Many people are advised to have chemotherapy and radiotherapy **before** surgery, to shrink the cancer and reduce the risk of it returning. This advice is based largely on the results of the MRI scan."
+        ]
+      },
+      {
+        "heading": "Bowel function after surgery",
+        "body": [
+          "When the rectum is removed, bowel function commonly changes. Frequency, urgency, a feeling of not fully emptying, clustering of bowel actions, and sometimes leakage are all common — particularly after a low join. This is sometimes called low anterior resection syndrome (LARS).",
+          "It usually improves gradually over 12 to 24 months, but the bowel rarely returns to exactly how it was before. There is a good deal that can be done to help — dietary adjustment, medication, pelvic floor exercises and, in selected cases, other treatments. Please raise it at follow-up rather than putting up with it."
+        ]
+      },
+      {
+        "heading": "Follow-up",
+        "body": [
+          "There are several reasons your surgeon will continue to see you after surgery. Initially it is important to ensure that recovery proceeds well. In the longer term it is important to be monitored for recurrence. This involves regular blood tests and visits for five years after surgery. A recurrence may still be curable if it is detected early.",
+          "There is also an ongoing risk of developing more polyps in the bowel, or a second bowel cancer. Colonoscopy will be recommended periodically, depending on the nature of the initial cancer."
+        ]
+      },
+      {
+        "heading": "Support",
+        "body": [
+          "The diagnosis of cancer, and the treatment it requires, are often devastating for a person and their family. There are many supports available to help during this difficult period and afterwards. Speak to your surgeon or general practitioner for help. A bowel cancer support group also meets in Coffs Harbour on the first Monday of each month at Baringa Private Hospital — call (02) 6656 5749 for details."
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "q": "Will I need a permanent stoma?",
+        "a": "Often not. Most rectal cancers can be removed with the bowel rejoined, although a temporary stoma is commonly used to protect the join while it heals and is closed in a second, smaller operation. A permanent stoma is needed when the cancer is very low and the sphincter cannot be preserved. Your MRI result and examination findings usually make this clear before surgery."
+      },
+      {
+        "q": "Why do I need an MRI scan, and why isn't it free?",
+        "a": "MRI is the most accurate way to judge how far a rectal cancer has grown and whether the surrounding tissues are involved. That information determines whether you should have chemotherapy and radiotherapy before surgery, and what kind of operation is possible. It is recommended by the NHMRC, but it is not currently covered by Medicare for this indication, so there is usually an out-of-pocket cost."
+      },
+      {
+        "q": "Why have treatment before surgery rather than after?",
+        "a": "For some rectal cancers, giving chemotherapy and radiotherapy before surgery shrinks the cancer, makes the operation more straightforward, and reduces the chance of the cancer returning in the pelvis. Whether it is recommended for you depends on the MRI findings."
+      },
+      {
+        "q": "How long until my bowels settle down?",
+        "a": "It varies a great deal. Many people notice a steady improvement over 12 to 24 months, although bowel habit may never be exactly as it was. If symptoms such as urgency, frequency or leakage are affecting your life, tell us — there is usually something that can help."
+      },
+      {
+        "q": "Will I be able to have children afterwards?",
+        "a": "Pelvic radiotherapy and pelvic surgery can affect fertility in both men and women. If you hope to have children, please raise it early so that fertility preservation and referral can be discussed before treatment begins."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Cancer Council Australia — Bowel cancer",
+        "url": "https://www.cancer.org.au/cancer-information/types-of-cancer/bowel-cancer"
+      },
+      {
+        "title": "Bowel Cancer Australia — Bowel cancer treatment",
+        "url": "https://www.bowelcanceraustralia.org/diagnosis-treatment/surgery-treatment/bowel-cancer-treatment/"
+      },
+      {
+        "title": "NHMRC — Clinical practice guidelines for the prevention, early detection and management of colorectal cancer",
+        "url": "https://www.nhmrc.gov.au/"
+      },
+      {
+        "title": "CSSANZ — Colorectal Surgical Society of Australia and New Zealand",
+        "url": "https://www.cssanz.org/"
+      }
+    ]
+  }
+]

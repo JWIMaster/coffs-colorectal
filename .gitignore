@@ -1,0 +1,25 @@
+# Build output and tooling scratch
+dist/
+qa-shots/
+build-report.json
+
+# macOS
+.DS_Store
+
+# The Wayback crawl is kept locally for reference, but is deliberately NOT
+# published. Portions of the captured HTML contain verbatim third-party
+# patient-information text (ASCRS, NHS and others) that is not ours to
+# redistribute, and the raw files are large and machine-generated. The
+# extracted, practice-authored text is committed separately in
+# _archive/content-extracted/ so the rebuild stays reproducible.
+_archive/html/
+_archive/media/
+_archive/pages.json
+_archive/assets.txt
+_archive/media-urls.txt
+_archive/content/
+
+# Editor and environment noise
+*.swp
+.env
+.env.*
