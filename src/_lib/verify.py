@@ -6,7 +6,8 @@ deployment base path has been applied, no template placeholders survived, and
 the safety and accessibility elements are present. Exits non-zero on any
 failure, so a broken build never reaches GitHub Pages.
 
-    python3 src/_lib/verify.py dist /coffs-colorectal
+    python3 src/_lib/verify.py dist /coffs-colorectal \
+        https://jwimaster.github.io/coffs-colorectal/
 """
 
 import pathlib
@@ -40,6 +41,7 @@ def main():
 
     dist = pathlib.Path(sys.argv[1])
     base = (sys.argv[2] if len(sys.argv) > 2 else "").rstrip("/")
+    expect_canonical = sys.argv[3] if len(sys.argv) > 3 else ""
 
     if not dist.is_dir():
         print(f"FAIL: {dist} is not a directory — did the build run?")
@@ -80,6 +82,14 @@ def main():
         for needle, label in REQUIRED:
             if needle not in html:
                 errors.append(f"{display}: missing {label}")
+
+        if expect_canonical:
+            canonical = re.findall(r'<link rel="canonical" href="([^"]+)"', html)
+            expected = expect_canonical + ("" if url == "/" else url.lstrip("/"))
+            if canonical != [expected]:
+                errors.append(
+                    f"{display}: canonical is {canonical or ['none']}, expected {expected}"
+                )
 
         h1s = html.count("<h1")
         if h1s != 1:

@@ -144,6 +144,13 @@ const BASE = (
 /** Prefix an absolute site path with the deployment base. */
 const path = (p) => (p.startsWith("/") ? BASE + p : p);
 
+/** The public origin for this deployment, e.g. https://user.github.io.
+ *  Deliberately not SITE_URL: actions/configure-pages injects its own value. */
+const SITE_ORIGIN = process.env.SITE_ORIGIN || site.practice.url;
+
+/** Absolute URL for a site path, including the deployment base. */
+const absUrl = (p) => `${SITE_ORIGIN}${BASE}${p}`;
+
 export const TEL = site.contact.phone.replace(/[^\d+]/g, "");
 export const HELP_TEL = site.emergency.healthdirect.replace(/\s/g, "");
 
@@ -448,14 +455,15 @@ export function writePage({
   jsonld,
 }) {
   const fullTitle = url === "/" ? title : `${title} — ${site.practice.name}`;
-  const siteUrl = process.env.SITE_URL || site.practice.url;
-
+  // Deliberately not SITE_URL: the Pages configure-pages action injects its own
+  // SITE_URL value, which would silently override this.
   const html = applyBase(
     interpolate(partial("shell"), {
       lang: escapeHTML(site.practice.lang),
       title: escapeHTML(fullTitle),
       description: escapeHTML(description),
-      url: `${siteUrl}${url}`,
+      // Absolute, so applyBase must not touch it — the base is built in here.
+      url: absUrl(url),
       robots: "",
       styles: styles(),
       script: script(),
@@ -482,4 +490,4 @@ export function writePage({
   });
 }
 
-export { ROOT, SRC, OUT, BASE, path, site, procedures, conditions };
+export { ROOT, SRC, OUT, BASE, SITE_ORIGIN, path, absUrl, site, procedures, conditions };

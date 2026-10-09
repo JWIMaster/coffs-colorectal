@@ -12,6 +12,7 @@ import {
   emergencyStrip,
   pageHead,
   card,
+  absUrl,
   TEL,
 } from "../_lib/render.mjs";
 
@@ -137,7 +138,7 @@ export function render() {
         "@context": "https://schema.org",
         "@type": "MedicalClinic",
         name: site.practice.name,
-        url: site.practice.url,
+        url: absUrl("/"),
         telephone: site.contact.phone,
         faxNumber: site.contact.fax,
         email: site.contact.email,

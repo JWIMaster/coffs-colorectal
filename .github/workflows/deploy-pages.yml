@@ -15,11 +15,6 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
-env:
-  # GitHub Pages serves project repositories from https://<owner>.github.io/<repo>/
-  SITE_BASE: /${{ github.event.repository.name }}
-  SITE_URL: https://${{ github.repository_owner }}.github.io
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,6 +27,19 @@ jobs:
         with:
           node-version: "20"
 
+      # Derive the canonical origin and base path. GitHub Pages serves project
+      # repositories from https://<owner>.github.io/<repo>/, and the owner
+      # context preserves the account's capitalisation, so it is lower-cased
+      # here to match the host the site is actually served from.
+      #
+      # The variable is SITE_ORIGIN, not SITE_URL: actions/configure-pages
+      # injects its own SITE_URL later in the job and would override ours.
+      - name: Resolve site URLs
+        run: |
+          set -euo pipefail
+          echo "SITE_BASE=/${GITHUB_REPOSITORY#*/}" >> "$GITHUB_ENV"
+          echo "SITE_ORIGIN=https://${GITHUB_REPOSITORY_OWNER,,}.github.io" >> "$GITHUB_ENV"
+
       # The site has no dependencies, so there is nothing to install and no
       # package manager step. The build is plain Node plus the standard library.
       - name: Build the site
@@ -39,7 +47,10 @@ jobs:
 
       # Fail loudly rather than publishing a broken site.
       - name: Verify the build
-        run: python3 src/_lib/verify.py dist "$SITE_BASE"
+        run: |
+          set -euo pipefail
+          echo "base=$SITE_BASE origin=$SITE_ORIGIN"
+          python3 src/_lib/verify.py dist "$SITE_BASE" "${SITE_ORIGIN}${SITE_BASE}/"
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
