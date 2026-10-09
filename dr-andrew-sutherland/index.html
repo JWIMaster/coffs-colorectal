@@ -482,6 +482,30 @@ main {
   }
 }
 
+/* The wordmark needs roughly 200px beside three actions. Below that it wraps to
+   four lines and inflates the header, so it is replaced by the mark alone, which
+   carries the same accessible name via the link's aria-label. */
+@media (max-width: 27.5rem) {
+  .brand__text {
+    display: none;
+  }
+
+  .brand__mark {
+    inline-size: 2.6rem;
+    block-size: 2.6rem;
+  }
+}
+
+@media (min-width: 27.5rem) and (max-width: 34rem) {
+  .brand__name {
+    font-size: 0.92rem;
+  }
+
+  .brand__sub {
+    display: none;
+  }
+}
+
 /* The full navigation and the menu button are switched at the 64rem breakpoint
    in section 22, at the end of this file. */
 
@@ -634,7 +658,9 @@ main {
   inset: 0;
   z-index: 150;
   display: grid;
-  grid-template-columns: 1fr min(22rem, 88vw);
+  /* minmax(0, 1fr), not 1fr: a 1fr track refuses to shrink below its
+     content, which pushed the whole page sideways on a 320px screen. */
+  grid-template-columns: minmax(0, 1fr) min(22rem, 88vw);
   pointer-events: none;
 }
 
@@ -1125,6 +1151,18 @@ main {
 .nav-sheet__title {
   font-weight: 700;
   letter-spacing: -0.005em;
+}
+
+/* A photograph in a figure: fluid width, natural height. The width/height
+   attributes on the <img> give the browser an aspect ratio to reserve space
+   with, but they must not be allowed to set a fixed rendered height, or a wide
+   image is squashed into that height at narrow widths. */
+.figure-img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-s);
 }
 
 /* --------------------------------------------------------------------------
@@ -2132,9 +2170,10 @@ main {
     <div class="grid grid--2" style="align-items:start;gap:var(--space-xl)">
       <div>
         <figure style="margin:0">
-          <img src="/media/dr-andrew-sutherland.webp" width="440" height="440"
+          <img class="figure-img" src="/media/dr-andrew-sutherland.webp"
+               width="440" height="440"
                alt="Dr Andrew Sutherland, colorectal surgeon."
-               style="border-radius:var(--radius-m);border:1px solid var(--border);box-shadow:var(--shadow-m);max-width:22rem;width:100%;height:auto">
+               style="max-width:22rem">
         </figure>
 
         <div class="panel" style="margin-top:var(--space-m);max-width:26rem">

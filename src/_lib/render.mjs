@@ -42,19 +42,46 @@ export function inline(text) {
   return s;
 }
 
-/** Paragraph / bullet blocks. */
+/**
+ * Paragraph / bullet blocks.
+ *
+ * A plain string renders as a paragraph. A string beginning with "- " is a list
+ * item, and consecutive ones join into a single list — that convention is the
+ * documented content format, so it is honoured here rather than being left to
+ * each caller to remember.
+ */
 export function prose(blocks) {
   if (!blocks) return "";
   const out = [];
+  let list = null;
+
+  const flush = () => {
+    if (list) {
+      out.push(`<ul>${list.map((li) => `<li>${inline(li)}</li>`).join("")}</ul>`);
+      list = null;
+    }
+  };
+
   for (const b of blocks) {
-    if (typeof b === "string") out.push(`<p>${inline(b)}</p>`);
-    else if (b.bullets) {
+    if (typeof b === "string") {
+      if (b.startsWith("- ")) {
+        (list = list || []).push(b.slice(2));
+      } else {
+        flush();
+        out.push(`<p>${inline(b)}</p>`);
+      }
+    } else if (b.bullets) {
+      flush();
       const tag = b.ordered ? "ol" : "ul";
       out.push(
         `<${tag}>${b.bullets.map((li) => `<li>${inline(li)}</li>`).join("")}</${tag}>`,
       );
-    } else if (b.note) out.push(`<p class="small muted">${inline(b.note)}</p>`);
+    } else if (b.note) {
+      flush();
+      out.push(`<p class="small muted">${inline(b.note)}</p>`);
+    }
   }
+  flush();
   return out.join("\n");
 }
 

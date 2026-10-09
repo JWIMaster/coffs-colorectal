@@ -15,7 +15,6 @@
     ],
     "acknowledgement": "Coffs Colorectal Surgery acknowledges the Gumbaynggirr people as the Traditional Owners of the land on which we work, and pays respect to Elders past and present."
   },
-
   "contact": {
     "phone": "(02) 6651 6211",
     "fax": "(02) 6651 6299",
@@ -28,12 +27,17 @@
     "landmark": "Opposite NBN and Cooper's Surf Shop, in the Orlando Street medical precinct.",
     "hoursShort": "Monday to Friday, 9am – 5pm",
     "hours": [
-      { "days": "Monday to Friday", "time": "9:00am – 5:00pm" },
-      { "days": "Saturday, Sunday and public holidays", "time": "Closed" }
+      {
+        "days": "Monday to Friday",
+        "time": "9:00am – 5:00pm"
+      },
+      {
+        "days": "Saturday, Sunday and public holidays",
+        "time": "Closed"
+      }
     ],
     "afterHours": "The practice telephone is not answered outside consulting hours. For urgent health advice, call healthdirect on 1800 022 222. In an emergency call 000."
   },
-
   "emergency": {
     "ambulance": "000",
     "healthdirect": "1800 022 222",
@@ -41,37 +45,71 @@
     "relay": "1800 555 677",
     "interpreter": "131 450"
   },
-
   "footerNav": [
     {
       "title": "Your visit",
       "links": [
-        { "label": "Referrals and Medicare", "href": "/your-visit/referrals/" },
-        { "label": "Fees and informed financial consent", "href": "/your-visit/fees/" },
-        { "label": "Bowel preparation", "href": "/your-visit/bowel-preparation/" },
-        { "label": "Symptoms and screening", "href": "/your-visit/symptoms/" },
-        { "label": "After your procedure", "href": "/your-visit/after-surgery/" }
+        {
+          "label": "Referrals and Medicare",
+          "href": "/your-visit/referrals/"
+        },
+        {
+          "label": "Fees and informed financial consent",
+          "href": "/your-visit/fees/"
+        },
+        {
+          "label": "Bowel preparation",
+          "href": "/your-visit/bowel-preparation/"
+        },
+        {
+          "label": "Symptoms and screening",
+          "href": "/your-visit/symptoms/"
+        },
+        {
+          "label": "After your procedure",
+          "href": "/your-visit/after-surgery/"
+        }
       ]
     },
     {
       "title": "Clinical information",
       "links": [
-        { "label": "Conditions", "href": "/conditions/" },
-        { "label": "Procedures", "href": "/procedures/" },
-        { "label": "Resources and support", "href": "/resources/" },
-        { "label": "Dr Andrew Sutherland", "href": "/dr-andrew-sutherland/" }
+        {
+          "label": "Conditions",
+          "href": "/conditions/"
+        },
+        {
+          "label": "Procedures",
+          "href": "/procedures/"
+        },
+        {
+          "label": "Resources and support",
+          "href": "/resources/"
+        },
+        {
+          "label": "Dr Andrew Sutherland",
+          "href": "/dr-andrew-sutherland/"
+        }
       ]
     },
     {
       "title": "About this site",
       "links": [
-        { "label": "Accessibility statement", "href": "/accessibility/" },
-        { "label": "Privacy policy", "href": "/privacy/" },
-        { "label": "Contact us", "href": "/contact-us/" }
+        {
+          "label": "Accessibility statement",
+          "href": "/accessibility/"
+        },
+        {
+          "label": "Privacy policy",
+          "href": "/privacy/"
+        },
+        {
+          "label": "Contact us",
+          "href": "/contact-us/"
+        }
       ]
     }
   ],
-
   "home": {
     "heroTitle": "Specialist colorectal surgery in Coffs Harbour",
     "heroLede": "Dr Andrew Sutherland provides care for conditions of the colon, rectum and anus for people across Coffs Harbour and the Mid North Coast. Clear information, and honest advice about what each treatment involves.",
@@ -84,9 +122,13 @@
       "title": "Bowel cancer screening saves lives",
       "body": [
         "Bowel cancer is one of the most common cancers in Australia, and it is one of the most treatable when it is found early. The National Bowel Cancer Screening Program posts a **free test kit** to eligible Australians every two years.",
-        "- People aged **50 to 74** are sent a free kit automatically every two years.",
-        "- People aged **45 to 49** can request their first free kit, and are then sent one every two years. Call the National Cancer Screening Register on **1800 627 701** or visit ncsr.gov.au.",
-        "- If you are younger than 45 or older than 74, or you have a family history of bowel cancer, speak to your GP about what screening is right for you.",
+        {
+          "bullets": [
+            "People aged **50 to 74** are sent a free kit automatically every two years.",
+            "People aged **45 to 49** can request their first free kit, and are then sent one every two years. Call the National Cancer Screening Register on **1800 627 701** or visit ncsr.gov.au.",
+            "If you are younger than 45 or older than 74, or you have a family history of bowel cancer, speak to your GP about what screening is right for you."
+          ]
+        },
         "The test looks for invisible traces of blood in a bowel motion. A positive result does **not** mean you have cancer — it means you need a colonoscopy to find out why the blood is there. If you already have symptoms, see your GP rather than waiting for a screening kit; screening is for people without symptoms."
       ],
       "symptoms": [
@@ -98,13 +140,10 @@
       ]
     }
   },
-
   "conditionsIntro": "Each page explains a condition in plain language: what it is, what causes it, the symptoms, how it is diagnosed, and the treatments available, starting with the treatments that do not involve surgery. Most colorectal conditions are managed without an operation.",
   "proceduresIntro": "Each page explains what an operation involves, how to prepare, what to expect during recovery, and the risks, including the risks that are rare but serious. The exact nature of any procedure depends on your individual circumstances, and Dr Sutherland will discuss this with you in detail.",
   "consentNote": "Informed consent means you understand the nature of a procedure, why it is being recommended, the alternatives available, and the risks and benefits for you in particular. Please ask as many questions as you need to. It is always reasonable to take information home and think about it before deciding.",
-
   "resourcesIntro": "These organisations provide further information about colorectal surgery and specific conditions. The inclusion of a link does not imply endorsement by Dr Sutherland. For many problems the best evidence remains specialist opinion rather than definite facts, and more than one approach may be equally reasonable.",
-
   "symptomsPage": {
     "title": "Symptoms and screening",
     "intro": "Colorectal symptoms are common and most of them turn out not to be cancer. But some symptoms need to be checked, and a few need urgent attention. This page explains what to look out for and how the Australian screening program works.",
@@ -131,7 +170,6 @@
       "If your kit is lost, expired or damaged, a free replacement can be requested from the National Cancer Screening Register."
     ]
   },
-
   "afterSurgeryPage": {
     "title": "After your procedure",
     "intro": "Recovery is different for every operation and every person. This page covers what is generally expected after colorectal surgery, and the symptoms that mean you should contact us or seek urgent care.",

@@ -482,6 +482,30 @@ main {
   }
 }
 
+/* The wordmark needs roughly 200px beside three actions. Below that it wraps to
+   four lines and inflates the header, so it is replaced by the mark alone, which
+   carries the same accessible name via the link's aria-label. */
+@media (max-width: 27.5rem) {
+  .brand__text {
+    display: none;
+  }
+
+  .brand__mark {
+    inline-size: 2.6rem;
+    block-size: 2.6rem;
+  }
+}
+
+@media (min-width: 27.5rem) and (max-width: 34rem) {
+  .brand__name {
+    font-size: 0.92rem;
+  }
+
+  .brand__sub {
+    display: none;
+  }
+}
+
 /* The full navigation and the menu button are switched at the 64rem breakpoint
    in section 22, at the end of this file. */
 
@@ -634,7 +658,9 @@ main {
   inset: 0;
   z-index: 150;
   display: grid;
-  grid-template-columns: 1fr min(22rem, 88vw);
+  /* minmax(0, 1fr), not 1fr: a 1fr track refuses to shrink below its
+     content, which pushed the whole page sideways on a 320px screen. */
+  grid-template-columns: minmax(0, 1fr) min(22rem, 88vw);
   pointer-events: none;
 }
 
@@ -1125,6 +1151,18 @@ main {
 .nav-sheet__title {
   font-weight: 700;
   letter-spacing: -0.005em;
+}
+
+/* A photograph in a figure: fluid width, natural height. The width/height
+   attributes on the <img> give the browser an aspect ratio to reserve space
+   with, but they must not be allowed to set a fixed rendered height, or a wide
+   image is squashed into that height at narrow widths. */
+.figure-img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-s);
 }
 
 /* --------------------------------------------------------------------------
@@ -2215,10 +2253,10 @@ main {
 <p>The information here has been prepared by Dr Andrew Sutherland and is general in nature. It does not take into account your individual circumstances. Nothing on this site replaces a consultation with your surgeon or your general practitioner.</p>
       </div>
       <figure style="margin:0">
-        <img src="/media/29-orlando-street.webp" width="1260" height="340"
+        <img class="figure-img" src="/media/29-orlando-street.webp"
+             width="1260" height="340"
              alt="The building at 29 Orlando Street, Coffs Harbour, where the practice is located."
-             loading="lazy" decoding="async"
-             style="border-radius:var(--radius-m);box-shadow:var(--shadow-m);border:1px solid var(--border)">
+             loading="lazy" decoding="async">
         <figcaption class="small subtle" style="margin-top:0.6rem">
           Suite 4, 29 Orlando Street, Coffs Harbour, opposite NBN and Cooper's Surf Shop.
         </figcaption>
@@ -2233,9 +2271,7 @@ main {
       <div class="prose">
         <h2 id="bc-h">Bowel cancer screening saves lives</h2>
         <p>Bowel cancer is one of the most common cancers in Australia, and it is one of the most treatable when it is found early. The National Bowel Cancer Screening Program posts a <strong>free test kit</strong> to eligible Australians every two years.</p>
-<p>- People aged <strong>50 to 74</strong> are sent a free kit automatically every two years.</p>
-<p>- People aged <strong>45 to 49</strong> can request their first free kit, and are then sent one every two years. Call the National Cancer Screening Register on <strong>1800 627 701</strong> or visit ncsr.gov.au.</p>
-<p>- If you are younger than 45 or older than 74, or you have a family history of bowel cancer, speak to your GP about what screening is right for you.</p>
+<ul><li>People aged <strong>50 to 74</strong> are sent a free kit automatically every two years.</li><li>People aged <strong>45 to 49</strong> can request their first free kit, and are then sent one every two years. Call the National Cancer Screening Register on <strong>1800 627 701</strong> or visit ncsr.gov.au.</li><li>If you are younger than 45 or older than 74, or you have a family history of bowel cancer, speak to your GP about what screening is right for you.</li></ul>
 <p>The test looks for invisible traces of blood in a bowel motion. A positive result does <strong>not</strong> mean you have cancer — it means you need a colonoscopy to find out why the blood is there. If you already have symptoms, see your GP rather than waiting for a screening kit; screening is for people without symptoms.</p>
       </div>
       <div class="card">

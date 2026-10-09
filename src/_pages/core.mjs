@@ -96,10 +96,10 @@ export function render() {
         ${prose(h.about)}
       </div>
       <figure style="margin:0">
-        <img src="/media/29-orlando-street.webp" width="1260" height="340"
+        <img class="figure-img" src="/media/29-orlando-street.webp"
+             width="1260" height="340"
              alt="The building at 29 Orlando Street, Coffs Harbour, where the practice is located."
-             loading="lazy" decoding="async"
-             style="border-radius:var(--radius-m);box-shadow:var(--shadow-m);border:1px solid var(--border)">
+             loading="lazy" decoding="async">
         <figcaption class="small subtle" style="margin-top:0.6rem">
           Suite 4, 29 Orlando Street, Coffs Harbour, opposite NBN and Cooper's Surf Shop.
         </figcaption>

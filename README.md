@@ -61,6 +61,45 @@ Canonical URLs currently point at the GitHub Pages address, because
    in the workflow, since a custom domain serves from the root.
 3. Re-run the workflow.
 
+### Mobile verification
+
+`src/_lib/mobile.mjs` runs one representative page per layout template at eight
+real device widths (320, 360, 375, 390, 414, 430, 768, 834) and measures the
+things that make a layout feel squashed rather than merely narrow:
+
+```bash
+node src/_lib/mobile.mjs           # measure
+node src/_lib/mobile.mjs --shots   # also write full-page screenshots
+```
+
+It checks horizontal overflow, elements sticking past the viewport, images
+distorted away from their natural aspect ratio, images overflowing their
+container, text clipped by a fixed height, text running into the screen edge,
+and tap targets below the 24 × 24 minimum. It decodes lazy images before
+measuring (an undecoded image reports `naturalWidth: 0` and hides distortion)
+and ignores the navigation sheet, which sits off-screen by design.
+
+This caught three real defects that a desktop pass could not see:
+
+- **The building photograph rendered as a square.** `width="1260" height="340"`
+  on the `<img>` was being read as a CSS height, so the 3.7:1 banner was squashed
+  to 1:1 — 71% vertical distortion at 390px. Fixed with a `.figure-img` class
+  that sets `block-size: auto`; the attributes now only reserve aspect-ratio
+  space, which is what they are for.
+- **The page scrolled sideways at 320px.** The navigation sheet used a `1fr`
+  grid track, which refuses to shrink below its content, so the fixed overlay
+  grew to 385px and pushed the whole document wider than the screen. Changed to
+  `minmax(0, 1fr)`.
+- **The brand lockup wrapped to four lines** below 440px ("Coffs / Colorectal /
+  Surgery / Colorectal surgery"), inflating the header. The wordmark is now
+  replaced by the mark alone on narrow screens, keeping the same accessible name
+  through the link's `aria-label`.
+
+A fourth defect was found on the way: three bullet lists in the home page's
+screening copy rendered as literal `-` text because the documented `- ` content
+convention was never parsed. `prose()` now handles it, and consecutive
+dash-prefixed strings collapse into one `<ul>`.
+
 ### Verifying a deployment
 
 `src/_lib/verify.py` inspects the built artifact rather than trusting the build.

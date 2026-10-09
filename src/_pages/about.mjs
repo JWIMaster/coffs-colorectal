@@ -28,9 +28,10 @@ function bioPage() {
     <div class="grid grid--2" style="align-items:start;gap:var(--space-xl)">
       <div>
         <figure style="margin:0">
-          <img src="/media/dr-andrew-sutherland.webp" width="440" height="440"
+          <img class="figure-img" src="/media/dr-andrew-sutherland.webp"
+               width="440" height="440"
                alt="Dr Andrew Sutherland, colorectal surgeon."
-               style="border-radius:var(--radius-m);border:1px solid var(--border);box-shadow:var(--shadow-m);max-width:22rem;width:100%;height:auto">
+               style="max-width:22rem">
         </figure>
 
         <div class="panel" style="margin-top:var(--space-m);max-width:26rem">
