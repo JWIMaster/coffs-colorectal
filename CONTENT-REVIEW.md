@@ -163,7 +163,10 @@ Only four images existed on the entire 2014 site, and three are in use:
       with the agency's window signage and cars in the foreground. The practice's
       own entrance is not visible. This is the single most improvable element.
 - [ ] The portrait of Dr Sutherland is **110 × 110 pixels** and is soft when
-      displayed larger. A current professional headshot is needed.
+      displayed larger. A current professional headshot is needed. A thorough
+      search of every public source found nothing better; see
+      `media/_review/README.md` for what was checked and the two same-photo
+      alternatives that exist.
 - [ ] The Coffs Creek panorama is 800 × 150 pixels and is used as a hero
       background behind a strong dark overlay, which is the only way it holds up.
       A higher-resolution coastal photograph would allow a lighter treatment.
