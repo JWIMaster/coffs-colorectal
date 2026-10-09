@@ -131,7 +131,11 @@
   --dur-slow: 420ms;
 
   --shell-max: 78rem;
-  --measure: 68ch;
+  /* One reading measure for the whole site, in ch so it tracks the body size.
+     Previously the measure varied by page type: clinical pages ran to 93
+     characters, privacy and accessibility to 83, the visit pages to 78. Same
+     kind of content, different line length, which reads as drift. */
+  --measure: 72ch;
   --header-h: 5rem;
 }
 

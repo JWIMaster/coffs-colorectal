@@ -1356,6 +1356,26 @@ main {
   color: var(--callout-fg);
 }
 
+/* A callout is read, not scanned, so it is held to a reading measure. It
+   previously spanned the full shell at 952-1176px, which is 124-157 characters.
+   The cap goes on the text itself, not the grid cell: a cap on the wrapper only
+   sizes the box, and the paragraphs inside it still ran the full width. */
+/* Absolute caps, not ch: these blocks are set at 14-15.4px rather than the 19px
+   body size, and a ch cap measured against the wrong font resolved far looser
+   than intended. At 14px, 40rem is about 91 characters; at 15.4px, 42rem is
+   about 87. Both are secondary text, so slightly looser than body is right. */
+.callout p,
+.callout li,
+.callout > div {
+  max-inline-size: 42rem;
+}
+
+.prose .small,
+.small,
+.prose .sources {
+  max-inline-size: 40rem;
+}
+
 .callout > svg {
   inline-size: 1.35rem;
   block-size: 1.35rem;
@@ -2128,7 +2148,11 @@ main {
   --dur-slow: 420ms;
 
   --shell-max: 78rem;
-  --measure: 68ch;
+  /* One reading measure for the whole site, in ch so it tracks the body size.
+     Previously the measure varied by page type: clinical pages ran to 93
+     characters, privacy and accessibility to 83, the visit pages to 78. Same
+     kind of content, different line length, which reads as drift. */
+  --measure: 72ch;
   --header-h: 5rem;
 }
 
@@ -2868,6 +2892,7 @@ main {
       panel.addEventListener("pointercancel", endDrag);
     }
   }
+
 
 })();
 </script>
