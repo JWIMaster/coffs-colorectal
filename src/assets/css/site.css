@@ -415,13 +415,14 @@ main {
   background: color-mix(in srgb, var(--brand) 8%, transparent);
 }
 
-.nav__link[aria-current="page"],
-.nav__link[data-section-active="true"] {
+/* aria-current is the only thing that marks the current section. There is
+   deliberately no second hook: a parallel client-set attribute is what let a
+   base-path bug mark Home on every page without the accessible state agreeing. */
+.nav__link[aria-current="page"] {
   color: var(--brand-text);
 }
 
-.nav__link[aria-current="page"]::after,
-.nav__link[data-section-active="true"]::after {
+.nav__link[aria-current="page"]::after {
   content: "";
   position: absolute;
   inset-inline: 0.72rem;
