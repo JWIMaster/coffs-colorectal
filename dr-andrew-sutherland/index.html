@@ -1183,13 +1183,83 @@ main {
   letter-spacing: -0.005em;
 }
 
-/* The circular portrait cut-out. No border or radius of its own: the alpha
-   edge is the shape. */
-.portrait {
+/* --------------------------------------------------------------------------
+   Profile
+   The portrait introduces the page rather than occupying a column of its own,
+   where it left a tall dead gap beside the prose. Below it, the biography and
+   the qualification panel sit side by side and run roughly the same height.
+   -------------------------------------------------------------------------- */
+.profile__intro {
+  display: flex;
+  align-items: center;
+  gap: var(--space-m);
+  padding-block-end: var(--space-l);
+  border-block-end: 1px solid var(--border);
+}
+
+.profile__portrait {
   display: block;
-  inline-size: 100%;
-  block-size: auto;
-  max-inline-size: 20rem;
+  flex: none;
+  inline-size: 7rem;
+  block-size: 7rem;
+  /* The source is a circular cut-out: the alpha edge is the shape, so no
+     border or radius is applied here. */
+}
+
+@media (min-width: 26rem) {
+  .profile__portrait {
+    inline-size: 8rem;
+    block-size: 8rem;
+  }
+}
+
+@media (min-width: 40rem) {
+  .profile__portrait {
+    inline-size: 9.5rem;
+    block-size: 9.5rem;
+  }
+}
+
+.profile__role {
+  font-size: var(--step-2);
+  font-weight: 700;
+  letter-spacing: -0.018em;
+  line-height: 1.2;
+}
+
+.profile__meta {
+  margin-block-start: 0.35rem;
+  color: var(--text-muted);
+  max-inline-size: 54ch;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.profile__body {
+  display: grid;
+  gap: var(--space-xl);
+  padding-block-start: var(--space-l);
+}
+
+@media (min-width: 60rem) {
+  .profile__body {
+    /* Biography first and wider; the facts column is reference material that
+       should not stretch to the height of the prose. */
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.profile__facts {
+  position: sticky;
+  inset-block-start: calc(var(--header-h) + var(--space-s));
+}
+
+/* Sticky only where there is room for it to be useful. */
+@media (max-width: 59.99rem) {
+  .profile__facts {
+    position: static;
+  }
 }
 
 /* A photograph in a figure: fluid width, natural height. The width/height
@@ -2287,39 +2357,26 @@ main {
     <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="/">Home</a></li><li aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></li><li aria-current="page">Dr Andrew Sutherland</li></ol></nav>
     <div class="page-head__inner" style="margin-top:var(--space-s)">
       <h1>Dr Andrew Sutherland</h1>
-      <p class="lede">Colorectal surgeon, consulting in Coffs Harbour since 2009.</p>
+      
     </div>
   </div>
 </header>
 
 <section class="section">
   <div class="shell">
-    <div class="grid grid--2" style="align-items:start;gap:var(--space-xl)">
+    <!-- The portrait introduces him rather than sitting in a column of its own,
+         where it left a tall dead gap beside the prose. -->
+    <div class="profile__intro">
+      <img class="profile__portrait" src="/media/dr-andrew-sutherland.webp"
+           width="440" height="440" loading="lazy" decoding="async"
+           alt="Dr Andrew Sutherland, colorectal surgeon.">
       <div>
-        <figure style="margin:0">
-          <!-- The portrait is supplied as a circular cut-out, so it must not sit
-               in the rectangular figure frame: a bordered square around a circle
-               reads as a mistake. -->
-          <img class="portrait" src="/media/dr-andrew-sutherland.webp"
-               width="440" height="440" loading="lazy" decoding="async"
-               alt="Dr Andrew Sutherland, colorectal surgeon.">
-        </figure>
-
-        <div class="panel" style="margin-top:var(--space-m);max-width:26rem">
-          <h2 style="font-size:var(--step-1)">Qualifications and accreditation</h2>
-          <dl class="deflist" style="margin-top:var(--space-xs)">
-            <div><dt>Fellowship</dt><dd>FRACS, Royal Australasian College of Surgeons, general surgery (2006)</dd></div>
-            <div><dt>Post-fellowship training</dt><dd>Colorectal surgery, CSSANZ training program</dd></div>
-            <div><dt>Medical degree</dt><dd>University of Melbourne (1998)</dd></div>
-            <div><dt>Consulting since</dt><dd>Coffs Harbour, 2009</dd></div>
-          </dl>
-          <p class="small muted" style="margin-top:var(--space-s)">
-            Registration can be verified on the
-            <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners" rel="noopener noreferrer">Ahpra register of practitioners</a>.
-          </p>
-        </div>
+        <p class="profile__role">Colorectal surgeon</p>
+        <p class="profile__meta">Consulting in Coffs Harbour since 2009. Fellow of the Royal Australasian College of Surgeons, and accredited through the CSSANZ post-fellowship training programme.</p>
       </div>
+    </div>
 
+    <div class="profile__body">
       <div class="prose">
         <p>Dr Andrew Sutherland is a specialist colorectal surgeon who has been
         working in Coffs Harbour since early 2009.</p>
@@ -2372,6 +2429,23 @@ main {
         circumstances. It is not a substitute for a consultation. Where an outside
         organisation has been used as a source, it is listed at the foot of the page.</p>
       </div>
+
+      <aside class="profile__facts">
+        <div class="panel">
+          <h2 style="font-size:var(--step-1)">Qualifications and accreditation</h2>
+          <dl class="deflist" style="margin-top:var(--space-xs)">
+            <div><dt>Fellowship</dt><dd>FRACS, Royal Australasian College of Surgeons, general surgery (2006)</dd></div>
+            <div><dt>Post-fellowship training</dt><dd>Colorectal surgery, CSSANZ training program</dd></div>
+            <div><dt>Medical degree</dt><dd>University of Melbourne (1998)</dd></div>
+            <div><dt>Consulting since</dt><dd>Coffs Harbour, 2009</dd></div>
+            <div><dt>Operates at</dt><dd>Baringa Private Hospital<br>Coffs Harbour Health Campus</dd></div>
+          </dl>
+          <p class="small muted" style="margin-top:var(--space-s)">
+            Registration can be verified on the
+            <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners" rel="noopener noreferrer">Ahpra register of practitioners</a>.
+          </p>
+        </div>
+      </aside>
     </div>
   </div>
 </section>

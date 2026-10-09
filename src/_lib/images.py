@@ -40,16 +40,21 @@ def save(img, name, widths, focal=None):
             print(f"  {os.path.basename(out):44s} {os.path.getsize(out):>7d} B  {w}x{h}")
 
 
-def centre_circle(img, size, focus=(0.5, 0.5)):
+def centre_circle(img, size, focus=(0.5, 0.5), zoom=1.0):
     """Crop to a square centred on `focus`, then mask to a circle.
 
     focus is the point of the source, as a fraction of width and height, that
-    should land at the centre of the square. A default of (0.5, 0.5) is a plain
-    centre crop; a portrait where the subject sits off-centre needs the focus
-    moved rather than the whole frame thrown away.
+    should land at the centre of the square; (0.5, 0.5) is a plain centre crop,
+    and a subject who sits off-centre needs the focus moved rather than the frame
+    thrown away.
+
+    zoom crops further in: 1.0 takes the largest square the frame allows, 1.25
+    takes a square a quarter smaller. A portrait shot wide, where the subject
+    occupies only part of the frame, needs both, or the circle fills with
+    background instead of the person.
     """
     img = ImageOps.exif_transpose(img).convert("RGBA")
-    side = min(img.width, img.height)
+    side = int(min(img.width, img.height) / max(zoom, 1.0))
     cx, cy = img.width * focus[0], img.height * focus[1]
     left = max(0, min(img.width - side, int(round(cx - side / 2))))
     top = max(0, min(img.height - side, int(round(cy - side / 2))))
@@ -81,14 +86,18 @@ def main():
     modern = os.path.join(SRC, "dr_andrew_sutherland_2023_2208x2944.webp")
     if os.path.exists(modern):
         head = Image.open(modern)
-        focus = (0.44, 0.30)          # his face, not the frame centre
+        # He sits left of centre, with a bright corridor behind him. Framing on
+        # his face and cropping in a third stops the circle filling with the room.
+        focus = (0.40, 0.26)
+        zoom = 1.30
         print(f"  using {os.path.basename(modern)} ({head.width}x{head.height})")
     else:
         head = Image.open(os.path.join(SRC, "dr_andrew_sutherland.png"))
         focus = (0.5, 0.5)
+        zoom = 1.0
         print("  using the archived 110x110 file (larger source not present)")
     for size in (220, 440):
-        circle = centre_circle(head, size, focus)
+        circle = centre_circle(head, size, focus, zoom)
         circle.save(os.path.join(OUT, f"dr-andrew-sutherland-{size}.webp"),
                     "WEBP", quality=88, method=6)
         circle.save(os.path.join(OUT, f"dr-andrew-sutherland-{size}.png"))

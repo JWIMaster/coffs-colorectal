@@ -87,6 +87,19 @@ generated-page tell, and they were doing no informational work.
 - Cards are used only where a surface genuinely is a discrete, self-contained
   object. They are never the page's structure.
 
+## Profile page
+
+The surgeon's page leads with his role, not his name repeated: the `h1` carries
+the name, a circular portrait sits beside a one-line role and a short credential
+sentence, and a rule closes the block. The biography and the qualifications panel
+then sit side by side, deliberately allowed to differ in height because they are
+different kinds of content — reference material beside prose.
+
+The portrait is a circular cut-out supplied with its own alpha edge, so it takes
+no border and no radius: the shape is the image. It is framed from the 2208x2944
+source with an explicit focus point and zoom rather than a centre crop, because
+the subject sits left of centre with a corridor behind him.
+
 ## Signature detail
 
 The **index row**: name, hairline, summary in a second column, arrow only on

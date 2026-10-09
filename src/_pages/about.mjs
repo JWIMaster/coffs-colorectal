@@ -19,38 +19,25 @@ function bioPage() {
 
   const body = `${pageHead(
     "Dr Andrew Sutherland",
-    "Colorectal surgeon, consulting in Coffs Harbour since 2009.",
+    "",
     trail,
   )}
 
 <section class="section">
   <div class="shell">
-    <div class="grid grid--2" style="align-items:start;gap:var(--space-xl)">
+    <!-- The portrait introduces him rather than sitting in a column of its own,
+         where it left a tall dead gap beside the prose. -->
+    <div class="profile__intro">
+      <img class="profile__portrait" src="/media/dr-andrew-sutherland.webp"
+           width="440" height="440" loading="lazy" decoding="async"
+           alt="Dr Andrew Sutherland, colorectal surgeon.">
       <div>
-        <figure style="margin:0">
-          <!-- The portrait is supplied as a circular cut-out, so it must not sit
-               in the rectangular figure frame: a bordered square around a circle
-               reads as a mistake. -->
-          <img class="portrait" src="/media/dr-andrew-sutherland.webp"
-               width="440" height="440" loading="lazy" decoding="async"
-               alt="Dr Andrew Sutherland, colorectal surgeon.">
-        </figure>
-
-        <div class="panel" style="margin-top:var(--space-m);max-width:26rem">
-          <h2 style="font-size:var(--step-1)">Qualifications and accreditation</h2>
-          <dl class="deflist" style="margin-top:var(--space-xs)">
-            <div><dt>Fellowship</dt><dd>FRACS, Royal Australasian College of Surgeons, general surgery (2006)</dd></div>
-            <div><dt>Post-fellowship training</dt><dd>Colorectal surgery, CSSANZ training program</dd></div>
-            <div><dt>Medical degree</dt><dd>University of Melbourne (1998)</dd></div>
-            <div><dt>Consulting since</dt><dd>Coffs Harbour, 2009</dd></div>
-          </dl>
-          <p class="small muted" style="margin-top:var(--space-s)">
-            Registration can be verified on the
-            <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners" rel="noopener noreferrer">Ahpra register of practitioners</a>.
-          </p>
-        </div>
+        <p class="profile__role">Colorectal surgeon</p>
+        <p class="profile__meta">Consulting in Coffs Harbour since 2009. Fellow of the Royal Australasian College of Surgeons, and accredited through the CSSANZ post-fellowship training programme.</p>
       </div>
+    </div>
 
+    <div class="profile__body">
       <div class="prose">
         <p>Dr Andrew Sutherland is a specialist colorectal surgeon who has been
         working in Coffs Harbour since early 2009.</p>
@@ -103,6 +90,23 @@ function bioPage() {
         circumstances. It is not a substitute for a consultation. Where an outside
         organisation has been used as a source, it is listed at the foot of the page.</p>
       </div>
+
+      <aside class="profile__facts">
+        <div class="panel">
+          <h2 style="font-size:var(--step-1)">Qualifications and accreditation</h2>
+          <dl class="deflist" style="margin-top:var(--space-xs)">
+            <div><dt>Fellowship</dt><dd>FRACS, Royal Australasian College of Surgeons, general surgery (2006)</dd></div>
+            <div><dt>Post-fellowship training</dt><dd>Colorectal surgery, CSSANZ training program</dd></div>
+            <div><dt>Medical degree</dt><dd>University of Melbourne (1998)</dd></div>
+            <div><dt>Consulting since</dt><dd>Coffs Harbour, 2009</dd></div>
+            <div><dt>Operates at</dt><dd>Baringa Private Hospital<br>Coffs Harbour Health Campus</dd></div>
+          </dl>
+          <p class="small muted" style="margin-top:var(--space-s)">
+            Registration can be verified on the
+            <a href="https://www.ahpra.gov.au/Registration/Registers-of-Practitioners" rel="noopener noreferrer">Ahpra register of practitioners</a>.
+          </p>
+        </div>
+      </aside>
     </div>
   </div>
 </section>

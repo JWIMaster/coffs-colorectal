@@ -1183,13 +1183,83 @@ main {
   letter-spacing: -0.005em;
 }
 
-/* The circular portrait cut-out. No border or radius of its own: the alpha
-   edge is the shape. */
-.portrait {
+/* --------------------------------------------------------------------------
+   Profile
+   The portrait introduces the page rather than occupying a column of its own,
+   where it left a tall dead gap beside the prose. Below it, the biography and
+   the qualification panel sit side by side and run roughly the same height.
+   -------------------------------------------------------------------------- */
+.profile__intro {
+  display: flex;
+  align-items: center;
+  gap: var(--space-m);
+  padding-block-end: var(--space-l);
+  border-block-end: 1px solid var(--border);
+}
+
+.profile__portrait {
   display: block;
-  inline-size: 100%;
-  block-size: auto;
-  max-inline-size: 20rem;
+  flex: none;
+  inline-size: 7rem;
+  block-size: 7rem;
+  /* The source is a circular cut-out: the alpha edge is the shape, so no
+     border or radius is applied here. */
+}
+
+@media (min-width: 26rem) {
+  .profile__portrait {
+    inline-size: 8rem;
+    block-size: 8rem;
+  }
+}
+
+@media (min-width: 40rem) {
+  .profile__portrait {
+    inline-size: 9.5rem;
+    block-size: 9.5rem;
+  }
+}
+
+.profile__role {
+  font-size: var(--step-2);
+  font-weight: 700;
+  letter-spacing: -0.018em;
+  line-height: 1.2;
+}
+
+.profile__meta {
+  margin-block-start: 0.35rem;
+  color: var(--text-muted);
+  max-inline-size: 54ch;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.profile__body {
+  display: grid;
+  gap: var(--space-xl);
+  padding-block-start: var(--space-l);
+}
+
+@media (min-width: 60rem) {
+  .profile__body {
+    /* Biography first and wider; the facts column is reference material that
+       should not stretch to the height of the prose. */
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.profile__facts {
+  position: sticky;
+  inset-block-start: calc(var(--header-h) + var(--space-s));
+}
+
+/* Sticky only where there is room for it to be useful. */
+@media (max-width: 59.99rem) {
+  .profile__facts {
+    position: static;
+  }
 }
 
 /* A photograph in a figure: fluid width, natural height. The width/height

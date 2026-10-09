@@ -31,10 +31,26 @@ sharply at every size up to 2x.
 - **A copy is kept locally** at `_archive/media/dr_andrew_sutherland_2023_2208x2944.webp`
   so the build does not depend on their CDN, and `src/_lib/images.py` generates
   the responsive set from it.
-- **The crop is explicit, not automatic.** He sits left of centre with the
-  corridor behind him, so `images.py` takes a focus point of `(0.44, 0.30)` to
-  centre the square on his face rather than the frame. A plain centre crop loses
-  his head to the right-hand third.
+- **The crop is explicit, not automatic.** He sits left of centre, with a bright
+  corridor filling the right of the frame. A plain centre crop loses his head to
+  the right-hand third and fills half the circle with room; a tighter crop with
+  the same focus then frames him too close, chin near the edge. `images.py`
+  takes both a focus point and a zoom, and now uses `(0.40, 0.26)` at `zoom 1.30`
+  — close enough that he fills the circle, wide enough to keep his shoulders.
+  `media/_review/framing-options.png` shows the four variants that were compared.
+
+### How it sits on the page
+
+The portrait is **not** in a column of its own. It introduces the page directly
+beneath the `h1`, as a circular avatar beside his role and credentials, with a
+rule under it; the biography and the qualification panel then sit side by side
+below, roughly matched in height.
+
+The earlier arrangement put the portrait and the qualification panel stacked in a
+narrow left column next to the prose. The prose is roughly three times the
+height of that column, so the portrait ended up floating above a large dead gap —
+the page read as two unrelated halves. `media/_review/framing-options.png` and
+the notes above record the crop work that went with the change.
 
 ### Licensing — action required before this is published
 
