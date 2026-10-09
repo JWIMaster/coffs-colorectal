@@ -6,28 +6,14 @@ which found the previous look sitting in a second-order default cluster.
 
 ## The direction
 
-**Clinical, not editorial.**
+Clinical, calm and easy to navigate. Public Sans, blue-teal actions, cool white
+surfaces and clear rules preserve the practice identity. Spacing and weight
+establish hierarchy; restrained borders and shadows distinguish reference panels.
 
-The subject is a specialist surgical practice. Its own artefacts are theatre
-lists, endoscopy reports, patient information sheets, screening kits and hospital
-wayfinding. Those are high-contrast, information-dense, functional objects, built
-to be read accurately by people who are anxious, in a hurry, or older.
-
-The previous design was neither clinical nor editorial — it was warm and soft:
-parchment ground, sand-toned surfaces, a decorative ocean-to-banksia colour ramp,
-18–26px radii, and frosted glass on two surfaces. It read as "tasteful" rather
-than as anything to do with colorectal surgery, which is what the tell catalog
-calls a second-order default: the look a model reaches for once purple is ruled
-out. It was replaced rather than softened.
-
-Two decisions carry the direction:
-
-1. **One accent with one job.** Blue-teal is the practice's own colour, and it
-   marks only what you can act on — links, primary actions, the current section.
-   It is never decoration. Everything else is ink on a cool near-white ground.
-2. **Hierarchy from weight and rule, not from softness.** Public Sans at 400 /
-   600 / 700 / 800, tight radii, and hairlines separating content. Depth is a
-   defined border first and a tight shadow second, never a halo.
+The homepage leads with a plain introduction beside a surgeon profile. The coast
+photograph has its own panoramic strip rather than sitting behind text. Patient
+pathways give symptoms a wider, tinted entry and keep the other destinations
+compact. Phone layouts stack the introduction, full-width actions and profile.
 
 ## Colour
 
@@ -82,7 +68,7 @@ generated-page tell, and they were doing no informational work.
   the left column, summary in the right, hairlines between. The name carries the
   type weight, so entries outrank each other visually.
 - **The home page is a weighted routemap**, not six equal tiles. "I have symptoms"
-  leads at full width and display size because it is the entry point most people
+  leads at two-thirds width on desktop and full width on phones because it is the entry point most people
   need; the other five fall in beneath at a third width.
 - Cards are used only where a surface genuinely is a discrete, self-contained
   object. They are never the page's structure.
@@ -102,16 +88,16 @@ the subject sits left of centre with a corridor behind him.
 
 ## Signature detail
 
-The **index row**: name, hairline, summary in a second column, arrow only on
-hover. It is the whole site's organising unit, and it is what makes the
+The **index row**: name, hairline, summary in a second column, a visible arrow with stronger feedback on
+hover and focus. It is the whole site's organising unit, and it is what makes the
 conditions and procedures pages read as a reference rather than a brochure.
 
 ## Motion
 
 One authored moment, not an entrance on everything:
 
-- The hero panel settles over 720ms on an exponential ease-out — opacity 0 → 1
-  and scale 0.985 → 1, sampled frame by frame to confirm continuity.
+- The hero panel and introduction settle with a short fade and small vertical
+  movement. Content remains fully visible when reduced motion is requested.
 - Everything else is static at rest.
 - `prefers-reduced-motion: reduce` renders the hero fully visible with no
   animation. `prefers-reduced-transparency` makes the header opaque.
@@ -140,5 +126,5 @@ spacer, and underline offset.
 - **The portrait is a 110×110px image centre-cropped to a circle.** A geometric
   mask approximating a photographic edge is the cheap substitute for a real
   cut-out. The fix is photography, not CSS.
-- **The hero and building photographs are low-resolution.** The banner is a
-  real-estate listing shot. The design works around them; it cannot fix them.
+- **The coastal photograph is low-resolution.** It is displayed as a panoramic
+  strip at its natural aspect ratio. Replacement photography would improve it.

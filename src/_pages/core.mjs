@@ -21,12 +21,6 @@ export function render() {
     const h = site.home;
     const body = `
 <section class="hero">
-  <div class="hero__media">
-    <picture>
-      <source srcset="/media/coffs-creek-estuary.webp" type="image/webp">
-      <img src="/media/coffs-creek-estuary.jpg" alt="" width="800" height="150" fetchpriority="high" decoding="async">
-    </picture>
-  </div>
   <div class="shell hero__inner">
     <div class="hero__copy">
       <h1>${escapeHTML(h.heroTitle)}</h1>
@@ -42,11 +36,10 @@ export function render() {
       </p>
     </div>
     <div class="hero__panel">
-      <h2>${icon("shield")} About the practice</h2>
-      <p class="small" style="margin-top:0.4rem">${inline(site.practice.intro)}</p>
-      <p class="small" style="margin-top:0.5rem">
-        <a class="hero__panel-link" href="/dr-andrew-sutherland/">Read Dr Sutherland's qualifications and experience</a>
-      </p>
+      <div class="hero__surgeon">
+        <img src="/media/dr-andrew-sutherland-220.webp" alt="Dr Andrew Sutherland, colorectal surgeon" width="220" height="220" decoding="async">
+        <div><h2>Dr Andrew Sutherland</h2><p class="small">Specialist colorectal surgeon</p></div>
+      </div>
       <div class="hero__divider"></div>
       <ul class="hero__facts">
         ${site.practice.credentials
@@ -54,13 +47,19 @@ export function render() {
           .join("\n        ")}
       </ul>
       <div class="hero__divider"></div>
-      <p class="small">${escapeHTML(site.contact.street)}, ${escapeHTML(site.contact.suburb)}<br>
-        <a class="quiet-link" href="/contact-us/">Contact and directions</a>
-      </p>
+      <a class="hero__panel-link" href="/dr-andrew-sutherland/">Qualifications and experience ${icon("arrow")}</a>
     </div>
   </div>
 </section>
 
+<div class="coast-banner" aria-hidden="true">  <div class="coast-banner__media">
+    <picture>
+      <source srcset="/media/coffs-creek-estuary.webp" type="image/webp">
+      <img src="/media/coffs-creek-estuary.jpg" alt="" width="800" height="150" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
+  <div class="shell coast-banner__caption">Coffs Harbour &amp; the Mid North Coast</div>
+</div>
 
 <section class="section" aria-labelledby="start-h">
   <div class="shell">
@@ -96,6 +95,7 @@ export function render() {
     <div class="grid grid--2" style="align-items:center;gap:var(--space-xl)">
       <div class="prose">
         <h2 id="about-h">${escapeHTML(site.practice.name)}</h2>
+        <p>${inline(site.practice.intro)}</p>
         ${prose(h.about)}
       </div>
       <figure style="margin:0">

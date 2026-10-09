@@ -11,8 +11,8 @@
 <meta name="description" content="What to expect after colorectal surgery: pain relief, eating, bowel function, activity, wound care, follow-up, and the symptoms that need urgent attention.">
 <link rel="canonical" href="https://www.coffscolorectal.com.au/your-visit/after-surgery/">
 
-<meta name="theme-color" content="#fdfcfa" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e181d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f9fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a1519" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Coffs Colorectal Surgery">
 <meta property="og:title" content="After your procedure — Coffs Colorectal Surgery">
@@ -504,9 +504,13 @@ main {
    four lines and inflates the header, so it is replaced by the mark alone, which
    carries the same accessible name via the link's aria-label. */
 @media (max-width: 27.5rem) {
-  .brand__text {
-    display: none;
-  }
+  .brand__text { display: flex; }
+  .brand__name { font-size: 0.82rem; max-inline-size: 10rem; line-height: 1.2; }
+  .brand__sub { display: none; }
+  .chrome__inner { gap: 0.4rem; }
+  .chrome__actions { gap: 0.15rem; }
+  .brand { gap: 0.5rem; }
+  .brand__mark { display: none; }
 
   .brand__mark {
     inline-size: 2.6rem;
@@ -566,7 +570,7 @@ main {
   gap: 0.5rem;
   padding: 0.72rem 1.15rem;
   min-block-size: 2.75rem;
-  border-radius: var(--radius-full);
+  border-radius: 6px;
   background: var(--btn-bg);
   color: var(--btn-fg);
   font-size: 0.95rem;
@@ -799,180 +803,133 @@ main {
 /* --------------------------------------------------------------------------
    8. Hero
    -------------------------------------------------------------------------- */
+/* A calm introduction, with a separate reference panel for the surgeon. */
 .hero {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background: var(--ink-800);
-  color: #fff;
-  padding-block: var(--space-2xl) var(--space-2xl);
+  background: var(--bg);
+  padding-block: clamp(2.5rem, 5vw, 5rem);
 }
-
-.hero__media {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-}
-
-.hero__media img {
-  inline-size: 100%;
-  block-size: 100%;
-  object-fit: cover;
-  object-position: center 62%;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(
-      168deg,
-      rgb(9 38 46 / 0.93) 0%,
-      var(--hero-tint) 46%,
-      rgb(9 38 46 / 0.95) 100%
-    ),
-    radial-gradient(
-      120% 80% at 12% 0%,
-      rgb(36 116 133 / 0.5) 0%,
-      transparent 60%
-    );
-}
-
 .hero__inner {
   display: grid;
-  gap: var(--space-l);
+  gap: var(--space-xl);
   align-items: center;
 }
-
-@media (min-width: 60rem) {
-  .hero {
-    padding-block: var(--space-2xl);
-  }
-  .hero__inner {
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-    gap: var(--space-xl);
-  }
-}
-
 .hero h1 {
-  color: #fff;
-  text-shadow: 0 1px 24px rgb(0 0 0 / 0.28);
+  max-inline-size: 19ch;
+  font-size: clamp(2.25rem, 3.8vw, 3.65rem);
+  line-height: 1.12;
+  letter-spacing: -0.045em;
 }
-
 .hero .lede {
-  color: rgb(255 255 255 / 0.9);
-  font-size: var(--step-1);
-  max-width: 46ch;
+  color: var(--text-muted);
+  font-size: var(--step-0);
+  max-inline-size: 54ch;
+  line-height: 1.7;
 }
-
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-2xs);
-  margin-block-start: var(--space-m);
+  gap: var(--space-xs);
+  margin-block-start: var(--space-l);
 }
-
-.hero .btn--ghost {
-  --btn-fg: #fff;
-  border-color: rgb(255 255 255 / 0.42);
-}
-
-/* Secondary destinations sit below the two real actions rather than competing
-   with them as more buttons of equal weight. */
 .hero__links {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-s);
-  margin-block-start: var(--space-s);
-  font-size: 0.95rem;
+  gap: var(--space-m);
+  margin-block-start: var(--space-m);
+  font-size: 0.93rem;
 }
-
 .hero__links a {
-  color: rgb(255 255 255 / 0.88);
-  text-decoration-color: rgb(255 255 255 / 0.4);
   font-weight: 600;
+  text-decoration-color: var(--border-strong);
 }
-
-.hero__links a:hover {
-  color: #fff;
-  text-decoration-color: currentColor;
-}
-
-.hero__panel-link {
-  color: #fff;
-  font-weight: 600;
-  text-decoration-color: rgb(255 255 255 / 0.45);
-}
-
-.hero__panel-link:hover {
-  color: #fff;
-  text-decoration-color: currentColor;
-}
-
-.hero .btn--ghost:hover {
-  background: rgb(255 255 255 / 0.14);
-  color: #fff;
-}
-
-/* Translucent card over the hero image — light material on a dark ground. */
 .hero__panel {
-  /* A solid ink panel with a bright top edge. The blur was decoration: the
-     backdrop never changes enough behind it to earn a frosted material. */
-  background: rgb(6 20 26 / 0.82);
-  border: 1px solid rgb(255 255 255 / 0.16);
-  border-top-color: rgb(255 255 255 / 0.3);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: var(--radius-l);
-  padding: var(--space-m);
-  box-shadow: var(--shadow-l);
-  color: #fff;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  box-shadow: var(--shadow-m);
 }
-
+.hero__surgeon {
+  display: flex;
+  gap: var(--space-s);
+  align-items: center;
+}
+.hero__surgeon img {
+  inline-size: 5rem;
+  block-size: 5rem;
+  flex: none;
+}
 .hero__panel h2 {
-  color: #fff;
-  font-size: var(--step-1);
-  letter-spacing: -0.012em;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
 }
-
-/* Vibrancy: heavier weight and a touch more tracking keep text legible over a
-   blurred, changing background. */
-.hero__panel p,
-.hero__panel li,
-.hero__panel dt,
-.hero__panel dd {
-  color: rgb(255 255 255 / 0.94);
-  font-weight: 400;
-  letter-spacing: 0.005em;
+.hero__surgeon p {
+  color: var(--text-muted);
+  margin-block-start: 0.25rem;
 }
-
 .hero__facts {
   display: grid;
-  gap: 0.6rem;
+  gap: var(--space-s);
   margin: 0;
   padding: 0;
   list-style: none;
 }
-
 .hero__facts li {
   display: flex;
   align-items: flex-start;
-  gap: 0.6rem;
-  font-size: 0.95rem;
-  line-height: 1.45;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-muted);
 }
-
 .hero__facts svg {
-  inline-size: 1.1rem;
-  block-size: 1.1rem;
+  inline-size: 1.05rem;
+  block-size: 1.05rem;
   flex: none;
   margin-block-start: 0.18rem;
-  color: rgb(255 255 255 / 0.85);
+  color: var(--brand-text);
 }
-
 .hero__divider {
   block-size: 1px;
-  background: rgb(255 255 255 / 0.22);
-  margin-block: var(--space-s);
+  background: var(--border);
+  margin-block: var(--space-m);
+}
+.hero__panel-link {
+  min-block-size: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.hero__panel-link svg { inline-size: 1rem; block-size: 1rem; flex: none; }
+.coast-banner { position: relative; background: var(--ink-800); }
+.coast-banner__media img { inline-size: 100%; block-size: auto; }
+.coast-banner__caption {
+  position: absolute;
+  inset-block-end: var(--space-m);
+  inset-inline: 0;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-shadow: 0 1px 4px #000;
+}
+.coast-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 40%, rgb(8 22 28 / 0.78));
+}
+.coast-banner__caption { z-index: 1; }
+@media (min-width: 60rem) {
+  .hero__inner { grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr); gap: clamp(2rem, 5vw, 5rem); }
+}
+@media (max-width: 40rem) {
+  .hero__actions { flex-direction: column; align-items: stretch; }
+  .coast-banner__caption { inset-block-end: 0.6rem; font-size: 0.75rem; }
 }
 
 /* --------------------------------------------------------------------------
@@ -1008,7 +965,7 @@ main {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 0.35rem var(--space-l);
-  padding-block: var(--space-s);
+  padding: var(--space-s);
   border-block-end: 1px solid var(--border);
   text-decoration: none;
   color: var(--text);
@@ -1041,8 +998,8 @@ main {
   block-size: 0.85rem;
   flex: none;
   color: var(--brand-text);
-  opacity: 0;
-  transform: translateX(-4px);
+  opacity: 0.65;
+  transform: none;
   transition: opacity var(--dur-fast) var(--ease-out),
     transform var(--dur-fast) var(--ease-out);
 }
@@ -1056,6 +1013,10 @@ main {
   .index__row:hover .index__name {
     color: var(--brand-text);
   }
+}
+
+.index__row:hover, .index__row:focus-visible {
+  background: var(--brand-quiet);
 }
 
 .index__row:active {
@@ -1093,7 +1054,7 @@ main {
    -------------------------------------------------------------------------- */
 .routemap {
   display: grid;
-  gap: var(--space-s);
+  gap: var(--space-l);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
 }
 
@@ -1102,18 +1063,21 @@ main {
     grid-template-columns: repeat(6, 1fr);
   }
   .route--primary {
-    grid-column: span 6;
+    grid-column: span 4;
   }
   .route:not(.route--primary) {
     grid-column: span 2;
   }
+  .route--primary { flex-direction: row; align-items: center; gap: var(--space-l); }
+  .route--primary .route__label { flex: 1; }
+  .route--primary .route__text { flex: 1.4; }
 }
 
 .route {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  padding: var(--space-s) 0;
+  padding: var(--space-m) 0;
   border-block-start: 2px solid var(--border);
   text-decoration: none;
   color: var(--text);
@@ -1137,12 +1101,20 @@ main {
   line-height: 1.28;
   display: flex;
   align-items: baseline;
-  gap: 0.5rem;
+  justify-content: space-between;
+  gap: 0.75rem;
 }
 
 .route--primary .route__label {
   font-size: var(--step-2);
   letter-spacing: -0.02em;
+}
+
+.route--primary {
+  padding: var(--space-m);
+  background: var(--brand-quiet);
+  border-color: var(--brand);
+  border-radius: 0 0 var(--radius-s) var(--radius-s);
 }
 
 .route__label svg {
@@ -1591,6 +1563,7 @@ main {
    14. Breadcrumbs & page header
    -------------------------------------------------------------------------- */
 .crumbs {
+  padding-inline-start: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1624,7 +1597,8 @@ main {
 }
 
 .page-head {
-  padding-block: var(--space-l) var(--space-m);
+  background: var(--surface);
+  padding-block: var(--space-xl) var(--space-l);
   border-block-end: 1px solid var(--border);
 }
 
@@ -1703,7 +1677,7 @@ main {
    17. Footer
    -------------------------------------------------------------------------- */
 .footer {
-  margin-block-start: var(--space-2xl);
+  margin-block-start: 0;
   padding-block: var(--space-xl) var(--space-l);
   background: var(--bg-sunken);
   border-block-start: 1px solid var(--border);
@@ -1900,7 +1874,7 @@ main {
 /* Where a material transition is not wanted, the material is simply solid. */
 @media (prefers-reduced-transparency: reduce) {
   .hero__panel {
-    background: color-mix(in srgb, var(--ink-900) 86%, transparent);
+    background: var(--surface);
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }
@@ -1976,8 +1950,7 @@ main {
     padding-block: 0;
   }
 
-  .hero::after,
-  .hero__media {
+  .coast-banner {
     display: none;
   }
 
@@ -2151,7 +2124,7 @@ main {
 
   --shell-max: 78rem;
   --measure: 68ch;
-  --header-h: 4.25rem;
+  --header-h: 5rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -2159,11 +2132,11 @@ main {
    -------------------------------------------------------------------------- */
 :root,
 :root[data-theme="light"] {
-  --bg: #fdfcfa;
+  --bg: #f7f9fa;
   --bg-sunken: #eff3f5;
   --surface: #ffffff;
   --surface-2: #eff3f5;
-  --surface-inset: #f7f4ef;
+  --surface-inset: #edf2f4;
 
   --text: #16232a;
   --text-muted: #4a5c65;
@@ -2171,8 +2144,8 @@ main {
   --text-subtle: #5e707a;
   --text-on-brand: #ffffff;
 
-  --border: #e2ded6;
-  --border-strong: #cec8bd;
+  --border: #dce5e8;
+  --border-strong: #b7c9cf;
 
   --brand: var(--teal-600);
   --brand-hover: var(--teal-700);
@@ -2626,6 +2599,7 @@ main {
   Array.prototype.forEach.call(themeButtons, function (btn) {
     btn.addEventListener("click", function () {
       var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      stored = next;
       root.setAttribute("data-theme", next);
       try {
         localStorage.setItem("ccs-theme", next);
@@ -2636,7 +2610,7 @@ main {
       var metas = document.querySelectorAll('meta[name="theme-color"]');
       Array.prototype.forEach.call(metas, function (m) {
         if (m.getAttribute("media")) return;
-        m.setAttribute("content", next === "dark" ? "#0e181d" : "#fdfcfa");
+        m.setAttribute("content", next === "dark" ? "#0a1519" : "#f7f9fa");
       });
     });
   });
@@ -2694,7 +2668,7 @@ main {
     // Everything outside the sheet is made inert while it is open, so keyboard
     // and screen-reader users cannot wander into the page behind it.
     function setBackground(inert) {
-      document.querySelectorAll("main, .footer").forEach(function (el) {
+      document.querySelectorAll("main, .footer, .chrome, .help-band").forEach(function (el) {
         if (inert) el.setAttribute("inert", "");
         else el.removeAttribute("inert");
       });

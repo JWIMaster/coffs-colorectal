@@ -132,7 +132,7 @@
 
   --shell-max: 78rem;
   --measure: 68ch;
-  --header-h: 4.25rem;
+  --header-h: 5rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -140,11 +140,11 @@
    -------------------------------------------------------------------------- */
 :root,
 :root[data-theme="light"] {
-  --bg: #fdfcfa;
+  --bg: #f7f9fa;
   --bg-sunken: #eff3f5;
   --surface: #ffffff;
   --surface-2: #eff3f5;
-  --surface-inset: #f7f4ef;
+  --surface-inset: #edf2f4;
 
   --text: #16232a;
   --text-muted: #4a5c65;
@@ -152,8 +152,8 @@
   --text-subtle: #5e707a;
   --text-on-brand: #ffffff;
 
-  --border: #e2ded6;
-  --border-strong: #cec8bd;
+  --border: #dce5e8;
+  --border-strong: #b7c9cf;
 
   --brand: var(--teal-600);
   --brand-hover: var(--teal-700);

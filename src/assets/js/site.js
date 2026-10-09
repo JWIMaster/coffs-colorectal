@@ -38,6 +38,7 @@
   Array.prototype.forEach.call(themeButtons, function (btn) {
     btn.addEventListener("click", function () {
       var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      stored = next;
       root.setAttribute("data-theme", next);
       try {
         localStorage.setItem("ccs-theme", next);
@@ -48,7 +49,7 @@
       var metas = document.querySelectorAll('meta[name="theme-color"]');
       Array.prototype.forEach.call(metas, function (m) {
         if (m.getAttribute("media")) return;
-        m.setAttribute("content", next === "dark" ? "#0e181d" : "#fdfcfa");
+        m.setAttribute("content", next === "dark" ? "#0a1519" : "#f7f9fa");
       });
     });
   });
@@ -106,7 +107,7 @@
     // Everything outside the sheet is made inert while it is open, so keyboard
     // and screen-reader users cannot wander into the page behind it.
     function setBackground(inert) {
-      document.querySelectorAll("main, .footer").forEach(function (el) {
+      document.querySelectorAll("main, .footer, .chrome, .help-band").forEach(function (el) {
         if (inert) el.setAttribute("inert", "");
         else el.removeAttribute("inert");
       });
