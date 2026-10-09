@@ -9,7 +9,6 @@ import {
   prose,
   icon,
   escapeHTML,
-  emergencyStrip,
   pageHead,
   card,
   absUrl,
@@ -34,13 +33,20 @@ export function render() {
       <p class="lede" style="margin-top:var(--space-s)">${inline(h.heroLede)}</p>
       <p class="hero__actions">
         <a class="btn btn--primary" href="tel:${TEL}">${icon("phone")}Call ${escapeHTML(site.contact.phone)}</a>
-        <a class="btn btn--ghost" href="/conditions/">Conditions</a>
-        <a class="btn btn--ghost" href="/procedures/">Procedures</a>
+        <a class="btn btn--ghost" href="/dr-andrew-sutherland/">Meet Dr Andrew Sutherland</a>
+      </p>
+      <p class="hero__links">
+        <a href="/conditions/">Conditions</a>
+        <a href="/procedures/">Procedures</a>
+        <a href="/your-visit/">Your visit</a>
       </p>
     </div>
     <div class="hero__panel">
       <h2>${icon("shield")} About the practice</h2>
       <p class="small" style="margin-top:0.4rem">${inline(site.practice.intro)}</p>
+      <p class="small" style="margin-top:0.5rem">
+        <a class="hero__panel-link" href="/dr-andrew-sutherland/">Read Dr Sutherland's qualifications and experience</a>
+      </p>
       <div class="hero__divider"></div>
       <ul class="hero__facts">
         ${site.practice.credentials
@@ -55,9 +61,6 @@ export function render() {
   </div>
 </section>
 
-<section class="section section--tight">
-  <div class="shell">${emergencyStrip()}</div>
-</section>
 
 <section class="section" aria-labelledby="start-h">
   <div class="shell">
@@ -181,9 +184,6 @@ export function render() {
   </div>
 </section>
 
-<section class="section section--tight">
-  <div class="shell">${emergencyStrip()}</div>
-</section>
 `;
     writePage({
       url: "/conditions/",
@@ -224,9 +224,6 @@ export function render() {
   </div>
 </section>
 
-<section class="section section--tight">
-  <div class="shell">${emergencyStrip()}</div>
-</section>
 `;
     writePage({
       url: "/procedures/",

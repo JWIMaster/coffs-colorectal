@@ -10,7 +10,6 @@ import {
   icon,
   escapeHTML,
   pageHead,
-  emergencyStrip,
   relatedBlock,
   sourcesBlock,
   factsStrip,

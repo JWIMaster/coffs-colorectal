@@ -176,6 +176,9 @@ for (const [width, label] of WIDTHS) {
       document.querySelectorAll("h1,h2,h3,h4,p,li,dd,dt,span,a,summary,td,th").forEach((el) => {
         const cs = getComputedStyle(el);
         if (cs.overflow === "visible" && cs.overflowY === "visible") return;
+        // Visually-hidden text is clipped on purpose; it is not a layout defect.
+        if (cs.clipPath && cs.clipPath !== "none") return;
+        if (cs.position === "absolute" && el.offsetWidth <= 1) return;
         if (el.scrollHeight > el.clientHeight + 2 && el.clientHeight > 0) {
           out.clippedText.push(
             `${el.tagName.toLowerCase()}.${String(el.className || "").split(" ")[0]}`

@@ -183,7 +183,7 @@ export const HELP_TEL = site.emergency.healthdirect.replace(/\s/g, "");
 
 const NAV = [
   { label: "Home", href: "/", match: "/" },
-  { label: "Dr Sutherland", href: "/dr-andrew-sutherland/", match: "/dr-andrew-sutherland/" },
+  { label: "About Dr Sutherland", href: "/dr-andrew-sutherland/", match: "/dr-andrew-sutherland/" },
   { label: "Conditions", href: "/conditions/", match: "/conditions/" },
   { label: "Procedures", href: "/procedures/", match: "/procedures/" },
   { label: "Your visit", href: "/your-visit/", match: "/your-visit/" },
@@ -208,6 +208,8 @@ const BASE_SUBS = {
   healthdirect: escapeHTML(site.emergency.healthdirect),
   emergencyDept: escapeHTML(site.emergency.department),
   acknowledgement: escapeHTML(site.practice.acknowledgement),
+  relay: escapeHTML(site.emergency.relay),
+  interpreter: escapeHTML(site.emergency.interpreter),
   iconPhone: icon("phone"),
   iconPin: icon("pin"),
   iconAlert: icon("alert"),
@@ -231,23 +233,10 @@ function renderHeader(url) {
       `<a class="nav-sheet__link" href="${n.href}"${isActive(n, url) ? ' aria-current="page"' : ""}>${n.label}${icon("chevron")}</a>`,
   ).join("\n        ");
 
-  const sheetGroups = site.footerNav
-    .map(
-      (g) => `<p class="nav-sheet__label">${escapeHTML(g.title)}</p>
-        ${g.links
-          .map(
-            (l) =>
-              `<a class="nav-sheet__link" href="${l.href}">${escapeHTML(l.label)}${icon("chevron")}</a>`,
-          )
-          .join("\n        ")}`,
-    )
-    .join("\n        ");
-
   return interpolate(partial("header"), {
     ...BASE_SUBS,
     navLinks,
     sheetLinks,
-    sheetGroups,
   });
 }
 
@@ -264,7 +253,7 @@ const applyBase = (html) =>
         .replace(/(srcset|imagesrcset)="\/(?!\/)/g, `$1="${BASE}/`)
     : html;
 
-function renderFooter() {
+function renderFooter(currentUrl) {
   const groups = site.footerNav
     .map(
       (g) => `<div>
@@ -298,6 +287,10 @@ function renderFooter() {
     groups,
     emergencyNote,
     year: String(new Date().getFullYear()),
+    secondaryLink:
+      currentUrl === "/your-visit/referrals/"
+        ? '<a class="btn btn--ghost" href="/contact-us/">Contact and directions</a>'
+        : '<a class="btn btn--ghost" href="/your-visit/referrals/">How to get a referral</a>',
   });
 }
 
@@ -326,19 +319,6 @@ export function pageHead(title, lede, trail) {
   </div>
 </header>`;
 }
-
-export const emergencyStrip = () => `<aside class="callout callout--urgent" role="note">
-  ${icon("alert")}
-  <div>
-    <p class="callout__title">If this is an emergency, call ${escapeHTML(site.emergency.ambulance)}</p>
-    <p>For urgent health advice when the rooms are closed, call healthdirect on
-    <a href="tel:${HELP_TEL}">${escapeHTML(site.emergency.healthdirect)}</a>
-    (free, 24 hours). For life-threatening symptoms go to the nearest emergency
-    department — ${escapeHTML(site.emergency.department)}. This website and the
-    enquiry form are <strong>not monitored outside business hours</strong> and are not
-    for urgent or clinical matters.</p>
-  </div>
-</aside>`;
 
 export const card = (href, title, text, meta) => `<a class="link-card" href="${href}">
         <span class="link-card__title">${escapeHTML(title)}${icon("arrow")}</span>
@@ -500,7 +480,7 @@ export function writePage({
       styles: styles(),
       script: script(),
       header: renderHeader(url),
-      footer: renderFooter(),
+      footer: renderFooter(url),
       body,
       jsonld: jsonld
         ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>`

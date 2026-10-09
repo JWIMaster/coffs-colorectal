@@ -9,7 +9,6 @@ import {
   icon,
   escapeHTML,
   pageHead,
-  emergencyStrip,
   sourcesBlock,
   faqBlock,
   TEL,
@@ -88,9 +87,6 @@ ${pageHead(s.title, s.intro, trail)}
   </div>
 </section>
 
-<section class="section section--tight">
-  <div class="shell">${emergencyStrip()}</div>
-</section>
 `;
   writePage({
     url: "/your-visit/symptoms/",
@@ -208,9 +204,6 @@ ${sourcesBlock(
   "October 2026",
 )}
 
-<section class="section section--tight">
-  <div class="shell">${emergencyStrip()}</div>
-</section>
 `;
   writePage({
     url: "/your-visit/referrals/",
@@ -319,9 +312,6 @@ ${sourcesBlock(
   "October 2026",
 )}
 
-<section class="section section--tight">
-  <div class="shell">${emergencyStrip()}</div>
-</section>
 `;
   writePage({
     url: "/your-visit/fees/",
@@ -494,9 +484,6 @@ ${sourcesBlock(
   "October 2026",
 )}
 
-<section class="section section--tight">
-  <div class="shell">${emergencyStrip()}</div>
-</section>
 `;
   writePage({
     url: "/your-visit/bowel-preparation/",
@@ -640,9 +627,6 @@ ${sourcesBlock(
   "October 2026",
 )}
 
-<section class="section section--tight">
-  <div class="shell">${emergencyStrip()}</div>
-</section>
 `;
   writePage({
     url: "/your-visit/after-surgery/",
@@ -751,9 +735,6 @@ function resourcesPage() {
   </div>
 </section>
 
-<section class="section section--tight">
-  <div class="shell">${emergencyStrip()}</div>
-</section>
 `;
   writePage({
     url: "/resources/",
@@ -898,9 +879,6 @@ function contactPage() {
   </div>
 </section>
 
-<section class="section section--tight">
-  <div class="shell">${emergencyStrip()}</div>
-</section>
 `;
   writePage({
     url: "/contact-us/",
@@ -943,9 +921,6 @@ function visitIndex() {
   </div>
 </section>
 
-<section class="section section--tight">
-  <div class="shell">${emergencyStrip()}</div>
-</section>
 `;
   writePage({
     url: "/your-visit/",

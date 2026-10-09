@@ -17,8 +17,8 @@
     </nav>
 
     <div class="chrome__actions">
-      <a class="btn btn--quiet btn--sm phone-action" href="tel:{{tel}}" aria-label="Call the practice on {{phone}}">
-        {{iconPhone}}<span class="phone-action__text">{{phone}}</span>
+      <a class="icon-btn phone-action" href="tel:{{tel}}" aria-label="Call the practice on {{phone}}">
+        {{iconPhone}}<span class="phone-action__text sr-only">{{phone}}</span>
       </a>
       <button class="icon-btn theme-toggle" type="button" data-theme-toggle
               aria-label="Switch between light and dark appearance">
@@ -32,6 +32,12 @@
   </div>
 </header>
 
+<!--
+  The menu carries the pages you can go to, and nothing else. It used to repeat
+  the entire footer: seventeen links, three of them listed twice inside the sheet
+  itself, which made a specific page — such as the surgeon's profile — hard to
+  pick out. The footer under every page still lists everything.
+-->
 <div class="nav-sheet" id="nav-sheet" data-open="false" hidden>
   <div class="nav-sheet__scrim" data-menu-close></div>
   <div class="nav-sheet__panel" role="dialog" aria-modal="true" aria-label="Site menu">
@@ -42,14 +48,14 @@
         {{iconClose}}
       </button>
     </div>
-    <nav aria-label="Site">
-        {{sheetLinks}}
+
+    <nav class="nav-sheet__nav" aria-label="Site">
+      {{sheetLinks}}
     </nav>
-    <div class="nav-sheet__group">
-      {{sheetGroups}}
-    </div>
+
     <div class="nav-sheet__foot">
       <a class="btn btn--primary" href="tel:{{tel}}">{{iconPhone}}Call {{phone}}</a>
+      <a class="btn btn--ghost" href="/contact-us/">Contact and directions</a>
     </div>
   </div>
 </div>

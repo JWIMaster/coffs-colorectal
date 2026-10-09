@@ -61,6 +61,45 @@ Canonical URLs currently point at the GitHub Pages address, because
    in the workflow, since a custom domain serves from the root.
 3. Re-run the workflow.
 
+### Content de-duplication
+
+Two blocks were repeating themselves and were consolidated:
+
+**The emergency notice appeared twice or three times on every page** — a
+full-width banner in the body, plus the same information again in the footer. The
+home page mentioned `000` three times. There is now **one** emergency notice,
+in the footer, with the number leading and the less common routes (National
+Relay Service, interpreters, the fact that the form is unmonitored) behind a
+disclosure. Page-specific warnings survive where they do real work: the
+post-operative red flags on *After your procedure*, the symptom red flags on
+*Symptoms and screening*, and the unmonitored-form warning on the contact page
+next to the form itself.
+
+**The phone number appeared five or six times per page** — header, hero button,
+help band, emergency notice, and footer list. It now appears visibly three times
+at most: the header, the primary hero action, and the appointment band. The
+header instance is icon-only with an accessible name, which removes a fourth.
+
+**The appointment block had duplicates**: a "Practice details" panel carrying
+the address, telephone, fax and hours directly above a footer that listed the
+same address and telephone. The panel is gone, and the fax is no longer listed
+twice.
+
+**The mobile menu repeated the entire footer.** It held seventeen links, three
+of them listed twice inside the sheet itself, and fifteen of the seventeen also
+appeared in the footer directly below. Finding one specific page, such as the
+surgeon's profile, meant reading past a duplicated site map. The sheet is now
+the five pages you can go to, plus two actions at the bottom — seven targets.
+The footer still lists everything for anyone who scrolls to it.
+
+**A self-referential link** on `/your-visit/referrals/`: the appointment band
+offered "How to get a referral" while you were already reading that page. It now
+offers "Contact and directions" there instead.
+
+`000`, `healthdirect`, the appointment heading and the after-hours warning all
+appear exactly once per page across all 33 pages, except the three pages where a
+second mention is deliberate and page-specific.
+
 ### Mobile verification
 
 `src/_lib/mobile.mjs` runs one representative page per layout template at eight
@@ -243,6 +282,27 @@ Both a light and a dark appearance are provided. Dark mode follows the operating
 system unless the reader overrides it with the toggle in the header.
 
 ---
+
+## Navigation
+
+Six destinations, and every page reachable in one tap from anywhere:
+
+| | |
+|---|---|
+| Home | `/` |
+| About Dr Sutherland | the surgeon's profile, qualifications and scope |
+| Conditions | nine condition pages, as an editorial index |
+| Procedures | ten procedure pages, as an editorial index |
+| Your visit | symptoms, referrals, fees, bowel preparation, after surgery |
+| Contact | consult hours, directions, parking, access, enquiry form |
+
+The surgeon's page is labelled **"About Dr Sutherland"** rather than
+"Dr Sutherland", because a bare name in a flat list does not say what is behind
+it. On the home page he is reachable without opening any menu at all: a
+"Meet Dr Andrew Sutherland" action in the hero, and a second link in the practice
+panel. The hero's lower-priority destinations (Conditions, Procedures, Your
+visit) are set as plain links rather than buttons so they do not compete with
+the two real actions.
 
 ## Design review
 

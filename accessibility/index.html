@@ -754,19 +754,17 @@ main {
 
 .nav-sheet__link[aria-current="page"] {
   color: var(--brand-text);
-  background: var(--brand-quiet);
+}
+
+.nav-sheet__link[aria-current="page"]::after {
+  content: "";
+  position: absolute;
 }
 
 .nav-sheet__link svg {
   inline-size: 1rem;
   block-size: 1rem;
   opacity: 0.45;
-}
-
-.nav-sheet__group {
-  border-block-start: 1px solid var(--border);
-  margin-block-start: var(--space-2xs);
-  padding-block-start: var(--space-2xs);
 }
 
 .nav-sheet__label {
@@ -864,6 +862,38 @@ main {
 .hero .btn--ghost {
   --btn-fg: #fff;
   border-color: rgb(255 255 255 / 0.42);
+}
+
+/* Secondary destinations sit below the two real actions rather than competing
+   with them as more buttons of equal weight. */
+.hero__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  margin-block-start: var(--space-s);
+  font-size: 0.95rem;
+}
+
+.hero__links a {
+  color: rgb(255 255 255 / 0.88);
+  text-decoration-color: rgb(255 255 255 / 0.4);
+  font-weight: 600;
+}
+
+.hero__links a:hover {
+  color: #fff;
+  text-decoration-color: currentColor;
+}
+
+.hero__panel-link {
+  color: #fff;
+  font-weight: 600;
+  text-decoration-color: rgb(255 255 255 / 0.45);
+}
+
+.hero__panel-link:hover {
+  color: #fff;
+  text-decoration-color: currentColor;
 }
 
 .hero .btn--ghost:hover {
@@ -1635,6 +1665,102 @@ main {
   max-width: 62ch;
 }
 
+
+/* --------------------------------------------------------------------------
+   17b. Help band and emergency note
+   The appointment prompt is a single compact band, and the emergency notice is
+   one quiet block in the footer rather than a banner repeated on every page.
+   -------------------------------------------------------------------------- */
+.help-band {
+  background: var(--bg-sunken);
+  border-block: 1px solid var(--border);
+  padding-block: var(--space-l);
+}
+
+.help-band__inner {
+  display: grid;
+  gap: var(--space-s);
+}
+
+@media (min-width: 52rem) {
+  .help-band__inner {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: center;
+    gap: var(--space-l);
+  }
+}
+
+.help-band h2 {
+  font-size: var(--step-2);
+}
+
+.help-band__text {
+  margin-block-start: 0.35rem;
+  color: var(--text-muted);
+  max-width: 52ch;
+}
+
+.help-band__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+}
+
+.emergency-note {
+  display: grid;
+  gap: var(--space-2xs);
+  padding: var(--space-s) var(--space-s) var(--space-s) var(--space-xs);
+  border-inline-start: 3px solid var(--red-600);
+  background: var(--red-100);
+  border-radius: var(--radius-xs);
+  margin-block-end: var(--space-l);
+}
+
+.emergency-note p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: 76ch;
+}
+
+.emergency-note__more summary {
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-muted);
+  min-block-size: 1.75rem;
+}
+
+.emergency-note__more summary:hover {
+  color: var(--text);
+}
+
+.emergency-note__more ul {
+  margin-block-start: 0.4rem;
+  padding-inline-start: 1.1rem;
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.footer__ack {
+  margin-block-start: var(--space-m);
+  max-inline-size: 70ch;
+}
+
+/* Visually hidden, still announced. Used where an icon carries the meaning. */
+.sr-only {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* --------------------------------------------------------------------------
    18. The one authored moment
    The hero panel arrives as a material rather than a fade: blur radius and
@@ -2092,15 +2218,15 @@ main {
 
     <nav class="nav" aria-label="Primary">
         <a class="nav__link" href="/">Home</a>
-        <a class="nav__link" href="/dr-andrew-sutherland/">Dr Sutherland</a>
+        <a class="nav__link" href="/dr-andrew-sutherland/">About Dr Sutherland</a>
         <a class="nav__link" href="/conditions/">Conditions</a>
         <a class="nav__link" href="/procedures/">Procedures</a>
         <a class="nav__link" href="/your-visit/">Your visit</a>
     </nav>
 
     <div class="chrome__actions">
-      <a class="btn btn--quiet btn--sm phone-action" href="tel:0266516211" aria-label="Call the practice on (02) 6651 6211">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h-2A1.5 1.5 0 0 0 3 4.5C3 13 11 21 19.5 21A1.5 1.5 0 0 0 21 19.5v-2l-4-1.5-2 2a14.5 14.5 0 0 1-5.5-5.5l2-2Z"/></svg><span class="phone-action__text">(02) 6651 6211</span>
+      <a class="icon-btn phone-action" href="tel:0266516211" aria-label="Call the practice on (02) 6651 6211">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h-2A1.5 1.5 0 0 0 3 4.5C3 13 11 21 19.5 21A1.5 1.5 0 0 0 21 19.5v-2l-4-1.5-2 2a14.5 14.5 0 0 1-5.5-5.5l2-2Z"/></svg><span class="phone-action__text sr-only">(02) 6651 6211</span>
       </a>
       <button class="icon-btn theme-toggle" type="button" data-theme-toggle
               aria-label="Switch between light and dark appearance">
@@ -2114,6 +2240,12 @@ main {
   </div>
 </header>
 
+<!--
+  The menu carries the pages you can go to, and nothing else. It used to repeat
+  the entire footer: seventeen links, three of them listed twice inside the sheet
+  itself, which made a specific page — such as the surgeon's profile — hard to
+  pick out. The footer under every page still lists everything.
+-->
 <div class="nav-sheet" id="nav-sheet" data-open="false" hidden>
   <div class="nav-sheet__scrim" data-menu-close></div>
   <div class="nav-sheet__panel" role="dialog" aria-modal="true" aria-label="Site menu">
@@ -2124,32 +2256,18 @@ main {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
       </button>
     </div>
-    <nav aria-label="Site">
-        <a class="nav-sheet__link" href="/">Home<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
-        <a class="nav-sheet__link" href="/dr-andrew-sutherland/">Dr Sutherland<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
+
+    <nav class="nav-sheet__nav" aria-label="Site">
+      <a class="nav-sheet__link" href="/">Home<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
+        <a class="nav-sheet__link" href="/dr-andrew-sutherland/">About Dr Sutherland<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
         <a class="nav-sheet__link" href="/conditions/">Conditions<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
         <a class="nav-sheet__link" href="/procedures/">Procedures<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
         <a class="nav-sheet__link" href="/your-visit/">Your visit<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
     </nav>
-    <div class="nav-sheet__group">
-      <p class="nav-sheet__label">Your visit</p>
-        <a class="nav-sheet__link" href="/your-visit/referrals/">Referrals and Medicare<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
-        <a class="nav-sheet__link" href="/your-visit/fees/">Fees and informed financial consent<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
-        <a class="nav-sheet__link" href="/your-visit/bowel-preparation/">Bowel preparation<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
-        <a class="nav-sheet__link" href="/your-visit/symptoms/">Symptoms and screening<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
-        <a class="nav-sheet__link" href="/your-visit/after-surgery/">After your procedure<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
-        <p class="nav-sheet__label">Clinical information</p>
-        <a class="nav-sheet__link" href="/conditions/">Conditions<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
-        <a class="nav-sheet__link" href="/procedures/">Procedures<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
-        <a class="nav-sheet__link" href="/resources/">Resources and support<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
-        <a class="nav-sheet__link" href="/dr-andrew-sutherland/">Dr Andrew Sutherland<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
-        <p class="nav-sheet__label">About this site</p>
-        <a class="nav-sheet__link" href="/accessibility/">Accessibility statement<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
-        <a class="nav-sheet__link" href="/privacy/">Privacy policy<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
-        <a class="nav-sheet__link" href="/contact-us/">Contact us<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a>
-    </div>
+
     <div class="nav-sheet__foot">
       <a class="btn btn--primary" href="tel:0266516211"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h-2A1.5 1.5 0 0 0 3 4.5C3 13 11 21 19.5 21A1.5 1.5 0 0 0 21 19.5v-2l-4-1.5-2 2a14.5 14.5 0 0 1-5.5-5.5l2-2Z"/></svg>Call (02) 6651 6211</a>
+      <a class="btn btn--ghost" href="/contact-us/">Contact and directions</a>
     </div>
   </div>
 </div>
@@ -2233,68 +2351,52 @@ main {
 <!-- K7 is a cross-file false positive: :focus-visible is defined once, globally,
      in src/assets/css/site.css and applies to every interactive element here.
      Masking it would hide a real focus regression on these elements. -->
-<section class="section section--sunken" aria-labelledby="help-h">
-  <div class="shell">
-    <div class="grid grid--2" style="gap:var(--space-l)">
-      <div>
-        <h2 id="help-h" style="font-size:var(--step-2)">Making an appointment</h2>
-        <p class="muted" style="margin-top:var(--space-2xs);max-width:46ch">
-          A referral from your general practitioner is needed to claim a Medicare
-          rebate for a specialist consultation. Call the practice and we will explain
-          what to bring and what to expect.
-        </p>
-        <p style="margin-top:var(--space-s);display:flex;gap:0.6rem;flex-wrap:wrap">
-          <a class="btn btn--primary" href="tel:0266516211"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h-2A1.5 1.5 0 0 0 3 4.5C3 13 11 21 19.5 21A1.5 1.5 0 0 0 21 19.5v-2l-4-1.5-2 2a14.5 14.5 0 0 1-5.5-5.5l2-2Z"/></svg>Call (02) 6651 6211</a>
-          <a class="btn btn--ghost" href="/your-visit/referrals/">How to get a referral</a>
-        </p>
-      </div>
-      <div class="panel">
-        <h3 style="font-size:var(--step-1)">Practice details</h3>
-        <dl class="deflist" style="margin-top:var(--space-xs)">
-          <div>
-            <dt>Consulting address</dt>
-            <dd>Suite 4, 29 Orlando Street<br>Coffs Harbour NSW 2450</dd>
-          </div>
-          <div><dt>Telephone</dt><dd><a href="tel:0266516211">(02) 6651 6211</a></dd></div>
-          <div><dt>Fax</dt><dd>(02) 6651 6299</dd></div>
-          <div><dt>Consulting hours</dt><dd>Monday to Friday, 9am – 5pm</dd></div>
-        </dl>
-      </div>
+
+<!-- The one appointment prompt on the page. The phone number appears here and
+     once in the header, and nowhere else. -->
+<section class="help-band" aria-labelledby="help-h">
+  <div class="shell help-band__inner">
+    <div>
+      <h2 id="help-h">Making an appointment</h2>
+      <p class="help-band__text">
+        A referral from your general practitioner is needed to claim a Medicare
+        rebate for a specialist consultation.
+      </p>
     </div>
+    <p class="help-band__actions">
+      <a class="btn btn--primary" href="tel:0266516211"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h-2A1.5 1.5 0 0 0 3 4.5C3 13 11 21 19.5 21A1.5 1.5 0 0 0 21 19.5v-2l-4-1.5-2 2a14.5 14.5 0 0 1-5.5-5.5l2-2Z"/></svg>Call (02) 6651 6211</a>
+      <a class="btn btn--ghost" href="/your-visit/referrals/">How to get a referral</a>
+    </p>
   </div>
 </section>
 
 <footer class="footer">
   <div class="shell">
-    <aside class="callout callout--urgent" style="margin-bottom:var(--space-l)" aria-label="Emergency information">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 2.7 19.5h18.6L12 3.5Z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg>
-      <div>
-        <p class="callout__title">In an emergency, call 000</p>
-        <p>
-          For urgent health advice when the rooms are closed, call healthdirect on
-          <a href="tel:1800022222">1800 022 222</a> (free, 24 hours, registered nurses).
-          For life-threatening symptoms, go to the nearest emergency department —
-          Coffs Harbour Health Campus emergency department. This website and the enquiry form are
-          <strong>not monitored outside business hours</strong> and are not for urgent
-          or clinical matters. National Relay Service <strong>1800 555 677</strong>;
-          interpreters <strong>131 450</strong>.
-        </p>
-      </div>
+    <!-- The single emergency notice for the site. Deliberately quiet: 000 is the
+         one fact a reader needs, and it is not competing with the content. -->
+    <aside class="emergency-note" aria-label="Emergency information">
+      <p>
+        <strong>In an emergency, call 000.</strong>
+        For urgent advice when the rooms are closed, call healthdirect on
+        <a href="tel:1800022222">1800 022 222</a>, free, 24 hours.
+        For life-threatening symptoms go to Coffs Harbour Health Campus emergency department.
+      </p>
+      <details class="emergency-note__more">
+        <summary>Other ways to get help</summary>
+        <ul>
+          <li>National Relay Service <strong>1800 555 677</strong>, for people who are deaf or hard of hearing</li>
+          <li>Interpreters, TIS National <strong>131 450</strong></li>
+          <li>The enquiry form is not monitored outside business hours and is not for clinical matters</li>
+        </ul>
+      </details>
     </aside>
 
     <div class="footer__grid">
       <div>
         <h2>Coffs Colorectal Surgery</h2>
         <ul>
-          <li style="display:flex;gap:0.5rem;align-items:flex-start">
-            <span aria-hidden="true" style="margin-top:0.15rem;opacity:0.7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
-            <span>Suite 4, 29 Orlando Street<br>Coffs Harbour NSW 2450</span>
-          </li>
-          <li style="display:flex;gap:0.5rem;align-items:center">
-            <span aria-hidden="true" style="opacity:0.7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h-2A1.5 1.5 0 0 0 3 4.5C3 13 11 21 19.5 21A1.5 1.5 0 0 0 21 19.5v-2l-4-1.5-2 2a14.5 14.5 0 0 1-5.5-5.5l2-2Z"/></svg></span>
-            <a href="tel:0266516211">(02) 6651 6211</a>
-          </li>
-          <li>Fax (02) 6651 6299</li>
+          <li>Suite 4, 29 Orlando Street<br>Coffs Harbour NSW 2450</li>
+          <li><a href="tel:0266516211">(02) 6651 6211</a></li>
           <li><a href="mailto:reception@coffscolorectal.com.au">reception@coffscolorectal.com.au</a></li>
         </ul>
       </div>
@@ -2313,18 +2415,14 @@ main {
     </div>
 
     <div class="footer__base">
+      <p class="small">&copy; 2026 Coffs Colorectal Surgery. ABN to be confirmed. All rights reserved.</p>
       <p class="small">
-        &copy; 2026 Coffs Colorectal Surgery. ABN to be confirmed. All rights reserved.
-      </p>
-      <p class="small">
-        Information on this website is general in nature and is not a substitute for
-        advice from your own doctor.
+        Information on this website is general in nature and is not a substitute
+        for advice from your own doctor.
       </p>
     </div>
 
-    <p class="small subtle" style="margin-top:var(--space-m);max-width:70ch">
-      Coffs Colorectal Surgery acknowledges the Gumbaynggirr people as the Traditional Owners of the land on which we work, and pays respect to Elders past and present.
-    </p>
+    <p class="small subtle footer__ack">Coffs Colorectal Surgery acknowledges the Gumbaynggirr people as the Traditional Owners of the land on which we work, and pays respect to Elders past and present.</p>
   </div>
 </footer>
 
