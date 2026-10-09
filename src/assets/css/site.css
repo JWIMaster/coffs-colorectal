@@ -1441,16 +1441,15 @@ main {
 
 .callout--urgent {
   --callout-bg: var(--red-100);
-  --callout-edge: color-mix(in srgb, var(--red-600) 35%, var(--border));
-  --callout-fg: var(--text);
+  --callout-edge: color-mix(in srgb, var(--red-600) 45%, var(--border));
+  /* The foreground is a token rather than --text, because the tint is a pale
+     wash in light and a raised tone in dark: the readable colour differs in each
+     and one hard-coded value cannot serve both. */
+  --callout-fg: var(--on-red-tint);
 }
 
 .callout--urgent > svg {
-  color: var(--red-600);
-}
-
-:root[data-theme="dark"] .callout--urgent > svg {
-  color: #ff8f7d;
+  color: var(--on-red-tint);
 }
 
 .callout--info {
@@ -1458,8 +1457,12 @@ main {
   --callout-edge: color-mix(in srgb, var(--brand) 30%, var(--border));
 }
 
+.callout--info {
+  --callout-fg: var(--on-brand-tint);
+}
+
 .callout--info > svg {
-  color: var(--brand-text);
+  color: var(--on-brand-tint);
 }
 
 .callout--note {
@@ -1529,6 +1532,7 @@ main {
   background-image: var(--wash-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-s);
+  box-shadow: var(--shadow-panel);
 }
 
 .risk__name {
@@ -1557,7 +1561,7 @@ main {
   padding: 0.1rem 0.4rem;
   border-radius: var(--radius-full);
   background: var(--red-100);
-  color: var(--red-700);
+  color: var(--on-red-tint);
   /* "Rare but serious" was breaking across two lines inside the badge, making
      it taller than the heading it labels. */
   white-space: nowrap;

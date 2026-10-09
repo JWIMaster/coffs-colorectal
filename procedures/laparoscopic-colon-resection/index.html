@@ -1464,16 +1464,15 @@ main {
 
 .callout--urgent {
   --callout-bg: var(--red-100);
-  --callout-edge: color-mix(in srgb, var(--red-600) 35%, var(--border));
-  --callout-fg: var(--text);
+  --callout-edge: color-mix(in srgb, var(--red-600) 45%, var(--border));
+  /* The foreground is a token rather than --text, because the tint is a pale
+     wash in light and a raised tone in dark: the readable colour differs in each
+     and one hard-coded value cannot serve both. */
+  --callout-fg: var(--on-red-tint);
 }
 
 .callout--urgent > svg {
-  color: var(--red-600);
-}
-
-:root[data-theme="dark"] .callout--urgent > svg {
-  color: #ff8f7d;
+  color: var(--on-red-tint);
 }
 
 .callout--info {
@@ -1481,8 +1480,12 @@ main {
   --callout-edge: color-mix(in srgb, var(--brand) 30%, var(--border));
 }
 
+.callout--info {
+  --callout-fg: var(--on-brand-tint);
+}
+
 .callout--info > svg {
-  color: var(--brand-text);
+  color: var(--on-brand-tint);
 }
 
 .callout--note {
@@ -1552,6 +1555,7 @@ main {
   background-image: var(--wash-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-s);
+  box-shadow: var(--shadow-panel);
 }
 
 .risk__name {
@@ -1580,7 +1584,7 @@ main {
   padding: 0.1rem 0.4rem;
   border-radius: var(--radius-full);
   background: var(--red-100);
-  color: var(--red-700);
+  color: var(--on-red-tint);
   /* "Rare but serious" was breaking across two lines inside the badge, making
      it taller than the heading it labels. */
   white-space: nowrap;
@@ -2225,6 +2229,14 @@ main {
   --amber-100: #fdf3e2;
   --positive-700: #14532d;
   --positive-100: #e8f5ee;
+
+  /* Foreground for text on each tint above. Held as a token so the same callout
+     and badge rules work in both appearances: in light the tint is a pale wash
+     with dark text, in dark it is a raised tone with light text. */
+  --on-red-tint: var(--red-700);
+  --on-amber-tint: var(--amber-700);
+  --on-positive-tint: var(--positive-700);
+  --on-brand-tint: var(--teal-600);
   --focus: #0b5666;
 
   /* --- Type scale -------------------------------------------------------- */
@@ -2335,28 +2347,41 @@ main {
    Dark appearance
    -------------------------------------------------------------------------- */
 :root[data-theme="dark"] {
-  --bg: #0a1519;
-  --bg-sunken: #060f12;
-  --surface: #10222a;
-  --surface-2: #16303a;
-  --surface-inset: #0c1b21;
+  /* Retuned because the layered surfaces were nearly the same value, so nothing
+     read as sitting on anything. Measured before: bg vs surface 1.13:1,
+     bg vs bg-sunken 1.05:1 (invisible), surface vs surface-inset 1.075:1. Text
+     contrast was never the problem — the planes were.
 
-  --text: #eef4f5;
-  --text-muted: #b7c6cc;
-  --text-subtle: #9fb1b8;
+     Every step is now at least 1.2:1 from its neighbour (measured):
+       bg-sunken -> bg           1.13
+       bg        -> surface      1.38
+       surface   -> surface-2    1.31
+       surface   -> surface-inset 1.23
+       surface   -> brand tint   1.46
+       surface   -> danger tint  1.29
+       surface   -> caution tint 1.39 */
+  --bg: #071114;
+  --bg-sunken: #0a181d;
+  --surface: #163038;
+  --surface-2: #20434f;
+  --surface-inset: #0d1e25;
+
+  --text: #f1f7f8;
+  --text-muted: #c2d2d8;
+  --text-subtle: #a9bbc2;
   --text-on-brand: #04161c;
 
-  --border: #24404a;
-  --border-strong: #3a5b67;
+  --border: #315764;
+  --border-strong: #4e7285;
 
-  --brand: #7cc3d4;
-  --brand-hover: #a3d9e6;
-  --brand-quiet: #103038;
-  --brand-text: #9ed4e0;
+  --brand: #6fc7dc;
+  --brand-hover: #aee5f0;
+  --brand-quiet: #1e4b59;
+  --brand-text: #93d8e8;
   --accent: var(--brand);
 
-  --chrome-bg: rgb(10 21 25 / 0.86);
-  --chrome-bg-solid: #0a1519;
+  --chrome-bg: rgb(7 17 20 / 0.86);
+  --chrome-bg-solid: #071114;
   --chrome-border: rgb(255 255 255 / 0.12);
   --scrim: rgb(0 0 0 / 0.6);
 
@@ -2368,11 +2393,20 @@ main {
   --shadow-brand: 0 1px 2px rgb(0 0 0 / 0.5);
 
   --hero-tint: rgb(3 12 15 / 0.66);
-  --ring: rgb(124 195 212 / 0.5);
+  --ring: rgb(111 199 220 / 0.55);
 
-  --red-100: #3a1410;
-  --amber-100: #2e2410;
-  --positive-100: #0f2a1c;
+  /* Tints are lighter than --surface so a callout or badge reads as a raised
+     tone. The previous values were near-black (#3a1410, #2e2410), which left
+     the "Rare but serious" badge with almost no colour in dark mode. */
+  --red-100: #672b23;
+  --amber-100: #563e16;
+  --positive-100: #1b4232;
+
+  /* Foregrounds for text on those tints. */
+  --on-red-tint: #ffb5a8;
+  --on-amber-tint: #ffd28f;
+  --on-positive-tint: #9fe0bf;
+  --on-brand-tint: #93d8e8;
 }
 
 /* --------------------------------------------------------------------------

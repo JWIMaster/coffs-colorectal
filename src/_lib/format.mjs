@@ -10,15 +10,26 @@ import { join, extname, relative } from "node:path";
 import { chromium } from "playwright";
 
 const ROOT = process.cwd();
+/* Test the base-prefixed deployment artifact when it exists, not just the root
+   build. Every font 404ed for weeks because the @font-face URLs lacked the
+   deployment base, and a root-relative root build cannot reproduce that: the
+   paths resolve by accident when the site sits at "/". */
+const PREFIX = existsSync(join(ROOT, "dist")) ? "/coffs-colorectal" : "";
+const SERVE_ROOT = PREFIX ? join(ROOT, "dist") : ROOT;
 const TYPES = { ".html": "text/html", ".css": "text/css", ".js": "text/javascript",
   ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg",
   ".webp": "image/webp", ".woff2": "font/woff2" };
 
+const failedRequests = [];
 const server = createServer(async (req, res) => {
   let p = decodeURIComponent(new URL(req.url, "http://x").pathname);
+  if (PREFIX && p.startsWith(PREFIX)) p = p.slice(PREFIX.length);
   if (p.endsWith("/")) p += "index.html";
-  const f = join(ROOT, p);
-  if (!existsSync(f)) { res.writeHead(404); res.end(); return; }
+  const f = join(SERVE_ROOT, p);
+  if (!existsSync(f)) {
+    failedRequests.push(`404 ${p}`);
+    res.writeHead(404); res.end(); return;
+  }
   res.writeHead(200, { "content-type": TYPES[extname(f)] || "text/plain" });
   res.end(await readFile(f));
 });
@@ -32,11 +43,13 @@ function pages() {
       if (e === "node_modules" || e.startsWith(".") || e === "dist" || e === "qa-shots") continue;
       const f = join(d, e);
       if (statSync(f).isDirectory()) walk(f);
-      else if (e === "index.html") out.push("/" + relative(ROOT, f).replace(/index\.html$/, ""));
+      // Relative to the directory actually being served, then the prefix is
+      // added on. Using ROOT here produced /<prefix>/dist/... paths that 404ed.
+      else if (e === "index.html") out.push("/" + relative(SERVE_ROOT, f).replace(/index\.html$/, ""));
     }
   };
-  walk(ROOT);
-  return out.sort();
+  walk(SERVE_ROOT);
+  return out.map((u) => PREFIX + u).sort();
 }
 
 const lum = ([r, g, b]) => {
@@ -60,6 +73,13 @@ for (const theme of ["light", "dark"]) {
     const page = await ctx.newPage();
     for (const url of list) {
       await page.goto(`http://127.0.0.1:${PORT}${url}`, { waitUntil: "networkidle" });
+      // The webfont must actually load. A missing face falls back silently and
+      // the page still looks plausible, which is how this went unnoticed.
+      const fontsLoaded = await page.evaluate(async () => {
+        await document.fonts.ready;
+        return [...document.fonts].filter((f) => f.status === "loaded").length;
+      });
+      if (fontsLoaded < 4) add(url, theme, "webfont not loaded", `${fontsLoaded} face(s) loaded`);
       await page.evaluate((t) => document.documentElement.setAttribute("data-theme", t), theme);
       await page.evaluate(async () => { await document.fonts.ready; });
       const r = await page.evaluate(() => {
@@ -153,7 +173,13 @@ for (const theme of ["light", "dark"]) {
 await browser.close();
 server.close();
 
-console.log(`\n  ${list.length} pages x 2 themes x 4 widths = ${list.length * 8} renders`);
+console.log(`\n  serving ${SERVE_ROOT}${PREFIX ? ` under ${PREFIX}` : ""}`);
+console.log(`  ${list.length} pages x 2 themes x 4 widths = ${list.length * 8} renders`);
+if (failedRequests.length) {
+  console.log(`\n  ${failedRequests.length} failed request(s):`);
+  for (const f of [...new Set(failedRequests)].slice(0, 15)) console.log("    " + f);
+  findings.push({ page: "(network)", theme: "-", kind: "failed request", detail: failedRequests[0] });
+}
 if (!findings.length) {
   console.log("\n  No formatting problems found.\n");
   process.exit(0);

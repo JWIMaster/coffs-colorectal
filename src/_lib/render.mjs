@@ -447,6 +447,15 @@ export const styles = () => {
       .sort()
       .map((f) => read(join(SRC, "assets", "css", f)))
       .join("\n");
+
+    // Root-relative url() references inside the CSS need the deployment base as
+    // well. applyBase only rewrites the HTML shell, so the @font-face sources
+    // still pointed at /assets/fonts/... while the files are served from
+    // /<base>/assets/fonts/.... Every font 404ed on the subpath deployment and
+    // the site silently fell back to a system face.
+    if (BASE) {
+      _css = _css.replace(/url\((["']?)\/(?!\/)/g, (_m, q) => `url(${q}${BASE}/`);
+    }
   }
   return _css;
 };
