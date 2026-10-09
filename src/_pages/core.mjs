@@ -92,7 +92,7 @@ export function render() {
 
 <section class="section section--sunken" aria-labelledby="about-h">
   <div class="shell">
-    <div class="grid grid--2" style="align-items:center;gap:var(--space-xl)">
+    <div class="grid grid--main-side" style="align-items:center;gap:var(--space-xl)">
       <div class="prose">
         <h2 id="about-h">${escapeHTML(site.practice.name)}</h2>
         <p>${inline(site.practice.intro)}</p>
@@ -113,7 +113,7 @@ export function render() {
 
 <section class="section" aria-labelledby="bc-h">
   <div class="shell">
-    <div class="grid grid--2" style="align-items:start">
+    <div class="grid grid--main-side" style="align-items:start">
       <div class="prose">
         <h2 id="bc-h">${escapeHTML(h.screening.title)}</h2>
         ${prose(h.screening.body)}

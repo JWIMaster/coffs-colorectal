@@ -43,7 +43,7 @@ ${pageHead(s.title, s.intro, trail)}
       </div>
     </div>
 
-    <div class="grid grid--2" style="margin-top:var(--space-xl);align-items:start">
+    <div class="grid grid--main-side" style="margin-top:var(--space-xl);align-items:start">
       <div class="prose">
         <h2>See your GP about these</h2>
         <p>Most people with these symptoms do not have cancer. But symptoms like
@@ -115,7 +115,7 @@ ${pageHead(
 
 <section class="section">
   <div class="shell">
-    <div class="grid grid--2" style="align-items:start">
+    <div class="grid grid--main-side" style="align-items:start">
       <div class="prose">
         <h2>Do I need a referral?</h2>
         <p>Yes, if you want to claim a Medicare rebate. A referral from your general
@@ -352,7 +352,7 @@ ${pageHead(
       </div>
     </div>
 
-    <div class="grid grid--2" style="margin-top:var(--space-xl);align-items:start">
+    <div class="grid grid--main-side" style="margin-top:var(--space-xl);align-items:start">
       <div class="prose">
         <h2>A few days before</h2>
         <p>You will be asked to eat a low-fibre diet for the day or two before your
@@ -522,7 +522,7 @@ ${pageHead(a.title, a.intro, trail)}
       </div>
     </div>
 
-    <div class="grid grid--2" style="margin-top:var(--space-xl);align-items:start">
+    <div class="grid grid--main-side" style="margin-top:var(--space-xl);align-items:start">
       <div class="prose">
         <h2>Hospital stay and going home</h2>
         <p>How long you stay depends on the operation, whether it was done

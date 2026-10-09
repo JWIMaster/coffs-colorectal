@@ -287,12 +287,16 @@ main {
   flex: 1;
 }
 
+/* Vertical rhythm. These compound: a 72px section pad plus a 72px heading
+   margin produced 168px voids that read as the page having run out of content.
+   The scale is now tighter at the top end while keeping the distinction between
+   a full section and a tight one. */
 .section {
-  padding-block: var(--space-2xl);
+  padding-block: var(--space-xl);
 }
 
 .section--tight {
-  padding-block: var(--space-xl);
+  padding-block: var(--space-l);
 }
 
 .section--sunken {
@@ -318,6 +322,25 @@ main {
 
 .grid--2 {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+/* A long reading column paired with a short support panel. As two columns this
+   left the dead space of whichever side was shorter, which measured 1,200 to
+   1,425px on the visit pages: the prose ran 2,300px against a 1,090px panel, and
+   no column width can close that. The prose takes the full width and the support
+   panels flow underneath it, arranged across the row. */
+@media (min-width: 62rem) {
+  .grid--main-side {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .grid--main-side > :not(.prose) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    gap: var(--space-m);
+    align-items: start;
+    margin-block-start: var(--space-m);
+  }
 }
 
 
@@ -1149,6 +1172,7 @@ main {
   font-size: var(--step-1);
   font-weight: 700;
   letter-spacing: -0.012em;
+  color: var(--brand-text);
   text-wrap: balance;
 }
 
@@ -1271,10 +1295,31 @@ main {
   margin-block-start: var(--space-s);
 }
 
+/* A section marker. The page previously separated sections with whitespace
+   alone, which is invisible when skimming: 15 identically styled h2s in a row
+   read as one undivided column. The marker is a fixed 38px rule in the brand
+   colour, so a reader can scan the page's structure down the left edge. */
 .prose h2 {
   font-size: var(--step-2);
-  margin-block-start: var(--space-xl);
-  padding-block-start: var(--space-xs);
+  margin-block-start: var(--space-l);
+  padding-block-start: var(--space-s);
+}
+
+.prose h2::before {
+  content: "";
+  display: block;
+  inline-size: 38px;
+  block-size: 3px;
+  border-radius: 2px;
+  background: var(--brand);
+  margin-block-end: var(--space-xs);
+}
+
+/* The first heading needs no marker above it; the section boundary already
+   separates it. */
+.prose > h2:first-child::before,
+.prose h2:first-of-type::before {
+  display: none;
 }
 
 .prose h3 {
@@ -1450,13 +1495,21 @@ main {
   display: flex;
   align-items: flex-start;
   gap: 0.55rem;
-  padding: 0.7rem 0.85rem;
+  padding: 0.7rem 0.85rem 0.7rem 0.75rem;
   background: var(--surface);
   border: 1px solid var(--border);
+  /* A brand edge marks these as the scannable summary. They were plain white
+     cards on a white page, which gave the one part of the page meant to be
+     skimmed no more weight than the prose around it. */
+  border-inline-start: 3px solid var(--brand);
   border-radius: var(--radius-xs);
   font-size: 0.93rem;
   line-height: 1.45;
   font-weight: 600;
+}
+
+.facts li > svg {
+  color: var(--brand-text);
 }
 
 .facts svg {
@@ -2453,7 +2506,7 @@ main {
 
 <section class="section section--sunken" aria-labelledby="about-h">
   <div class="shell">
-    <div class="grid grid--2" style="align-items:center;gap:var(--space-xl)">
+    <div class="grid grid--main-side" style="align-items:center;gap:var(--space-xl)">
       <div class="prose">
         <h2 id="about-h">Coffs Colorectal Surgery</h2>
         <p>A specialist Colorectal Surgery practice in Coffs Harbour, providing care for conditions of the colon, rectum and anus, including bowel cancer, inflammatory bowel disease and benign anorectal conditions.</p>
@@ -2475,7 +2528,7 @@ main {
 
 <section class="section" aria-labelledby="bc-h">
   <div class="shell">
-    <div class="grid grid--2" style="align-items:start">
+    <div class="grid grid--main-side" style="align-items:start">
       <div class="prose">
         <h2 id="bc-h">Bowel cancer screening saves lives</h2>
         <p>Bowel cancer is one of the most common cancers in Australia, and it is one of the most treatable when it is found early. The National Bowel Cancer Screening Program posts a <strong>free test kit</strong> to eligible Australians every two years.</p>
