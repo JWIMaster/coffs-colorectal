@@ -528,7 +528,7 @@ main {
   }
 }
 
-/* The full navigation and the menu button are switched at the 64rem breakpoint
+/* The full navigation and the menu button are switched at the 69rem breakpoint
    in section 22, at the end of this file. */
 
 /* Inline icons have no intrinsic size, so a bare <svg> inside text is sized by
@@ -1973,8 +1973,13 @@ main {
    file, so source order decides the cascade.
    -------------------------------------------------------------------------- */
 
-/* Show the full navigation once there is room for it. */
-@media (min-width: 64rem) {
+/* Show the full navigation only once the row genuinely fits. Measured: the
+   brand lockup (236px), the nav (540px) and the actions (222px) plus 32px of
+   gaps need about 1030px of shell, which is a 1070px viewport. Turning the nav
+   on at 1024px — as it was — left it roughly 46px short over the 1040-1079px
+   range, and the brand lockup paid for it by wrapping to three lines, taking
+   the header from 80px to 100px tall for those 40 pixels of viewport. */
+@media (min-width: 69rem) {
   .nav {
     display: flex;
   }
