@@ -1,12 +1,12 @@
 {
   "practice": {
     "name": "Coffs Colorectal Surgery",
-    "tagline": "Colorectal surgery",
+    "tagline": "Colorectal Surgery",
     "region": "Coffs Harbour & the Mid North Coast",
     "lang": "en-AU",
     "url": "https://www.coffscolorectal.com.au",
     "abn": "ABN to be confirmed",
-    "intro": "A specialist colorectal surgery practice in Coffs Harbour, providing care for conditions of the colon, rectum and anus, including bowel cancer, inflammatory bowel disease and benign anorectal conditions.",
+    "intro": "A specialist Colorectal Surgery practice in Coffs Harbour, providing care for conditions of the colon, rectum and anus, including bowel cancer, inflammatory bowel disease and benign anorectal conditions.",
     "credentials": [
       "Fellow of the Royal Australasian College of Surgeons (FRACS)",
       "Post-fellowship training accredited by the Colorectal Surgical Society of Australia and New Zealand (CSSANZ)",
@@ -111,7 +111,7 @@
     }
   ],
   "home": {
-    "heroTitle": "Specialist colorectal surgery in Coffs Harbour",
+    "heroTitle": "Specialist Colorectal Surgery in Coffs Harbour",
     "heroLede": "Dr Andrew Sutherland provides care for conditions of the colon, rectum and anus for people across Coffs Harbour and the Mid North Coast. Clear information, and honest advice about what each treatment involves.",
     "metaDescription": "Coffs Colorectal Surgery: Dr Andrew Sutherland, colorectal surgeon in Coffs Harbour. Information for patients about bowel cancer, colonoscopy, and conditions and procedures of the colon, rectum and anus.",
     "about": [
