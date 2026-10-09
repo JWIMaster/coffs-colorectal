@@ -437,24 +437,34 @@ main {
   gap: 0.5rem;
 }
 
-/* Up to 48rem the phone action collapses to its icon so that the header never
-   forces the page wider than the viewport (WCAG 1.4.10 Reflow). */
-.phone-action__text {
+/* The header call action. Below 48rem it is a 44px circular icon so the header
+   can never force the page wider than the viewport (WCAG 1.4.10 Reflow); above
+   it, it opens into the pill it always was. The previous version carried both a
+   responsive display rule and .sr-only, so the label was clipped to a single
+   pixel at every width and the button sat there padded and empty. */
+/* .btn.btn.call-btn, not .call-btn: a two-class selector so it outranks
+   `.btn svg`, whose width was squeezing the icon into a 5x17 sliver. */
+.btn.call-btn {
+  inline-size: 2.75rem;
+  min-block-size: 2.75rem;
+  /* 44px in both states: match the icon buttons beside it rather than taking
+     .btn's taller vertical padding. */
+  padding: 0;
+  flex: none;
+}
+
+.call-btn__text {
   display: none;
 }
 
-.phone-action {
-  padding-inline: 0.7rem;
-}
-
-@media (min-width: 30rem) {
-  .phone-action {
-    padding-inline: 1rem;
-  }
-}
-
 @media (min-width: 48rem) {
-  .phone-action__text {
+  .btn.call-btn {
+    inline-size: auto;
+    padding: 0 1.1rem;
+    min-block-size: 2.75rem;
+  }
+
+  .call-btn__text {
     display: inline;
   }
 }

@@ -17,8 +17,10 @@
     </nav>
 
     <div class="chrome__actions">
-      <a class="icon-btn phone-action" href="tel:{{tel}}" aria-label="Call the practice on {{phone}}">
-        {{iconPhone}}<span class="phone-action__text sr-only">{{phone}}</span>
+      <!-- Collapses to an icon below 48rem so the header cannot force the page
+           wider than the viewport, and opens into a labelled pill above it. -->
+      <a class="btn call-btn" href="tel:{{tel}}" aria-label="Call the practice on {{phone}}">
+        {{iconPhone}}<span class="call-btn__text">{{phone}}</span>
       </a>
       <button class="icon-btn theme-toggle" type="button" data-theme-toggle
               aria-label="Switch between light and dark appearance">

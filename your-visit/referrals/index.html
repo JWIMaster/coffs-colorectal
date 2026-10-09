@@ -460,24 +460,34 @@ main {
   gap: 0.5rem;
 }
 
-/* Up to 48rem the phone action collapses to its icon so that the header never
-   forces the page wider than the viewport (WCAG 1.4.10 Reflow). */
-.phone-action__text {
+/* The header call action. Below 48rem it is a 44px circular icon so the header
+   can never force the page wider than the viewport (WCAG 1.4.10 Reflow); above
+   it, it opens into the pill it always was. The previous version carried both a
+   responsive display rule and .sr-only, so the label was clipped to a single
+   pixel at every width and the button sat there padded and empty. */
+/* .btn.btn.call-btn, not .call-btn: a two-class selector so it outranks
+   `.btn svg`, whose width was squeezing the icon into a 5x17 sliver. */
+.btn.call-btn {
+  inline-size: 2.75rem;
+  min-block-size: 2.75rem;
+  /* 44px in both states: match the icon buttons beside it rather than taking
+     .btn's taller vertical padding. */
+  padding: 0;
+  flex: none;
+}
+
+.call-btn__text {
   display: none;
 }
 
-.phone-action {
-  padding-inline: 0.7rem;
-}
-
-@media (min-width: 30rem) {
-  .phone-action {
-    padding-inline: 1rem;
-  }
-}
-
 @media (min-width: 48rem) {
-  .phone-action__text {
+  .btn.call-btn {
+    inline-size: auto;
+    padding: 0 1.1rem;
+    min-block-size: 2.75rem;
+  }
+
+  .call-btn__text {
     display: inline;
   }
 }
@@ -2304,8 +2314,10 @@ main {
     </nav>
 
     <div class="chrome__actions">
-      <a class="icon-btn phone-action" href="tel:0266516211" aria-label="Call the practice on (02) 6651 6211">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h-2A1.5 1.5 0 0 0 3 4.5C3 13 11 21 19.5 21A1.5 1.5 0 0 0 21 19.5v-2l-4-1.5-2 2a14.5 14.5 0 0 1-5.5-5.5l2-2Z"/></svg><span class="phone-action__text sr-only">(02) 6651 6211</span>
+      <!-- Collapses to an icon below 48rem so the header cannot force the page
+           wider than the viewport, and opens into a labelled pill above it. -->
+      <a class="btn call-btn" href="tel:0266516211" aria-label="Call the practice on (02) 6651 6211">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h-2A1.5 1.5 0 0 0 3 4.5C3 13 11 21 19.5 21A1.5 1.5 0 0 0 21 19.5v-2l-4-1.5-2 2a14.5 14.5 0 0 1-5.5-5.5l2-2Z"/></svg><span class="call-btn__text">(02) 6651 6211</span>
       </a>
       <button class="icon-btn theme-toggle" type="button" data-theme-toggle
               aria-label="Switch between light and dark appearance">
