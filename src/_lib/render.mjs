@@ -197,6 +197,11 @@ const isActive = (item, url) =>
 
 const partial = (name) => read(join(SRC, "_partials", `${name}.html`));
 
+const isHomeUrl = (url) => {
+  const clean = url.split("#")[0].split("?")[0];
+  return clean === "/" || clean === "" || clean === "/index.html";
+};
+
 const BASE_SUBS = {
   phone: escapeHTML(site.contact.phone),
   tel: TEL,
@@ -491,6 +496,10 @@ export function writePage({
       robots: "",
       styles: styles(),
       script: script(),
+      // Lets the script tell the home page without parsing the path, which
+      // breaks under a deployment base.
+      pageAttr: isHomeUrl(url) ? ' data-page="home"' : "",
+      favicon: "/assets/favicon.svg",
       header: renderHeader(url),
       footer: renderFooter(url),
       body,

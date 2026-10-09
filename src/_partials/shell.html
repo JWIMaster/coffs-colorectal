@@ -18,12 +18,12 @@
 <meta property="og:title" content="{{title}}">
 <meta property="og:description" content="{{description}}">
 <meta property="og:url" content="{{url}}">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/assets/favicon.svg">
+<link rel="icon" href="{{favicon}}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{favicon}}">
 {{jsonld}}
 <style>{{styles}}</style>
 </head>
-<body>
+<body{{pageAttr}}>
 {{header}}
 <main id="main" tabindex="-1">
 {{body}}

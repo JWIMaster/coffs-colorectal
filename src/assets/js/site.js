@@ -299,7 +299,12 @@
      - Under prefers-reduced-motion nothing is marked at all and the gating
        attribute is never set, so the CSS has nothing to hide.
      ---------------------------------------------------------------------- */
-  if (!reduceMotion.matches && "IntersectionObserver" in window) {
+  // Home page only. Applying this to every interior page pulled the eye to an
+  // entrance on each scroll, on pages whose job is to be read. Keyed off a
+  // marker the build emits, not the path, which cannot work under a base path.
+  var isHome = document.body.hasAttribute("data-page");
+
+  if (isHome && !reduceMotion.matches && "IntersectionObserver" in window) {
     // Deliberately fine-grained. Coarse blocks were the first attempt, but an
     // index page is one 1200px list and a contact page is one 1480px grid, both
     // of which fail the height test below and so animated nothing at all.

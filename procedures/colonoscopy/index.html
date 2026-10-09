@@ -401,7 +401,7 @@ main {
   inline-size: 2.4rem;
   block-size: 2.4rem;
   flex: none;
-  border-radius: 11px;
+  border-radius: var(--radius-s);
   display: grid;
   place-items: center;
   background: var(--teal-600);
@@ -593,7 +593,7 @@ main {
   gap: 0.5rem;
   padding: 0.72rem 1.15rem;
   min-block-size: 2.75rem;
-  border-radius: 6px;
+  border-radius: var(--radius-s);
   background: var(--btn-bg);
   color: var(--btn-fg);
   font-size: 0.95rem;
@@ -659,7 +659,9 @@ main {
   place-items: center;
   inline-size: 2.75rem;
   block-size: 2.75rem;
-  border-radius: var(--radius-full);
+  /* Not a pill. A fully rounded control is a soft, consumer shape that reads
+     pasted on beside 3px cards. */
+  border-radius: var(--radius-s);
   color: var(--text-muted);
   border: 1px solid transparent;
   transition: transform var(--dur-instant) var(--ease-out),
@@ -2213,22 +2215,22 @@ main {
   /* --- One accent -------------------------------------------------------- */
   /* Blue-teal, taken from the practice's own identity. It marks what you can
      act on and nothing else, so it never becomes decoration. */
-  --teal-700: #073f4b;
-  --teal-600: #0b5666;
-  --teal-500: #106b7e;
-  --teal-200: #cfe2e6;
-  --teal-100: #e3eef1;
+  --teal-700: #17414d;
+  --teal-600: #1d4e5c;
+  --teal-500: #245f70;
+  --teal-200: #d3dfe3;
+  --teal-100: #e8eef0;
 
   /* --- Functional -------------------------------------------------------- */
   /* Red is reserved for genuine urgency, amber for "get help" states. Neither
      is used for emphasis. */
   --red-700: #7d1a12;
-  --red-600: #a8241a;
-  --red-100: #fbeae7;
+  --red-600: #97362e;
+  --red-100: #f6e9e6;
   --amber-700: #6b4708;
-  --amber-100: #fdf3e2;
-  --positive-700: #14532d;
-  --positive-100: #e8f5ee;
+  --amber-100: #f7f0e3;
+  --positive-700: #20543a;
+  --positive-100: #eaf1ec;
 
   /* Foreground for text on each tint above. Held as a token so the same callout
      and badge rules work in both appearances: in light the tint is a pale wash
@@ -2237,7 +2239,7 @@ main {
   --on-amber-tint: var(--amber-700);
   --on-positive-tint: var(--positive-700);
   --on-brand-tint: var(--teal-600);
-  --focus: #0b5666;
+  --focus: #1d4e5c;
 
   /* --- Type scale -------------------------------------------------------- */
   /* Fluid, rem-based so the whole layout scales with the user's text size. */
@@ -2264,6 +2266,9 @@ main {
   /* --- Radius ------------------------------------------------------------ */
   /* Nearly square. Softness was a complaint, so this takes the edge off rather
      than rounding everything into pills. */
+  /* A single restrained scale. The two controls that were pill-shaped are now
+     on it as well: a fully rounded button is a soft, consumer shape, and it sat
+     oddly against 3px cards. */
   --radius-xs: 2px;
   --radius-s: 3px;
   --radius-m: 5px;
@@ -2374,10 +2379,10 @@ main {
   --border: #315764;
   --border-strong: #4e7285;
 
-  --brand: #6fc7dc;
-  --brand-hover: #aee5f0;
-  --brand-quiet: #1e4b59;
-  --brand-text: #93d8e8;
+  --brand: #7fb9c9;
+  --brand-hover: #a8d3df;
+  --brand-quiet: #1b3e49;
+  --brand-text: #9ac6d4;
   --accent: var(--brand);
 
   --chrome-bg: rgb(5 13 16 / 0.86);
@@ -2393,20 +2398,20 @@ main {
   --shadow-brand: 0 1px 2px rgb(0 0 0 / 0.5);
 
   --hero-tint: rgb(3 12 15 / 0.66);
-  --ring: rgb(111 199 220 / 0.55);
+  --ring: rgb(127 185 201 / 0.55);
 
   /* Tints are lighter than --surface so a callout or badge reads as a raised
      tone. The previous values were near-black (#3a1410, #2e2410), which left
      the "Rare but serious" badge with almost no colour in dark mode. */
-  --red-100: #672b23;
-  --amber-100: #563e16;
-  --positive-100: #1b4232;
+  --red-100: #5d332c;
+  --amber-100: #4d3a24;
+  --positive-100: #22452f;
 
   /* Foregrounds for text on those tints. */
-  --on-red-tint: #ffb5a8;
-  --on-amber-tint: #ffd28f;
-  --on-positive-tint: #9fe0bf;
-  --on-brand-tint: #93d8e8;
+  --on-red-tint: #f5bdb2;
+  --on-amber-tint: #e8c68d;
+  --on-positive-tint: #9ccfae;
+  --on-brand-tint: #bcd9e2;
 }
 
 /* --------------------------------------------------------------------------
@@ -3102,7 +3107,12 @@ main {
      - Under prefers-reduced-motion nothing is marked at all and the gating
        attribute is never set, so the CSS has nothing to hide.
      ---------------------------------------------------------------------- */
-  if (!reduceMotion.matches && "IntersectionObserver" in window) {
+  // Home page only. Applying this to every interior page pulled the eye to an
+  // entrance on each scroll, on pages whose job is to be read. Keyed off a
+  // marker the build emits, not the path, which cannot work under a base path.
+  var isHome = document.body.hasAttribute("data-page");
+
+  if (isHome && !reduceMotion.matches && "IntersectionObserver" in window) {
     // Deliberately fine-grained. Coarse blocks were the first attempt, but an
     // index page is one 1200px list and a contact page is one 1480px grid, both
     // of which fail the height test below and so animated nothing at all.
