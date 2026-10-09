@@ -31,15 +31,17 @@ import {
 
 /* ---------------------------------------------------------------- output dir */
 
-// Remove a stale build when writing to a dedicated directory, so that deleted
-// pages do not linger in the published artifact.
+// Writing to a dedicated directory clears it first, so pages deleted since the
+// last build do not linger in the published artifact. Writing to the project
+// root only clears the root index, and deliberately leaves a separate `dist/`
+// alone: the two targets are independent, and wiping one when building the
+// other leaves whichever you inspect last looking broken.
 if (OUT !== ROOT) {
   rmSync(OUT, { recursive: true, force: true });
   mkdirSync(OUT, { recursive: true });
 } else {
   rmSync(join(OUT, "index.html"), { force: true });
 }
-if (OUT !== ROOT) rmSync(join(ROOT, "index.html"), { force: true });
 
 /* -------------------------------------------------------------- static files */
 

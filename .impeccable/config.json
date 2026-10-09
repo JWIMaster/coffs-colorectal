@@ -1,0 +1,10 @@
+{
+  "detector": {
+    "ignoreRules": [
+      "low-contrast",
+      "cramped-padding"
+    ],
+    "ignoreFiles": [],
+    "ignoreValues": []
+  }
+}

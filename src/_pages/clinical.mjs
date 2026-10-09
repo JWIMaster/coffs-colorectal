@@ -84,7 +84,7 @@ ${pageHead(p.title, p.summary, trail)}
 ${p.expect && p.expect.length
   ? `<section class="section section--tight">
   <div class="shell">
-    <h2 class="eyebrow" style="margin-bottom:0">Key facts</h2>
+    <h2 class="group-label">Key facts</h2>
     ${factsStrip(p.expect)}
   </div>
 </section>`
@@ -179,7 +179,7 @@ ${pageHead(c.title, c.summary, trail)}
 ${c.expect && c.expect.length
   ? `<section class="section section--tight">
   <div class="shell">
-    <h2 class="eyebrow" style="margin-bottom:0">Key facts</h2>
+    <h2 class="group-label">Key facts</h2>
     ${factsStrip(c.expect)}
   </div>
 </section>`

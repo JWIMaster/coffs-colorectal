@@ -6,7 +6,7 @@
     "lang": "en-AU",
     "url": "https://www.coffscolorectal.com.au",
     "abn": "ABN to be confirmed",
-    "intro": "A specialist colorectal surgery practice in Coffs Harbour, providing care for conditions of the colon, rectum and anus — including bowel cancer, inflammatory bowel disease and benign anorectal conditions.",
+    "intro": "A specialist colorectal surgery practice in Coffs Harbour, providing care for conditions of the colon, rectum and anus, including bowel cancer, inflammatory bowel disease and benign anorectal conditions.",
     "credentials": [
       "Fellow of the Royal Australasian College of Surgeons (FRACS)",
       "Post-fellowship training accredited by the Colorectal Surgical Society of Australia and New Zealand (CSSANZ)",
@@ -74,8 +74,8 @@
 
   "home": {
     "heroTitle": "Specialist colorectal surgery in Coffs Harbour",
-    "heroLede": "Care for conditions of the colon, rectum and anus — from bowel cancer and inflammatory bowel disease through to haemorrhoids, fissures and fistulas. Clear information, and honest advice about what each treatment involves.",
-    "metaDescription": "Coffs Colorectal Surgery — Dr Andrew Sutherland, colorectal surgeon in Coffs Harbour. Information for patients about bowel cancer, colonoscopy, and conditions and procedures of the colon, rectum and anus.",
+    "heroLede": "Dr Andrew Sutherland provides care for conditions of the colon, rectum and anus for people across Coffs Harbour and the Mid North Coast. Clear information, and honest advice about what each treatment involves.",
+    "metaDescription": "Coffs Colorectal Surgery: Dr Andrew Sutherland, colorectal surgeon in Coffs Harbour. Information for patients about bowel cancer, colonoscopy, and conditions and procedures of the colon, rectum and anus.",
     "about": [
       "This website is written for patients and for the doctors who refer to us. It explains colorectal conditions and operations in plain language, sets out what to expect before and after a procedure, and is honest about the risks.",
       "The information here has been prepared by Dr Andrew Sutherland and is general in nature. It does not take into account your individual circumstances. Nothing on this site replaces a consultation with your surgeon or your general practitioner."
@@ -99,8 +99,8 @@
     }
   },
 
-  "conditionsIntro": "Each page explains a condition in plain language: what it is, what causes it, the symptoms, how it is diagnosed, and the treatments available — starting with the treatments that do not involve surgery. Most colorectal conditions are managed without an operation.",
-  "proceduresIntro": "Each page explains what an operation involves, how to prepare, what to expect during recovery, and the risks — including the risks that are rare but serious. The exact nature of any procedure depends on your individual circumstances, and Dr Sutherland will discuss this with you in detail.",
+  "conditionsIntro": "Each page explains a condition in plain language: what it is, what causes it, the symptoms, how it is diagnosed, and the treatments available, starting with the treatments that do not involve surgery. Most colorectal conditions are managed without an operation.",
+  "proceduresIntro": "Each page explains what an operation involves, how to prepare, what to expect during recovery, and the risks, including the risks that are rare but serious. The exact nature of any procedure depends on your individual circumstances, and Dr Sutherland will discuss this with you in detail.",
   "consentNote": "Informed consent means you understand the nature of a procedure, why it is being recommended, the alternatives available, and the risks and benefits for you in particular. Please ask as many questions as you need to. It is always reasonable to take information home and think about it before deciding.",
 
   "resourcesIntro": "These organisations provide further information about colorectal surgery and specific conditions. The inclusion of a link does not imply endorsement by Dr Sutherland. For many problems the best evidence remains specialist opinion rather than definite facts, and more than one approach may be equally reasonable.",
@@ -111,12 +111,12 @@
     "redFlags": [
       "Heavy or continuous bleeding from the back passage",
       "Severe abdominal pain with a swollen, tender abdomen, vomiting, or passing no gas or stool",
-      "Fever with severe pain and swelling around the anus — this may be an abscess and needs prompt treatment",
+      "Fever with severe pain and swelling around the anus. This may be an abscess and needs prompt treatment",
       "Feeling faint, dizzy or short of breath with rectal bleeding"
     ],
     "seeGp": [
       "Blood in your bowel motion, or on the toilet paper",
-      "A change in bowel habit — looser, more frequent, or constipation — lasting more than a few weeks",
+      "A change in bowel habit (looser, more frequent, or constipation) lasting more than a few weeks",
       "A feeling of not completely emptying your bowel",
       "Unexplained weight loss or loss of appetite",
       "Abdominal pain, cramping or bloating that does not settle",
@@ -126,7 +126,7 @@
     ],
     "screening": [
       "The National Bowel Cancer Screening Program posts a free test kit to eligible Australians every two years. People aged **50 to 74** are sent a kit automatically, and people aged **45 to 49** can request one.",
-      "The test is an immunochemical faecal occult blood test (iFOBT), also called a faecal immunochemical test (FIT) or simply a bowel screening test. It detects invisible traces of blood in a bowel motion. It does **not** detect cancer, and a positive result does **not** mean you have cancer — it means you need a colonoscopy to establish the cause.",
+      "The test is an immunochemical faecal occult blood test (iFOBT), also called a faecal immunochemical test (FIT) or simply a bowel screening test. The test detects invisible traces of blood in a bowel motion. It does **not** detect cancer, and a positive result does **not** mean you have cancer — it means you need a colonoscopy to establish the cause.",
       "If you have symptoms, do not wait for a screening kit. See your GP, because a screening test is not the right test for someone with symptoms.",
       "If your kit is lost, expired or damaged, a free replacement can be requested from the National Cancer Screening Register."
     ]

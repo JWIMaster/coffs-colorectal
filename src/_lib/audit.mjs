@@ -35,7 +35,10 @@ const base = `http://127.0.0.1:${PORT}`;
 /* Discover every built page from the filesystem. */
 function findPages(dir, acc = []) {
   for (const e of readdirSync(dir, { withFileTypes: true })) {
-    if (e.name.startsWith("_") || e.name === "node_modules" || e.name === "qa-shots") continue;
+    // Skip build output and tooling dirs: dist/ is a base-prefixed artifact
+    // verified by src/_lib/verify.py, not a root-served page.
+    if (e.name.startsWith("_") || e.name === "node_modules" || e.name === "qa-shots"
+        || e.name === "dist" || e.name === ".git") continue;
     const full = join(dir, e.name);
     if (e.isDirectory()) findPages(full, acc);
     else if (e.name === "index.html") {
@@ -174,7 +177,7 @@ for (const url of urls) {
     push("risk detail", document.querySelector(".risk__detail"));
     push("crumb", document.querySelector(".crumbs a"));
     push("nav link", document.querySelector(".nav__link"));
-    push("eyebrow", document.querySelector(".eyebrow"));
+    push("group label", document.querySelector(".group-label"));
     push("footer link", document.querySelector(".footer a"));
     push("callout p", document.querySelector(".callout p"));
     push("table cell", document.querySelector(".prose td"));

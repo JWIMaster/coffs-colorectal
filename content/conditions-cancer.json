@@ -3,16 +3,16 @@
     "slug": "colon-cancer",
     "title": "Colon cancer",
     "alsoKnownAs": "Also called bowel cancer, or large bowel cancer",
-    "summary": "Cancer of the colon — the large bowel above the rectum. Usually found by colonoscopy, and usually treated by removing the affected section of bowel along with the nearby lymph glands.",
+    "summary": "Cancer of the colon, the large bowel above the rectum. Usually found by colonoscopy, and usually treated by removing the affected section of bowel along with the nearby lymph glands.",
     "expect": [
       "Diagnosed by colonoscopy and biopsy",
       "Staging with CT scans of the chest and abdomen",
       "Main treatment is surgery to remove the cancer",
-      "The bowel is usually rejoined — a stoma is usually not needed",
+      "The bowel is usually rejoined, so a stoma is usually not needed",
       "Follow-up continues for five years"
     ],
     "urgent": [
-      "A bowel obstruction — severe abdominal pain, a swollen abdomen, vomiting, and passing no gas or stool",
+      "A bowel obstruction: severe abdominal pain, a swollen abdomen, vomiting, and passing no gas or stool",
       "Heavy or continuous bleeding from the back passage",
       "Fever with severe abdominal pain after surgery",
       "Feeling faint or short of breath with rectal bleeding"
@@ -42,7 +42,7 @@
       {
         "heading": "How it is diagnosed",
         "body": [
-          "Colon cancer is usually diagnosed readily by colonoscopy and biopsy — the removal of a very small piece of the growth for examination under a microscope.",
+          "Colon cancer is usually diagnosed readily by colonoscopy and biopsy, which is the removal of a very small piece of the growth for examination under a microscope.",
           "Screening tests, such as the immunochemical faecal occult blood test (iFOBT, also called a FIT) used in the National Bowel Cancer Screening Program, detect microscopic amounts of blood in the faeces. They do **not** detect cancer. Many cancers bleed a small amount into the bowel, but there are many other causes of a positive screening test apart from cancer.",
           "After a diagnosis, further tests are usually performed to determine the stage of the cancer. This is largely aimed at detecting spread to other organs, and involves a CT (computed tomography) scan of the abdomen and chest."
         ]
@@ -51,7 +51,7 @@
         "heading": "Treatment",
         "body": [
           "The main treatment for colon cancer is surgery to remove the segment of colon containing the cancer, together with the lymph glands that drain that segment. This is called a colectomy, or colon resection. It can usually be done laparoscopically (by keyhole surgery).",
-          "The bowel can usually be rejoined straight away, which means there is usually no need for a stoma. Where the join is not safe, or where the bowel is obstructed, a stoma may be needed — often temporarily.",
+          "The bowel can usually be rejoined straight away, which means a stoma is usually not needed. Where the join is not safe, or where the bowel is obstructed, a stoma may be needed — often temporarily.",
           "Depending on the stage of the cancer, chemotherapy may also be recommended after surgery. This is discussed with a medical oncologist, and the decision depends on what the pathology shows."
         ]
       },
@@ -114,7 +114,7 @@
     "slug": "rectal-cancer",
     "title": "Rectal cancer",
     "alsoKnownAs": "Also called bowel cancer, or cancer of the rectum",
-    "summary": "Cancer of the rectum — the last part of the large bowel before the anus. Treatment often involves chemotherapy and radiotherapy before surgery, and sometimes a temporary stoma.",
+    "summary": "Cancer of the rectum, the last part of the large bowel before the anus. Treatment often involves chemotherapy and radiotherapy before surgery, and sometimes a temporary stoma.",
     "expect": [
       "Often found by rectal examination or colonoscopy",
       "An MRI scan is the key test for staging",
@@ -123,7 +123,7 @@
       "Bowel habit can take a year or more to settle"
     ],
     "urgent": [
-      "A bowel obstruction — severe abdominal pain, a swollen abdomen, vomiting, and passing no gas or stool",
+      "A bowel obstruction: severe abdominal pain, a swollen abdomen, vomiting, and passing no gas or stool",
       "Heavy or continuous bleeding from the back passage",
       "Fever with severe pain, redness or discharge at a surgical wound",
       "Increasing pain, swelling or discharge around a stoma",
@@ -133,7 +133,7 @@
       {
         "heading": "What is rectal cancer?",
         "body": [
-          "The rectum is the last part of the large bowel — approximately the final 12 centimetres before the anus. A cancer is a malignant growth of tissue. Malignant means that it has the potential to spread to other parts of the body. It does **not** mean that it has already spread.",
+          "The rectum is the last part of the large bowel, approximately the final 12 centimetres before the anus. A cancer is a malignant growth of tissue. Malignant means that it has the potential to spread to other parts of the body. It does **not** mean that it has already spread.",
           "The term bowel cancer (colorectal cancer) covers cancer of both the colon and the rectum. Despite many similarities, there are significant differences in the way cancer in these two areas is treated. It is therefore important to be clear exactly where the cancer is."
         ]
       },
@@ -141,7 +141,7 @@
         "heading": "Symptoms",
         "bullets": [
           "Bleeding from the back passage, or blood mixed with the bowel motion",
-          "A change in bowel habit — looser, more frequent, or a feeling of urgency",
+          "A change in bowel habit: looser, more frequent, or a feeling of urgency",
           "A feeling of not completely emptying the bowel",
           "Mucus or discharge from the back passage",
           "Pain or a lump felt in the back passage",
@@ -152,7 +152,7 @@
       {
         "heading": "How it is diagnosed and staged",
         "body": [
-          "Rectal cancer can often be detected by a rectal examination in the consulting room. A colonoscopy and biopsy — the removal of a very small piece of the growth for testing — will usually be required to confirm the diagnosis and to assess the cancer further.",
+          "Rectal cancer can often be detected by a rectal examination in the consulting room. A colonoscopy and biopsy, the removal of a very small piece of the growth for testing — will usually be required to confirm the diagnosis and to assess the cancer further.",
           "Screening tests, such as the immunochemical faecal occult blood test (iFOBT, also called a FIT) used in the National Bowel Cancer Screening Program, detect microscopic amounts of blood in the faeces. They do not detect cancer, and there are many other causes for a positive screening test.",
           "After diagnosis, further tests determine the stage. The most important part of this is judging the size of the cancer and whether it has grown through the wall of the bowel or into nearby structures. The best test for this is a **magnetic resonance imaging (MRI)** scan. Unfortunately, Medicare does not cover the cost of this MRI scan, even though it is recommended by the National Health and Medical Research Council. A CT scan of the chest and abdomen is also used to detect spread to other organs."
         ]
@@ -169,7 +169,7 @@
         "heading": "Bowel function after surgery",
         "body": [
           "When the rectum is removed, bowel function commonly changes. Frequency, urgency, a feeling of not fully emptying, clustering of bowel actions, and sometimes leakage are all common — particularly after a low join. This is sometimes called low anterior resection syndrome (LARS).",
-          "It usually improves gradually over 12 to 24 months, but the bowel rarely returns to exactly how it was before. There is a good deal that can be done to help — dietary adjustment, medication, pelvic floor exercises and, in selected cases, other treatments. Please raise it at follow-up rather than putting up with it."
+          "It usually improves gradually over 12 to 24 months, but the bowel rarely returns to exactly how it was before. There is a good deal that can be done to help: dietary adjustment, medication, pelvic floor exercises and, in selected cases, other treatments. Please raise it at follow-up rather than putting up with it."
         ]
       },
       {

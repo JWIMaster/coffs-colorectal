@@ -205,6 +205,59 @@ system unless the reader overrides it with the toggle in the header.
 
 ---
 
+## Design review
+
+The interface was reviewed with [Impeccable](https://github.com/pbakaus/impeccable),
+which ships a deterministic detector for AI-generated frontend design.
+`.impeccable/config.json` records the run configuration.
+
+```bash
+npx impeccable detect dist        # or: impeccable detect dist
+```
+
+The first pass found 101 issues. The substantive ones were fixed:
+
+- **A tracked-caps "kicker" above every heading**, plus a pill-shaped eyebrow
+  above the hero headline. This is the single most recognisable generated-design
+  tell, and Impeccable bans it outright rather than treating it as a default. All
+  ten instances are gone. The region the hero eyebrow carried now reads as a
+  sentence in the supporting line beneath the headline, where it does actual
+  work; the section kickers ("About", "Start here", "Screening") were redundant
+  with the headings below them and were deleted. The "Key facts" label survived,
+  because it labels a strip rather than sitting above a display headline, but it
+  is now a normal sentence-case label instead of a letter-spaced chip.
+- **Em-dash saturation**, an AI cadence tell in body copy. The worst page had
+  21; em-dashes in prose and in `Label — description` lists became colons,
+  commas and parentheses. Em-dashes inside source citations were left alone,
+  because they are correct there. Prose em-dash density across the site fell
+  from 84 to 15.
+- **Line heights below the 1.3 readability floor** on multi-line interface text
+  (the brand lockup and link-card titles).
+
+### Verified exceptions
+
+Two rules are ignored in `.impeccable/config.json`, both confirmed false
+positives by measurement rather than by judgement. They are recorded here so
+that nobody re-litigates them, and so that the ignores are not mistaken for a
+clean bill of health:
+
+- **`low-contrast` (33 findings).** The detector resolves CSS custom properties
+  across theme blocks, pairing light-theme `--brand-text` (`#113d47`) with
+  dark-theme `--brand-hover` (`#124b58`) and reporting 1.20:1. Those two values
+  never coexist; each theme defines both halves. Measured in a real browser per
+  theme, every link state passes: light `#175d6d` on `#fdfcfa` is 7.26:1, dark
+  `#9ed4e0` on `#0e181d` is 11.09:1, and forced `:hover` states measure 8.46:1
+  and 9.66:1. `src/_lib/audit.mjs` independently re-checks rendered contrast on
+  all 33 pages and reports no failures.
+- **`cramped-padding` (61 findings).** Reports that section children are "flush
+  against bg on all sides". Sections are full-bleed by design and their content
+  sits inside `.shell`, which constrains width and centres it; nothing touches
+  the background edge. Adding `padding-inline` to `.section` left the count
+  unchanged at 61, so the rule is not responding to the property it names.
+
+Both exceptions are also worth treating as a caution: a detector result is
+defect evidence, not a verdict, and 94 of the original 101 findings were noise.
+
 ## Compliance
 
 The rebuild was built against the Australian regulatory and accessibility

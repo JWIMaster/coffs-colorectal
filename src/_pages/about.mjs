@@ -36,7 +36,7 @@ function bioPage() {
         <div class="panel" style="margin-top:var(--space-m);max-width:26rem">
           <h2 style="font-size:var(--step-1)">Qualifications and accreditation</h2>
           <dl class="deflist" style="margin-top:var(--space-xs)">
-            <div><dt>Fellowship</dt><dd>FRACS — Royal Australasian College of Surgeons, general surgery (2006)</dd></div>
+            <div><dt>Fellowship</dt><dd>FRACS, Royal Australasian College of Surgeons, general surgery (2006)</dd></div>
             <div><dt>Post-fellowship training</dt><dd>Colorectal surgery, CSSANZ training program</dd></div>
             <div><dt>Medical degree</dt><dd>University of Melbourne (1998)</dd></div>
             <div><dt>Consulting since</dt><dd>Coffs Harbour, 2009</dd></div>
@@ -83,9 +83,9 @@ function bioPage() {
         <ul>
           <li>Colonoscopy, including screening and surveillance</li>
           <li>Surgery for colon cancer and rectal cancer, including laparoscopic surgery</li>
-          <li>Surgery for inflammatory bowel disease — Crohn disease and ulcerative colitis</li>
+          <li>Surgery for inflammatory bowel disease: Crohn disease and ulcerative colitis</li>
           <li>Surgery for diverticular disease</li>
-          <li>Benign anorectal conditions — haemorrhoids, anal fissure, anal fistula and pilonidal sinus</li>
+          <li>Benign anorectal conditions: haemorrhoids, anal fissure, anal fistula and pilonidal sinus</li>
           <li>Surgery for rectal prolapse</li>
         </ul>
 
@@ -167,7 +167,7 @@ function privacyPage() {
       </ul>
 
       <h2>How we collect it</h2>
-      <p>We collect information directly from you — in person, on the telephone, in
+      <p>We collect information directly from you, in person, on the telephone, in
       writing, or through forms you complete. We also receive information from your
       general practitioner and other treating clinicians when they refer you, and from
       pathology and radiology services.</p>
@@ -202,7 +202,7 @@ function privacyPage() {
       <p><strong>Please do not send clinical information through the enquiry form on this
       website, or by ordinary email.</strong> The enquiry form is not monitored outside
       consulting hours and is not secure for clinical content. It is intended only for
-      administrative enquiries — such as confirming our address or asking about fees.</p>
+      administrative enquiries, such as confirming our address or asking about fees.</p>
       <p>Where you provide an email address or mobile number, we may use it to confirm
       appointments or send reminders. Our reminders contain no clinical detail. Ordinary
       email is not encrypted, so we avoid including clinical information in it; if a
@@ -217,7 +217,7 @@ function privacyPage() {
 
       <h2>How long we keep it</h2>
       <p>We keep medical records for at least seven years from the last time you attended,
-      and for longer in some circumstances — for example, records relating to a person
+      and for longer in some circumstances, for example records relating to a person
       under 18, and records where a claim is ongoing. When records are no longer required,
       they are destroyed securely.</p>
 
@@ -226,15 +226,15 @@ function privacyPage() {
       if it is inaccurate, incomplete, out of date or misleading. Please contact the
       practice in writing. In most cases we will respond within 45 days. There are a
       small number of situations where access may be declined, or where we will discuss
-      the record with you rather than release it directly — for example, where it could
+      the record with you rather than release it directly, for example where it could
       cause harm. If we decline, we will explain why and tell you how to complain.</p>
       <p>We may recover a reasonable administrative fee for preparing records. We will
       tell you the cost before proceeding.</p>
 
       <h2>Overseas disclosure</h2>
       <p>We do not routinely send personal information overseas. If that ever becomes
-      necessary — for example, through a secure cloud service with servers outside
-      Australia — we will make sure it is permitted by the APPs and will update this
+      necessary (for example, through a secure cloud service with servers outside
+      Australia) we will make sure it is permitted by the APPs and will update this
       policy.</p>
 
       <h2>Cookies and this website</h2>
@@ -251,7 +251,7 @@ function privacyPage() {
 
       <h2>Complaints</h2>
       <p>If you are concerned about how we have handled your information, please talk to
-      us first — many matters can be resolved quickly. You may also complain to:</p>
+      us first, as many matters can be resolved quickly. You may also complain to:</p>
       <ul>
         <li>The <strong>Office of the Australian Information Commissioner</strong>, at <a href="https://www.oaic.gov.au/" rel="noopener noreferrer">oaic.gov.au</a> or on 1300 363 992, about privacy and the APPs</li>
         <li>The <strong>NSW Privacy Commissioner</strong> at the Information and Privacy Commission, about the NSW Health Privacy Principles</li>
@@ -317,7 +317,7 @@ function accessibilityPage() {
         <li>Images that carry meaning have alternative text; purely decorative images are hidden from screen readers</li>
         <li>Headings follow a logical order, and each page has one main heading</li>
         <li>Every page has a "skip to main content" link and proper landmark regions</li>
-        <li>The page respects your operating system's reduced motion setting — see below</li>
+        <li>The page respects your operating system's reduced motion setting, described below</li>
         <li>A dark appearance is applied automatically if your device is set to dark mode, and can be switched manually</li>
         <li>Text remains readable if you override line height, paragraph spacing, letter spacing or word spacing</li>
         <li>Content is provided as accessible HTML rather than only as PDF documents</li>
@@ -331,7 +331,7 @@ function accessibilityPage() {
 
       <h2>Readability for older eyes</h2>
       <p>Body text is set at a comfortable size with generous line spacing, and the
-      measure — the length of a line — is kept short so it is easy to track from the
+      measure, meaning the length of a line, is kept short so it is easy to track from the
       end of one line to the beginning of the next. We use the system font, so it is
       the same typeface you already read everywhere else on your device.</p>
 
@@ -343,11 +343,11 @@ function accessibilityPage() {
 
       <h2>Other ways to reach us</h2>
       <p>If any part of this website is difficult for you to use, please tell us and we
-      will give you the information another way — over the phone, in large print, or in
+      will give you the information another way: over the phone, in large print, or in
       person. We are happy to read anything on this site to you over the phone.</p>
       <ul>
         <li><strong>Telephone:</strong> <a href="tel:${TEL}">${escapeHTML(site.contact.phone)}</a></li>
-        <li><strong>National Relay Service:</strong> ${escapeHTML(site.emergency.relay)} — for people who are deaf, hard of hearing, or have a speech impairment</li>
+        <li><strong>National Relay Service:</strong> ${escapeHTML(site.emergency.relay)}, for people who are deaf, hard of hearing, or have a speech impairment</li>
         <li><strong>Translating and Interpreting Service (TIS National):</strong> ${escapeHTML(site.emergency.interpreter)}</li>
       </ul>
 

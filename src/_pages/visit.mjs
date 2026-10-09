@@ -39,7 +39,7 @@ ${pageHead(s.title, s.intro, trail)}
         <p class="callout__title">Get help now if you have any of these</p>
         <ul>${s.redFlags.map((f) => `<li>${inline(f)}</li>`).join("")}</ul>
         <p style="margin-top:0.6rem">Call <strong>${escapeHTML(site.emergency.ambulance)}</strong>
-        for an ambulance, or go to the nearest emergency department —
+        for an ambulance, or go to the nearest emergency department,
         ${escapeHTML(site.emergency.department)}.</p>
       </div>
     </div>
@@ -63,7 +63,7 @@ ${pageHead(s.title, s.intro, trail)}
         colonoscopy to find out why.</p>
         <h3 style="font-size:var(--step-1);margin-top:var(--space-m)">${icon("clock")} Don't wait for a kit if you have symptoms</h3>
         <p style="margin-top:0.5rem">Screening tests are designed for people
-        <em>without</em> symptoms. If you already have symptoms, see your GP — a
+        <em>without</em> symptoms. If you already have symptoms, see your GP. A
         screening test is not the right test for you.</p>
       </div>
     </div>
@@ -73,8 +73,7 @@ ${pageHead(s.title, s.intro, trail)}
 <section class="section section--sunken" aria-labelledby="screen-h">
   <div class="shell">
     <div class="prose" style="max-width:64ch">
-      <p class="eyebrow">Screening</p>
-      <h2 id="screen-h" style="margin-top:var(--space-2xs)">The National Bowel Cancer Screening Program</h2>
+      <h2 id="screen-h">The National Bowel Cancer Screening Program</h2>
       ${prose(s.screening)}
       <p class="small muted" style="margin-top:var(--space-m)">
         To request a kit, or a replacement if yours is lost or has expired, call the
@@ -140,7 +139,7 @@ ${pageHead(
         <h2>How long is a referral valid?</h2>
         <ul>
           <li>A referral from a general practitioner is valid for <strong>12 months</strong>
-          from the date the specialist first sees you — not from the date the GP wrote it.</li>
+          from the date the specialist first sees you, not from the date the GP wrote it.</li>
           <li>A referral from another specialist is valid for <strong>3 months</strong>.</li>
           <li>A referral covers one course of treatment. A new or unrelated problem
           usually needs a new referral.</li>
@@ -254,19 +253,19 @@ ${pageHead(
     <div class="prose" style="max-width:64ch">
       <h2>What informed financial consent means</h2>
       <p>Informed financial consent means you are given clear information about the
-      likely costs — including any gap between the fee charged and the amount you get
-      back — <em>before</em> you agree to treatment. It also means you are told about
+      likely costs, including any gap between the fee charged and the amount you get
+      back, <em>before</em> you agree to treatment. It also means you are told about
       the costs that are not part of the surgeon's fee.</p>
 
       <h2>The bills you may receive</h2>
       <p>For an operation there are usually several separate accounts. This is normal
       and is worth understanding in advance:</p>
       <ul>
-        <li><strong>The surgeon's fee</strong> — for Dr Sutherland's services.</li>
-        <li><strong>The assistant's fee</strong> — if a surgical assistant is required.</li>
-        <li><strong>The anaesthetist's fee</strong> — a separate specialist who bills independently.</li>
-        <li><strong>The hospital fee</strong> — charged by the hospital, usually covered by private health insurance.</li>
-        <li><strong>Pathology and radiology</strong> — for tests on any tissue removed and for any scans.</li>
+        <li><strong>The surgeon's fee</strong>: for Dr Sutherland's services.</li>
+        <li><strong>The assistant's fee</strong>: if a surgical assistant is required.</li>
+        <li><strong>The anaesthetist's fee</strong>: a separate specialist who bills independently.</li>
+        <li><strong>The hospital fee</strong>: charged by the hospital, usually covered by private health insurance.</li>
+        <li><strong>Pathology and radiology</strong>: for tests on any tissue removed and for any scans.</li>
       </ul>
 
       <h2>Medicare and the Medicare Safety Net</h2>
@@ -290,9 +289,9 @@ ${pageHead(
 
       <h2>Other funding arrangements</h2>
       <ul>
-        <li><strong>Department of Veterans' Affairs (DVA)</strong> — accepted for eligible veterans.</li>
-        <li><strong>Workers compensation and CTP</strong> — accounts are usually sent to the insurer once the claim is approved.</li>
-        <li><strong>Medicare cards, pension and concession cards</strong> — please bring them so that rebates can be claimed correctly.</li>
+        <li><strong>Department of Veterans' Affairs (DVA)</strong>: accepted for eligible veterans.</li>
+        <li><strong>Workers compensation and CTP</strong>: accounts are usually sent to the insurer once the claim is approved.</li>
+        <li><strong>Medicare cards, pension and concession cards</strong>: please bring them so that rebates can be claimed correctly.</li>
       </ul>
 
       <h2>Consultation fees</h2>
@@ -380,12 +379,12 @@ ${pageHead(
         <p><strong>You can eat:</strong> white bread, white rice and refined cereals,
         eggs, plain meat and fish, chicken, dairy foods, and well-cooked peeled
         vegetables without seeds.</p>
-        <p><strong>Avoid anything red or purple</strong> — including red jelly, red
+        <p><strong>Avoid anything red or purple</strong>: including red jelly, red
         cordial and dark grape juice. These can be mistaken for blood during the
         procedure and may lead to unnecessary tests.</p>
 
         <h2>The day before: clear fluids only</h2>
-        <p>From the time instructed — usually in the morning of the day before — you
+        <p>From the time instructed (usually the morning of the day before) you
         will need to stop solid food and drink only clear fluids.</p>
         <p>Clear fluids include water, clear fruit juice without pulp, clear broth or
         soup, black tea or coffee without milk, clear soft drink, and clear sports
@@ -411,13 +410,13 @@ ${pageHead(
         colonoscopy, and some must be continued. This is a decision for the doctor who
         prescribes them, not something to decide yourself.</p>
         <ul>
-          <li><strong>Blood thinners and anticoagulants</strong> — including warfarin, direct oral anticoagulants, and antiplatelet medicines such as clopidogrel. Ask the prescriber well in advance.</li>
-          <li><strong>Diabetes medicines and insulin</strong> — doses usually need adjusting during the fasting period.</li>
-          <li><strong>Iron tablets</strong> — usually stopped about a week before, as they make the bowel look black.</li>
-          <li><strong>Anti-diarrhoeal medicines</strong> — usually stopped.</li>
-          <li><strong>Blood pressure medicines</strong> — usually continued, including on the morning of the procedure.</li>
+          <li><strong>Blood thinners and anticoagulants</strong>: including warfarin, direct oral anticoagulants, and antiplatelet medicines such as clopidogrel. Ask the prescriber well in advance.</li>
+          <li><strong>Diabetes medicines and insulin</strong>: doses usually need adjusting during the fasting period.</li>
+          <li><strong>Iron tablets</strong>: usually stopped about a week before, as they make the bowel look black.</li>
+          <li><strong>Anti-diarrhoeal medicines</strong>: usually stopped.</li>
+          <li><strong>Blood pressure medicines</strong>: usually continued, including on the morning of the procedure.</li>
         </ul>
-        <p>If you are unsure about any medicine, ring the practice — do not guess.</p>
+        <p>If you are unsure about any medicine, ring the practice rather than guessing.</p>
       </div>
 
       <div>
@@ -425,7 +424,7 @@ ${pageHead(
           <h3 style="font-size:var(--step-1)">${icon("clock")} The procedure itself</h3>
           <ul style="margin-top:0.6rem;padding-left:1.2rem;display:grid;gap:0.45rem">
             <li>The examination itself usually takes 20 to 30 minutes, though you should expect to be at the hospital or day surgery unit for three to four hours in total.</li>
-            <li>Performed under sedation or a light general anaesthetic — most people remember nothing of it.</li>
+            <li>Performed under sedation or a light general anaesthetic, and most people remember nothing of it.</li>
             <li>Generally not painful. Air used to inflate the bowel can cause bloating or wind afterwards.</li>
             <li>Usually day surgery: you will be able to go home the same day.</li>
             <li>Small growths called polyps are commonly removed at the same time.</li>
@@ -474,7 +473,7 @@ ${pageHead(
     <div class="prose" style="max-width:64ch">
       <h2>Why the preparation matters so much</h2>
       <p>In Australia, inadequate bowel preparation is observed in around 7% of all
-      colonoscopies (Bowel Cancer Australia) — roughly 63,000 procedures a year. When
+      colonoscopies (Bowel Cancer Australia): roughly 63,000 procedures a year. When
       the bowel is not clean, the endoscopist cannot see the lining properly, polyps
       can be missed, and the procedure may need to be repeated sooner, which means the
       whole preparation again. Following the diet, the fluid intake and the timing gives
@@ -550,7 +549,7 @@ ${pageHead(a.title, a.intro, trail)}
 
         <h2>Pain</h2>
         <p>Some pain is expected, and it is easier to control if you stay ahead of it.
-        You will go home with a plan agreed before your surgery — usually regular
+        You will go home with a plan agreed before your surgery, usually regular
         paracetamol and an anti-inflammatory where these are safe for you, with a
         stronger medicine for the first few days if needed.</p>
         <p>Strong opioid medicines such as oxycodone cause constipation and can make
@@ -566,18 +565,18 @@ ${pageHead(a.title, a.intro, trail)}
 
         <h2>Bowel function</h2>
         <p>It is normal for the bowels to be sluggish for a few days after surgery, and
-        then to be looser than usual for a while. Constipation is common — plenty of
+        then to be looser than usual for a while. Constipation is common, so plenty of
         fluid, gentle movement and the laxatives you are given all help. Avoid
         straining.</p>
         <p>After rectal surgery in particular, bowel habit can take many months to
         settle. Frequency, urgency and clustering of bowel actions are common and often
         improve gradually over a year or more. If these symptoms are troubling you,
-        please raise it at follow-up — there is usually something that can help.</p>
+        please raise it at follow-up, because there is usually something that can help.</p>
 
         <h2>Activity and lifting</h2>
         <p>Walking is good from the first day and helps prevent clots and chest
-        problems. Avoid heavy lifting — commonly nothing more than about five kilograms
-        for the first six weeks — and avoid straining. Ask before returning to driving,
+        problems. Avoid heavy lifting (commonly nothing more than about five kilograms for the
+        first six weeks) and avoid straining. Ask before returning to driving,
         heavy work, or strenuous exercise, and expect fatigue for some weeks. Build up
         gradually.</p>
 
@@ -816,7 +815,7 @@ function contactPage() {
         <p class="small muted" style="margin-top:0.5rem">
           The map is for orientation only. If you cannot see it,
           <a href="https://www.openstreetmap.org/?mlat=-30.2960&amp;mlon=153.1165#map=16/-30.2960/153.1165" rel="noopener noreferrer">open the location in a new page</a>
-          — or simply ask us for directions on the phone and we will talk you through it.
+          You can also simply ask us for directions on the phone and we will talk you through it.
         </p>
       </div>
 
@@ -836,7 +835,7 @@ function contactPage() {
         <form class="card" style="margin-top:var(--space-m)" action="mailto:${escapeHTML(site.contact.email)}" method="post" enctype="text/plain">
           <h2 style="font-size:var(--step-1)">Send a non-clinical enquiry</h2>
           <p class="small muted" style="margin-top:0.35rem">Use this form only for
-          administrative enquiries — for example, confirming our address, asking about
+          administrative enquiries, for example confirming our address, asking about
           opening hours, or requesting a copy of our fee schedule.</p>
 
           <div style="margin-top:var(--space-s);display:grid;gap:var(--space-s)">
@@ -863,7 +862,7 @@ function contactPage() {
                 <option>Opening hours or location</option>
                 <option>Fees and billing</option>
                 <option>I have a referral and would like an appointment</option>
-                <option>I am an existing patient — administrative matter</option>
+                <option>I am an existing patient, administrative matter</option>
                 <option>Referring doctor's rooms</option>
               </select>
             </div>
@@ -918,7 +917,7 @@ function visitIndex() {
   const trail = [{ label: "Home", href: "/" }, { label: "Your visit" }];
   const body = `${pageHead(
     "Your visit",
-    "Practical information for before and after your appointment — how referrals work, what it costs, how to prepare for a colonoscopy, and what to expect after surgery.",
+    "Practical information for before and after your appointment: how referrals work, what it costs, how to prepare for a colonoscopy, and what to expect after surgery.",
     trail,
   )}
 
@@ -929,7 +928,7 @@ function visitIndex() {
         ["/your-visit/symptoms/", "Symptoms and screening", "What to watch for, when to see your GP, when to seek urgent care, and how the national screening program works."],
         ["/your-visit/referrals/", "Referrals and Medicare", "How to get a referral, how long it lasts, what to bring, and information for referring doctors."],
         ["/your-visit/fees/", "Fees and informed financial consent", "Consultation fees, Medicare rebates, the safety net, and the separate bills to expect for surgery."],
-        ["/your-visit/bowel-preparation/", "Bowel preparation", "How to prepare for a colonoscopy — the diet, the fluids, your medicines, and what happens on the day."],
+        ["/your-visit/bowel-preparation/", "Bowel preparation", "How to prepare for a colonoscopy: the diet, the fluids, your medicines, and what happens on the day."],
         ["/your-visit/after-surgery/", "After your procedure", "Recovery, pain relief, eating, bowel function, wound care, follow-up, and warning signs."],
         ["/resources/", "Resources and support", "Trusted organisations for bowel cancer, inflammatory bowel disease and stoma support."],
       ]

@@ -163,24 +163,16 @@ li {
   max-width: 42ch;
 }
 
-.eyebrow {
-  font-size: var(--step--1);
-  font-weight: 620;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--brand-text);
-  display: flex;
-  align-items: center;
-  gap: var(--space-2xs);
-}
-
-.eyebrow::before {
-  content: "";
-  inline-size: 1.75rem;
-  block-size: 2px;
-  border-radius: 2px;
-  background: currentColor;
-  opacity: 0.5;
+/* Group labels.
+   These are real headings for the content beneath them, not tracked-caps
+   kickers sitting above a display headline. Sentence case, normal tracking,
+   normal weight: the label does the work and the type stays quiet. */
+.group-label {
+  font-size: var(--step-0);
+  font-weight: 640;
+  letter-spacing: -0.008em;
+  color: var(--text);
+  text-wrap: balance;
 }
 
 .muted {
@@ -352,7 +344,7 @@ main {
 .brand__text {
   display: flex;
   flex-direction: column;
-  line-height: 1.12;
+  line-height: 1.3;
 }
 
 .brand__name {
@@ -784,10 +776,6 @@ main {
   max-width: 46ch;
 }
 
-.hero .eyebrow {
-  color: rgb(255 255 255 / 0.88);
-}
-
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
@@ -917,7 +905,7 @@ main {
   font-size: var(--step-1);
   font-weight: 640;
   letter-spacing: -0.014em;
-  line-height: 1.25;
+  line-height: 1.3;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1968,12 +1956,12 @@ main {
         <p><strong>You can eat:</strong> white bread, white rice and refined cereals,
         eggs, plain meat and fish, chicken, dairy foods, and well-cooked peeled
         vegetables without seeds.</p>
-        <p><strong>Avoid anything red or purple</strong> — including red jelly, red
+        <p><strong>Avoid anything red or purple</strong>: including red jelly, red
         cordial and dark grape juice. These can be mistaken for blood during the
         procedure and may lead to unnecessary tests.</p>
 
         <h2>The day before: clear fluids only</h2>
-        <p>From the time instructed — usually in the morning of the day before — you
+        <p>From the time instructed (usually the morning of the day before) you
         will need to stop solid food and drink only clear fluids.</p>
         <p>Clear fluids include water, clear fruit juice without pulp, clear broth or
         soup, black tea or coffee without milk, clear soft drink, and clear sports
@@ -1999,13 +1987,13 @@ main {
         colonoscopy, and some must be continued. This is a decision for the doctor who
         prescribes them, not something to decide yourself.</p>
         <ul>
-          <li><strong>Blood thinners and anticoagulants</strong> — including warfarin, direct oral anticoagulants, and antiplatelet medicines such as clopidogrel. Ask the prescriber well in advance.</li>
-          <li><strong>Diabetes medicines and insulin</strong> — doses usually need adjusting during the fasting period.</li>
-          <li><strong>Iron tablets</strong> — usually stopped about a week before, as they make the bowel look black.</li>
-          <li><strong>Anti-diarrhoeal medicines</strong> — usually stopped.</li>
-          <li><strong>Blood pressure medicines</strong> — usually continued, including on the morning of the procedure.</li>
+          <li><strong>Blood thinners and anticoagulants</strong>: including warfarin, direct oral anticoagulants, and antiplatelet medicines such as clopidogrel. Ask the prescriber well in advance.</li>
+          <li><strong>Diabetes medicines and insulin</strong>: doses usually need adjusting during the fasting period.</li>
+          <li><strong>Iron tablets</strong>: usually stopped about a week before, as they make the bowel look black.</li>
+          <li><strong>Anti-diarrhoeal medicines</strong>: usually stopped.</li>
+          <li><strong>Blood pressure medicines</strong>: usually continued, including on the morning of the procedure.</li>
         </ul>
-        <p>If you are unsure about any medicine, ring the practice — do not guess.</p>
+        <p>If you are unsure about any medicine, ring the practice rather than guessing.</p>
       </div>
 
       <div>
@@ -2013,7 +2001,7 @@ main {
           <h3 style="font-size:var(--step-1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg> The procedure itself</h3>
           <ul style="margin-top:0.6rem;padding-left:1.2rem;display:grid;gap:0.45rem">
             <li>The examination itself usually takes 20 to 30 minutes, though you should expect to be at the hospital or day surgery unit for three to four hours in total.</li>
-            <li>Performed under sedation or a light general anaesthetic — most people remember nothing of it.</li>
+            <li>Performed under sedation or a light general anaesthetic, and most people remember nothing of it.</li>
             <li>Generally not painful. Air used to inflate the bowel can cause bloating or wind afterwards.</li>
             <li>Usually day surgery: you will be able to go home the same day.</li>
             <li>Small growths called polyps are commonly removed at the same time.</li>
@@ -2062,7 +2050,7 @@ main {
     <div class="prose" style="max-width:64ch">
       <h2>Why the preparation matters so much</h2>
       <p>In Australia, inadequate bowel preparation is observed in around 7% of all
-      colonoscopies (Bowel Cancer Australia) — roughly 63,000 procedures a year. When
+      colonoscopies (Bowel Cancer Australia): roughly 63,000 procedures a year. When
       the bowel is not clean, the endoscopist cannot see the lining properly, polyps
       can be missed, and the procedure may need to be repeated sooner, which means the
       whole preparation again. Following the diet, the fluid intake and the timing gives
@@ -2106,7 +2094,6 @@ main {
   <div class="shell">
     <div class="grid grid--2" style="gap:var(--space-l)">
       <div>
-        <p class="eyebrow">Appointments</p>
         <h2 id="help-h" style="font-size:var(--step-2)">Making an appointment</h2>
         <p class="muted" style="margin-top:var(--space-2xs);max-width:46ch">
           A referral from your general practitioner is needed to claim a Medicare

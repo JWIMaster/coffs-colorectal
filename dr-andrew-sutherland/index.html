@@ -163,24 +163,16 @@ li {
   max-width: 42ch;
 }
 
-.eyebrow {
-  font-size: var(--step--1);
-  font-weight: 620;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--brand-text);
-  display: flex;
-  align-items: center;
-  gap: var(--space-2xs);
-}
-
-.eyebrow::before {
-  content: "";
-  inline-size: 1.75rem;
-  block-size: 2px;
-  border-radius: 2px;
-  background: currentColor;
-  opacity: 0.5;
+/* Group labels.
+   These are real headings for the content beneath them, not tracked-caps
+   kickers sitting above a display headline. Sentence case, normal tracking,
+   normal weight: the label does the work and the type stays quiet. */
+.group-label {
+  font-size: var(--step-0);
+  font-weight: 640;
+  letter-spacing: -0.008em;
+  color: var(--text);
+  text-wrap: balance;
 }
 
 .muted {
@@ -352,7 +344,7 @@ main {
 .brand__text {
   display: flex;
   flex-direction: column;
-  line-height: 1.12;
+  line-height: 1.3;
 }
 
 .brand__name {
@@ -784,10 +776,6 @@ main {
   max-width: 46ch;
 }
 
-.hero .eyebrow {
-  color: rgb(255 255 255 / 0.88);
-}
-
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
@@ -917,7 +905,7 @@ main {
   font-size: var(--step-1);
   font-weight: 640;
   letter-spacing: -0.014em;
-  line-height: 1.25;
+  line-height: 1.3;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1949,7 +1937,7 @@ main {
         <div class="panel" style="margin-top:var(--space-m);max-width:26rem">
           <h2 style="font-size:var(--step-1)">Qualifications and accreditation</h2>
           <dl class="deflist" style="margin-top:var(--space-xs)">
-            <div><dt>Fellowship</dt><dd>FRACS — Royal Australasian College of Surgeons, general surgery (2006)</dd></div>
+            <div><dt>Fellowship</dt><dd>FRACS, Royal Australasian College of Surgeons, general surgery (2006)</dd></div>
             <div><dt>Post-fellowship training</dt><dd>Colorectal surgery, CSSANZ training program</dd></div>
             <div><dt>Medical degree</dt><dd>University of Melbourne (1998)</dd></div>
             <div><dt>Consulting since</dt><dd>Coffs Harbour, 2009</dd></div>
@@ -1996,9 +1984,9 @@ main {
         <ul>
           <li>Colonoscopy, including screening and surveillance</li>
           <li>Surgery for colon cancer and rectal cancer, including laparoscopic surgery</li>
-          <li>Surgery for inflammatory bowel disease — Crohn disease and ulcerative colitis</li>
+          <li>Surgery for inflammatory bowel disease: Crohn disease and ulcerative colitis</li>
           <li>Surgery for diverticular disease</li>
-          <li>Benign anorectal conditions — haemorrhoids, anal fissure, anal fistula and pilonidal sinus</li>
+          <li>Benign anorectal conditions: haemorrhoids, anal fissure, anal fistula and pilonidal sinus</li>
           <li>Surgery for rectal prolapse</li>
         </ul>
 
@@ -2037,7 +2025,6 @@ main {
   <div class="shell">
     <div class="grid grid--2" style="gap:var(--space-l)">
       <div>
-        <p class="eyebrow">Appointments</p>
         <h2 id="help-h" style="font-size:var(--step-2)">Making an appointment</h2>
         <p class="muted" style="margin-top:var(--space-2xs);max-width:46ch">
           A referral from your general practitioner is needed to claim a Medicare

@@ -163,24 +163,16 @@ li {
   max-width: 42ch;
 }
 
-.eyebrow {
-  font-size: var(--step--1);
-  font-weight: 620;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--brand-text);
-  display: flex;
-  align-items: center;
-  gap: var(--space-2xs);
-}
-
-.eyebrow::before {
-  content: "";
-  inline-size: 1.75rem;
-  block-size: 2px;
-  border-radius: 2px;
-  background: currentColor;
-  opacity: 0.5;
+/* Group labels.
+   These are real headings for the content beneath them, not tracked-caps
+   kickers sitting above a display headline. Sentence case, normal tracking,
+   normal weight: the label does the work and the type stays quiet. */
+.group-label {
+  font-size: var(--step-0);
+  font-weight: 640;
+  letter-spacing: -0.008em;
+  color: var(--text);
+  text-wrap: balance;
 }
 
 .muted {
@@ -352,7 +344,7 @@ main {
 .brand__text {
   display: flex;
   flex-direction: column;
-  line-height: 1.12;
+  line-height: 1.3;
 }
 
 .brand__name {
@@ -784,10 +776,6 @@ main {
   max-width: 46ch;
 }
 
-.hero .eyebrow {
-  color: rgb(255 255 255 / 0.88);
-}
-
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
@@ -917,7 +905,7 @@ main {
   font-size: var(--step-1);
   font-weight: 640;
   letter-spacing: -0.014em;
-  line-height: 1.25;
+  line-height: 1.3;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1976,7 +1964,7 @@ main {
         <p class="small muted" style="margin-top:0.5rem">
           The map is for orientation only. If you cannot see it,
           <a href="https://www.openstreetmap.org/?mlat=-30.2960&amp;mlon=153.1165#map=16/-30.2960/153.1165" rel="noopener noreferrer">open the location in a new page</a>
-          — or simply ask us for directions on the phone and we will talk you through it.
+          You can also simply ask us for directions on the phone and we will talk you through it.
         </p>
       </div>
 
@@ -1996,7 +1984,7 @@ main {
         <form class="card" style="margin-top:var(--space-m)" action="mailto:reception@coffscolorectal.com.au" method="post" enctype="text/plain">
           <h2 style="font-size:var(--step-1)">Send a non-clinical enquiry</h2>
           <p class="small muted" style="margin-top:0.35rem">Use this form only for
-          administrative enquiries — for example, confirming our address, asking about
+          administrative enquiries, for example confirming our address, asking about
           opening hours, or requesting a copy of our fee schedule.</p>
 
           <div style="margin-top:var(--space-s);display:grid;gap:var(--space-s)">
@@ -2023,7 +2011,7 @@ main {
                 <option>Opening hours or location</option>
                 <option>Fees and billing</option>
                 <option>I have a referral and would like an appointment</option>
-                <option>I am an existing patient — administrative matter</option>
+                <option>I am an existing patient, administrative matter</option>
                 <option>Referring doctor's rooms</option>
               </select>
             </div>
@@ -2079,7 +2067,6 @@ main {
   <div class="shell">
     <div class="grid grid--2" style="gap:var(--space-l)">
       <div>
-        <p class="eyebrow">Appointments</p>
         <h2 id="help-h" style="font-size:var(--step-2)">Making an appointment</h2>
         <p class="muted" style="margin-top:var(--space-2xs);max-width:46ch">
           A referral from your general practitioner is needed to claim a Medicare

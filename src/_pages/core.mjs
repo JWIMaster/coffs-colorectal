@@ -30,8 +30,7 @@ export function render() {
   </div>
   <div class="shell hero__inner">
     <div>
-      <p class="eyebrow">${escapeHTML(site.practice.region)}</p>
-      <h1 style="margin-top:var(--space-2xs)">${escapeHTML(h.heroTitle)}</h1>
+      <h1>${escapeHTML(h.heroTitle)}</h1>
       <p class="lede" style="margin-top:var(--space-s)">${inline(h.heroLede)}</p>
       <p class="hero__actions">
         <a class="btn btn--primary" href="tel:${TEL}">${icon("phone")}Call ${escapeHTML(site.contact.phone)}</a>
@@ -64,11 +63,10 @@ export function render() {
   <div class="shell">
     <div class="section-head">
       <div>
-        <p class="eyebrow">Start here</p>
         <h2 id="start-h">Where would you like to go?</h2>
       </div>
       <p class="muted" style="max-width:38ch">If you are not sure which section you
-      need, start with the symptom list — it will point you in the right direction.</p>
+      need, start with the symptom list. It will point you in the right direction.</p>
     </div>
     <div class="grid grid--3">
       ${[
@@ -89,8 +87,7 @@ export function render() {
   <div class="shell">
     <div class="grid grid--2" style="align-items:center;gap:var(--space-xl)">
       <div class="prose">
-        <p class="eyebrow">About</p>
-        <h2 id="about-h" style="margin-top:var(--space-2xs)">${escapeHTML(site.practice.name)}</h2>
+        <h2 id="about-h">${escapeHTML(site.practice.name)}</h2>
         ${prose(h.about)}
       </div>
       <figure style="margin:0">
@@ -99,7 +96,7 @@ export function render() {
              loading="lazy" decoding="async"
              style="border-radius:var(--radius-m);box-shadow:var(--shadow-m);border:1px solid var(--border)">
         <figcaption class="small subtle" style="margin-top:0.6rem">
-          Suite 4, 29 Orlando Street, Coffs Harbour — opposite NBN and Cooper's Surf Shop.
+          Suite 4, 29 Orlando Street, Coffs Harbour, opposite NBN and Cooper's Surf Shop.
         </figcaption>
       </figure>
     </div>
@@ -110,8 +107,7 @@ export function render() {
   <div class="shell">
     <div class="grid grid--2" style="align-items:start">
       <div class="prose">
-        <p class="eyebrow">Bowel cancer screening</p>
-        <h2 id="bc-h" style="margin-top:var(--space-2xs)">${escapeHTML(h.screening.title)}</h2>
+        <h2 id="bc-h">${escapeHTML(h.screening.title)}</h2>
         ${prose(h.screening.body)}
       </div>
       <div class="card">
