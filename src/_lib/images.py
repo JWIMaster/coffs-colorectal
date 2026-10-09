@@ -86,10 +86,12 @@ def main():
     modern = os.path.join(SRC, "dr_andrew_sutherland_2023_2208x2944.webp")
     if os.path.exists(modern):
         head = Image.open(modern)
-        # He sits left of centre, with a bright corridor behind him. Framing on
-        # his face and cropping in a third stops the circle filling with the room.
-        focus = (0.40, 0.26)
-        zoom = 1.30
+        # His face sits at about x 0.47, y 0.30 of the frame. Centring the crop
+        # there puts his head in the middle of the circle; a bigger zoom keeps the
+        # window small enough that it can actually move, rather than being pinned
+        # to the frame edge where the focus value stops having any effect.
+        focus = (0.47, 0.30)
+        zoom = 1.40
         print(f"  using {os.path.basename(modern)} ({head.width}x{head.height})")
     else:
         head = Image.open(os.path.join(SRC, "dr_andrew_sutherland.png"))

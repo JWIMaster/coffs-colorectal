@@ -35,8 +35,16 @@ sharply at every size up to 2x.
   corridor filling the right of the frame. A plain centre crop loses his head to
   the right-hand third and fills half the circle with room; a tighter crop with
   the same focus then frames him too close, chin near the edge. `images.py`
-  takes both a focus point and a zoom, and now uses `(0.40, 0.26)` at `zoom 1.30`
-  — close enough that he fills the circle, wide enough to keep his shoulders.
+  takes both a focus point and a zoom, and uses `(0.47, 0.30)` at `zoom 1.40`,
+  which centres his head in the circle.
+
+  Two earlier attempts missed. `(0.44, 0.30)` and then `(0.40, 0.26)` both left his
+  head high and to the right. The reason was arithmetic, not taste: at `zoom 1.30`
+  the square the frame allows is pinned to the left edge, so *lowering* the focus
+  x could not move the window left — the focus value had stopped having any
+  effect. A larger zoom makes the window small enough to travel. The framing was
+  chosen from a 12-cell sweep of focus against zoom (`centre-sweep.png`), each
+  cell checked against a centre crosshair rather than by eye alone.
   `media/_review/framing-options.png` shows the four variants that were compared.
 
 ### How it sits on the page
