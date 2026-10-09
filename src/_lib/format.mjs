@@ -143,6 +143,24 @@ for (const theme of ["light", "dark"]) {
           if (cs.whiteSpace !== "nowrap") out.clipped.push(`badge may wrap (white-space:${cs.whiteSpace})`);
         });
 
+        // A card is one object: its children should stack, and there should be
+        // no large dead gap between them. A too-broad selector once laid a
+        // card's four children out as three columns, stranding its button in a
+        // 400px void — the page still "looked fine" to every other check.
+        document.querySelectorAll("main .card").forEach((card) => {
+          const kids = [...card.children].filter((k) => k.getBoundingClientRect().height > 8);
+          if (kids.length < 2) return;
+          const lefts = new Set(kids.map((k) => Math.round(k.getBoundingClientRect().left)));
+          if (lefts.size > 1)
+            out.clipped.push(`card children laid out in ${lefts.size} columns`);
+          for (let i = 1; i < kids.length; i++) {
+            const prev = kids[i - 1].getBoundingClientRect();
+            const cur = kids[i].getBoundingClientRect();
+            const gap = Math.round(cur.top - prev.bottom);
+            if (gap > 80) out.clipped.push(`card dead gap ${gap}px inside .card`);
+          }
+        });
+
         // A grid should not leave a column of empty space beside short content.
         // Threshold is a ratio as well as an absolute: two columns of naturally
         // different length (a form beside details) are fine, but one column

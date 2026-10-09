@@ -334,11 +334,20 @@ main {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .grid--main-side > :not(.prose) {
+  /* Group several sibling panels into a row beneath the prose.
+     Scoped away from .card deliberately: a card is one self-contained object
+     whose text should stay in a single column. Without this exclusion the
+     selector (specificity 0,2,0) beat .card (0,1,0) and laid the card's four
+     CHILDREN out as three columns, stranding its button in a 400px void. */
+  .grid--main-side > :not(.prose):not(.card) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
     gap: var(--space-m);
     align-items: start;
+    margin-block-start: var(--space-m);
+  }
+
+  .grid--main-side > .card {
     margin-block-start: var(--space-m);
   }
 }
@@ -967,6 +976,16 @@ main {
   border-radius: var(--radius-s);
   box-shadow: var(--shadow-panel);
   padding: var(--space-m);
+}
+
+/* A card's own text is held to a reading measure even when the card spans the
+   page. Without this the "Symptoms worth checking" list ran 1198px wide, which
+   is roughly 120 characters a line. */
+.card > p,
+.card > ul,
+.card > ol,
+.card > dl {
+  max-inline-size: var(--measure);
 }
 
 .panel {
