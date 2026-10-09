@@ -750,10 +750,6 @@ main {
   color: var(--brand-text);
 }
 
-.nav-sheet__link[aria-current="page"]::after {
-  content: "";
-  position: absolute;
-}
 
 .nav-sheet__link svg {
   inline-size: 1rem;

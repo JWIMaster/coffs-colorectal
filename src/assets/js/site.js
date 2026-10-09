@@ -285,18 +285,4 @@
     }
   }
 
-  /* ----------------------------------------------------------------------
-     4. Current section in the header nav
-     Highlights the section you are reading, for pages inside a section.
-     ---------------------------------------------------------------------- */
-  var path = window.location.pathname;
-  var navLinks = document.querySelectorAll(".nav__link, .nav-sheet__link");
-  Array.prototype.forEach.call(navLinks, function (link) {
-    if (link.hasAttribute("aria-current")) return;
-    var href = link.getAttribute("href");
-    if (!href || href === "/") return;
-    if (path !== href && path.indexOf(href) === 0) {
-      link.setAttribute("data-section-active", "true");
-    }
-  });
 })();
