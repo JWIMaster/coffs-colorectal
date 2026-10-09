@@ -1315,12 +1315,20 @@ main {
   margin-block-end: var(--space-xs);
 }
 
-/* The first heading needs no marker above it; the section boundary already
-   separates it. */
-.prose > h2:first-child::before,
-.prose h2:first-of-type::before {
-  display: none;
-}
+/* Suppress the marker only on the heading that opens the prose block, where the
+   section boundary already separates it. This must be a direct-child test:
+   `:first-of-type` also matches the first h2 inside any nested group, which
+   silently removed the marker from "Risks and complications" and "Where this
+   information comes from" on every clinical page. */
+/* Every section heading carries the marker, unconditionally.
+
+   Three attempts to suppress it on just the opening heading each matched the
+   wrong element and silently removed the marker from real section headings:
+   `:first-of-type` matched the first h2 inside nested groups (so "Risks and
+   complications" lost its marker), and a build-time tag applied per prose block
+   tagged standalone section headings as openings. A rule that cannot be wrong
+   is worth more here than saving one marker after the page title. Note that an
+   earlier comment here claimed the opposite; it was describing the bug. */
 
 .prose h3 {
   margin-block-start: var(--space-l);
