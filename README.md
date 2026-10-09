@@ -12,14 +12,81 @@ anywhere, including a simple shared host or an object store.
 
 ---
 
+## Deployment
+
+The site is live at **https://jwimaster.github.io/coffs-colorectal/**
+
+Repository: https://github.com/JWIMaster/coffs-colorectal
+
+GitHub Actions builds and deploys on every push to `main`
+(`.github/workflows/deploy-pages.yml`). Nothing is committed as build output:
+the workflow runs the build into a clean `dist/`, verifies it, and publishes
+that artifact.
+
+### Hosting from a subpath
+
+GitHub Pages serves project repositories from `https://<owner>.github.io/<repo>/`,
+so every root-relative link has to carry that prefix. The build takes a base
+path for this:
+
+```bash
+node build.mjs --base=/coffs-colorectal --out=dist
+```
+
+A `<base href>` tag would have been less code, but it also rewrites fragment
+anchors and relative links, so the build instead applies the prefix explicitly
+in a single pass over the finished markup.
+
+The workflow derives the base from the repository name, so renaming the repo
+needs no change here. Two environment variables control absolute URLs:
+
+| Variable | Purpose |
+| --- | --- |
+| `SITE_BASE` | Path prefix for root-relative links |
+| `SITE_ORIGIN` | Public origin used for canonical and schema.org URLs |
+
+`SITE_ORIGIN` is deliberately **not** called `SITE_URL`: the
+`actions/configure-pages` action injects its own `SITE_URL` partway through the
+job, which silently overrode ours and produced canonical URLs pointing at a
+host with no path. If you wire up other Actions, keep an eye out for the same
+collision.
+
+### Pointing the real domain at it
+
+Canonical URLs currently point at the GitHub Pages address, because
+`coffscolorectal.com.au` does not yet serve this site. Once DNS is moved:
+
+1. Add a file named `CNAME` containing `coffscolorectal.com.au`.
+2. Set `SITE_ORIGIN=https://www.coffscolorectal.com.au` and `SITE_BASE=` (empty)
+   in the workflow, since a custom domain serves from the root.
+3. Re-run the workflow.
+
+### Verifying a deployment
+
+`src/_lib/verify.py` inspects the built artifact rather than trusting the build.
+It is what caught the canonical-URL faults on the first deploy. It checks that
+every page exists, the base path has been applied, no template placeholders
+survived, every internal link resolves to a real file, each page has exactly one
+`h1`, the required accessibility and safety elements are present, and the
+canonical URL for each page is the one expected.
+
+```bash
+node build.mjs --base=/coffs-colorectal --out=dist
+python3 src/_lib/verify.py dist /coffs-colorectal https://jwimaster.github.io/coffs-colorectal/
+```
+
+---
+
 ## Quick start
 
 ```bash
-node build.mjs          # build the whole site
-python3 src/_lib/images.py     # regenerate responsive images (only if sources change)
-python3 src/_lib/normalise.py  # re-apply Australian English rules to content
-node src/_lib/audit.mjs        # link, accessibility and contrast audit
-node src/_lib/shoot.mjs        # screenshots into qa-shots/ for visual review
+node build.mjs                                          # build into the project root
+node build.mjs --base=/coffs-colorectal --out=dist       # build for GitHub Pages
+python3 src/_lib/verify.py dist /coffs-colorectal        # verify a built artifact
+python3 src/_lib/images.py                               # regenerate images (only if sources change)
+python3 src/_lib/normalise.py                            # re-apply Australian English to content
+node src/_lib/audit.mjs                                  # link, a11y and contrast audit (needs playwright)
+node src/_lib/shoot.mjs                                  # screenshots into qa-shots/ (needs playwright)
 ```
 
 `build.mjs` is the only command needed for normal work. The other four are
@@ -62,8 +129,13 @@ content/
   conditions-cancer.json   Colon and rectal cancer, adapted from the original site
   procedures.json          Ten procedure pages
 media/                     Processed images (WebP + JPEG)
-_archive/                  The Wayback crawl: raw HTML, extracted text, originals
-qa-shots/                  Screenshots from the visual harness
+    verify.py              Pre-publish artifact checks
+_archive/
+  content-extracted/       Text extracted from the crawl (committed)
+  html/, media/            Raw crawl and original images (excluded from git)
+.github/workflows/         Build and deploy to GitHub Pages
+dist/                      Built artifact for publishing (excluded from git)
+qa-shots/                  Screenshots from the visual harness (excluded from git)
 ```
 
 Output is written to the project root, so `index.html` at the top level is the
@@ -207,7 +279,13 @@ before publication.**
 
 ## Recovered material
 
-`_archive/` preserves the crawl that this rebuild is based on:
+`_archive/content-extracted/` holds the text extracted from the crawl, so the
+rebuild stays traceable. The raw captured HTML and original images are kept
+locally but **excluded from the repository**: portions of the captured pages
+contain verbatim third-party patient-information text (ASCRS, NHS and others)
+that is not ours to redistribute.
+
+Locally, `_archive/` preserves the full crawl:
 
 - `html/` — the 24 raw pages from the Wayback Machine, plus two pages recovered
   from later snapshots (the February 2017 capture of those pages failed, so
