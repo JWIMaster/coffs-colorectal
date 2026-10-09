@@ -936,16 +936,22 @@ main {
    9. Cards & panels
    -------------------------------------------------------------------------- */
 .card {
-  background: var(--surface);
+  background-color: var(--surface);
+  background-image: var(--wash-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-s);
+  box-shadow: var(--shadow-panel);
   padding: var(--space-m);
 }
 
 .panel {
-  background: var(--surface);
+  /* The wash is a background-image over the surface colour, so it layers
+     without needing a second element. */
+  background-color: var(--surface);
+  background-image: var(--wash-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-s);
+  box-shadow: var(--shadow-panel);
   padding: var(--space-m);
 }
 
@@ -1519,7 +1525,8 @@ main {
 
 .risk {
   padding: 0.85rem 1rem;
-  background: var(--surface);
+  background-color: var(--surface);
+  background-image: var(--wash-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-s);
 }
@@ -2065,5 +2072,43 @@ main {
 @media (min-width: 78rem) {
   .nav__link {
     padding-inline: 0.85rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   23. Scroll reveal
+   Content settles into place as it enters the viewport, the way a printed page
+   resolves rather than appearing all at once. Deliberately restrained:
+
+   - Gated on `html[data-reveal="on"]`, which only the script sets. Without
+     JavaScript, or if the script fails, nothing is ever hidden.
+   - Opt-in per element via [data-reveal], so the surface area is explicit and a
+     new section is not silently animated before anyone has looked at it.
+   - Transform and opacity only, which stay on the compositor, and the travel is
+     12px over 520ms — a settle, not a slide.
+   - Skipped entirely under prefers-reduced-motion, and the script also skips any
+     element already in view at load, so above-the-fold content never animates
+     and the page cannot appear blank.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-reveal="on"] [data-reveal]:not([data-reveal="in"]) {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+
+  html[data-reveal="on"] [data-reveal] {
+    transition:
+      opacity 520ms var(--ease-out),
+      transform 520ms var(--ease-out);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+}
+
+/* Belt and braces: even if a stale attribute survives, reduced motion wins. */
+@media (prefers-reduced-motion: reduce) {
+  html[data-reveal="on"] [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

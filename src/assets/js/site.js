@@ -287,4 +287,100 @@
   }
 
 
+
+  /* ----------------------------------------------------------------------
+     5. Scroll reveal
+
+     Adds [data-reveal] to the blocks worth settling, then marks each one as it
+     enters the viewport. Two safeguards matter more than the effect:
+
+     - Anything already on screen at load is marked immediately, so the fold
+       never animates and the page cannot render blank while waiting.
+     - Under prefers-reduced-motion nothing is marked at all and the gating
+       attribute is never set, so the CSS has nothing to hide.
+     ---------------------------------------------------------------------- */
+  if (!reduceMotion.matches && "IntersectionObserver" in window) {
+    // Deliberately fine-grained. Coarse blocks were the first attempt, but an
+    // index page is one 1200px list and a contact page is one 1480px grid, both
+    // of which fail the height test below and so animated nothing at all.
+    // Rows and cards settle individually, which also reads better than a whole
+    // section moving as one slab.
+    var REVEAL_SELECTOR = [
+      ".section-head",
+      ".prose > h2",
+      ".callout",
+      ".panel",
+      ".card",
+      ".facts li",
+      ".risk",
+      ".index__row",
+      ".route",
+      ".profile__intro",
+      ".profile__facts",
+      ".doc__rail",
+    ].join(",");
+
+    var revealRoot = document.documentElement;
+    var candidates = Array.prototype.slice.call(
+      document.querySelectorAll(REVEAL_SELECTOR),
+    );
+
+    // Do not animate something taller than the viewport: it would be partly
+    // invisible on arrival and the reader would scroll into blank space. Nor
+    // anything tiny, where the movement would be imperceptible noise.
+    candidates = candidates.filter(function (el) {
+      var r = el.getBoundingClientRect();
+      return r.height >= 24 && r.height < window.innerHeight * 0.9;
+    });
+
+    // Past a few dozen the effect stops reading as settling and starts reading
+    // as a page assembling itself, and every observed node costs something.
+    if (candidates.length > 60) candidates = candidates.slice(0, 60);
+
+    if (candidates.length) {
+      revealRoot.setAttribute("data-reveal", "on");
+
+      var clearDelay = function (el) {
+        el.style.removeProperty("--reveal-delay");
+      };
+
+      var settle = function (el) {
+        el.setAttribute("data-reveal", "in");
+        window.setTimeout(function () {
+          clearDelay(el);
+        }, 900);
+      };
+
+      // Anything already in view is settled before paint, so nothing flashes.
+      var pending = [];
+      candidates.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.92 && r.bottom > 0) settle(el);
+        else {
+          el.setAttribute("data-reveal", "out");
+          pending.push(el);
+        }
+      });
+
+      var io = new IntersectionObserver(
+        function (entries) {
+          // Stagger within a batch so a row of cards does not move as one slab.
+          var arrived = entries.filter(function (e) {
+            return e.isIntersecting;
+          });
+          arrived.forEach(function (e, i) {
+            var el = e.target;
+            el.style.setProperty("--reveal-delay", i * 55 + "ms");
+            settle(el);
+            io.unobserve(el);
+          });
+        },
+        { rootMargin: "0px 0px -8% 0px", threshold: 0.06 },
+      );
+
+      pending.forEach(function (el) {
+        io.observe(el);
+      });
+    }
+  }
 })();
